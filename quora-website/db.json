@@ -1,0 +1,50 @@
+{
+    "users": [
+        {
+            "userid": "",
+            "username": "Ashish",
+            "email": "a4ashish04",
+            "password": "12345",
+            "employability": {
+                "Position": "Sodt",
+                "Company": "lt",
+                "Startyear": "2015"
+            },
+            "education": {},
+            "timestap": "April",
+            "image": ""
+        }
+    ],
+    "post": [
+        {
+            "postid": 1,
+            "userid": "",
+            "title": "",
+            "paragraph": [],
+            "images": [],
+            "upvotes": 2,
+            "comments": {
+                "commentid": "",
+                "userid": "",
+                "comments": "",
+                "upvotes": "",
+                "reply": {
+                    "upvotes": "",
+                    "commentId": "",
+                    "comments": "",
+                    "userid": "",
+                    "reply": ""
+                }
+            }
+        }
+    ],
+    "questions": [
+        {
+            "userid":"",
+            "question":"",
+            "answer": [{"userid": "",
+                "answer":""},
+                {},{}]
+        }
+    ]
+}
