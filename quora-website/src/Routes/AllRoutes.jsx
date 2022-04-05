@@ -8,6 +8,8 @@ export const AllRoutes = () => {
     <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/answer" element={<Answer />} />
+         <Route path='/login' element={<Login />}/>
+         <Route path="*" element={<NoRoute />} />
          {/* <Route path = "/notifications" element = {<Notification />} /> */}
     </Routes>
   )
