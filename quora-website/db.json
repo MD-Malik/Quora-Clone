@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userid": 5,
+      "username": "shahrukh",
+      "password": "12345",
+      "useremail": "md.shahrukhmalik2012@gmail.com",
+      "isAuth": true
+    },
+    {
+      "username": "shahrukh",
+      "useremail": "shahrukh",
+      "password": "shahrukh",
+      "userid": "34ca5405-a6a1-495d-8523-adcec951a423",
+      "isAuth": true,
+      "id": 2
+    },
+    {
+      "username": "",
+      "useremail": "",
+      "password": "",
+      "userid": "d18d3623-67cb-4a96-a048-e1c788168329",
+      "isAuth": true,
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "userid": 1,
+      "heading": "",
+      "images": [],
+      "paragraphs": [],
+      "postid": "",
+      "upvotes": 4,
+      "share_count": 3,
+      "comment_count": 5,
+      "comments": [
+        {
+          "userid": 2,
+          "commentid": 3,
+          "comment_message": ""
+        }
+      ]
+    }
+  ]
+}
