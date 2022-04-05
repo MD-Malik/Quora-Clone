@@ -7,9 +7,7 @@ import { Login } from './Routes/LoginPage';
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <AllRoutes />
-      <Login />
     </div>
   );
 }

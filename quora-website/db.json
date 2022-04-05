@@ -1,50 +1,69 @@
 {
-    "users": [
-        {
-            "userid": "",
-            "username": "Ashish",
-            "email": "a4ashish04",
-            "password": "12345",
-            "employability": {
-                "Position": "Sodt",
-                "Company": "lt",
-                "Startyear": "2015"
-            },
-            "education": {},
-            "timestap": "April",
-            "image": ""
+  "users": [
+    {
+      "userid": "",
+      "id": 1,
+      "username": "Ashish",
+      "useremail": "a4ashish04",
+      "password": "12345",
+      "employability": {
+        "Position": "Sodt",
+        "Company": "lt",
+        "Startyear": "2015"
+      },
+      "education": {},
+      "timestap": "April",
+      "image": ""
+    },
+    {
+      "username": "shahrukh",
+      "password": "shahrukh",
+      "id": 2
+    },
+    {
+      "username": "shahrukh",
+      "useremail": "shahrukh",
+      "password": "shahrukh",
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "isAuth": true,
+      "id": 3
+    }
+  ],
+  "post": [
+    {
+      "postid": 1,
+      "userid": "",
+      "title": "",
+      "paragraph": [],
+      "images": [],
+      "upvotes": 2,
+      "comments": {
+        "commentid": "",
+        "userid": "",
+        "comments": "",
+        "upvotes": "",
+        "reply": {
+          "upvotes": "",
+          "commentId": "",
+          "comments": "",
+          "userid": "",
+          "reply": ""
         }
-    ],
-    "post": [
+      }
+    }
+  ],
+  "questions": [
+    {
+      "userid": "",
+      "question": "",
+      "answer": [
         {
-            "postid": 1,
-            "userid": "",
-            "title": "",
-            "paragraph": [],
-            "images": [],
-            "upvotes": 2,
-            "comments": {
-                "commentid": "",
-                "userid": "",
-                "comments": "",
-                "upvotes": "",
-                "reply": {
-                    "upvotes": "",
-                    "commentId": "",
-                    "comments": "",
-                    "userid": "",
-                    "reply": ""
-                }
-            }
-        }
-    ],
-    "questions": [
-        {
-            "userid":"",
-            "question":"",
-            "answer": [{"userid": "",
-                "answer":""},
-                {},{}]
-        }
-    ]
+          "userid": "",
+          "answer": ""
+        },
+        {},
+        {}
+      ]
+    }
+  ]
 }

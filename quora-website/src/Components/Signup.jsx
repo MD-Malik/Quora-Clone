@@ -120,6 +120,7 @@ export const Signup = ({state}) => {
 let alreadyPresent=false
 
     const handleSubmit = () => {
+        console.log("done")
         updateUsers();
         userReducer.users.forEach((item)=>{
             if(item.password===userDetails.password || item.useremail===userDetails.useremail){
@@ -135,7 +136,7 @@ let alreadyPresent=false
         }
         else{
             
-            fetch("http://localhost:3001/users", {
+            fetch("http://localhost:3001/users",{
             method:"POST",
             body:JSON.stringify({
                 ...userDetails,
