@@ -1,17 +1,10 @@
-// import "./App.css";
-// import About from "./components/About";
-// import Career from "./components/Career";
-import Press from "./components/Press";
-// import Footer from "./components/Footer";
+import "./App.css";
+import { AllRoutes } from "./Routes/AllRoutes";
+
 function App() {
   return (
     <div className="App">
-      {/* <About /> */}
-
-      {/* <Career /> */}
-      <Press />
-
-      {/* <Footer /> */}
+      <AllRoutes />
     </div>
   );
 }

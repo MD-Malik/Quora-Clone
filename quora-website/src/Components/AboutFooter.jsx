@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './footer.module.css'
+import styles from './aboutFooter.module.css'
 
-const Footer = () => {
+const AboutFooter = () => {
     return (
         <div className={styles.section1}>
             <div className={styles.section1_a} >
@@ -84,4 +84,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default AboutFooter
