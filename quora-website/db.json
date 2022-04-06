@@ -27,6 +27,14 @@
       "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
       "isAuth": true,
       "id": 3
+    },
+    {
+      "username": "Ashish Kumar",
+      "useremail": "a4ashish04@gmail.com",
+      "password": "12345",
+      "userid": "77dd08b4-452e-49aa-a797-9fb0d22311c6",
+      "isAuth": true,
+      "id": 4
     }
   ],
   "post": [
