@@ -5,18 +5,19 @@ import { Feed } from './Feed';
 import { Navbar } from './Navbar'
 import { Post } from './Post';
 import { Space } from './Space';
+import HomeLeftSpace from './HomeLeftSpace';
 
 export const Home = () => {
 
-  const {isAuth}= useSelector((state)=>state.authReducer)
+  const { isAuth } = useSelector((state) => state.authReducer)
 
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(isAuth===false){
+  useEffect(() => {
+    if (isAuth === false) {
       navigate("/login")
     }
-  },[])
+  }, [])
   return (
     <div>
        <Navbar />
@@ -25,6 +26,7 @@ export const Home = () => {
            <Post />
            <Feed />
        </div>
+      <HomeLeftSpace />
     </div>
   )
 }

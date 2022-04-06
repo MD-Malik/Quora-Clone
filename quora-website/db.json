@@ -29,12 +29,20 @@
       "id": 3
     },
     {
-      "username": "Ashish Kumar",
-      "useremail": "a4ashish04@gmail.com",
-      "password": "12345",
-      "userid": "77dd08b4-452e-49aa-a797-9fb0d22311c6",
+      "username": "upendra",
+      "useremail": "upendra@gmail.com",
+      "password": "abc123",
+      "userid": "829ef848-26cf-4678-ae00-550279783a57",
       "isAuth": true,
       "id": 4
+    },
+    {
+      "username": "test",
+      "useremail": "test@gmail.com",
+      "password": "test",
+      "userid": "c42f874e-7e3b-4f73-9cbf-bc86ad304028",
+      "isAuth": true,
+      "id": 5
     }
   ],
   "post": [
