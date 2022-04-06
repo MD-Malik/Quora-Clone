@@ -21,8 +21,8 @@ export const Navbar = () => {
       <div className="navbar-icons">
         <div className="icon">
           <Tooltip title="Home">
-            <Link to = "/">
-            <HomeIcon />
+            <Link to="/">
+              <HomeIcon />
             </Link>
           </Tooltip>
         </div>
@@ -33,10 +33,10 @@ export const Navbar = () => {
         </div>
         <div className="icon">
           <Tooltip title="Answer">
-            <Link to = "/answer">
-            <AssignmentTurnedInOutlinedIcon />
+            <Link to="/answer">
+              <AssignmentTurnedInOutlinedIcon />
             </Link>
-           
+
           </Tooltip>
         </div>
         <div className="icon">

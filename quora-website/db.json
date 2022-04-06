@@ -27,6 +27,22 @@
       "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
       "isAuth": true,
       "id": 3
+    },
+    {
+      "username": "upendra",
+      "useremail": "upendra@gmail.com",
+      "password": "abc123",
+      "userid": "829ef848-26cf-4678-ae00-550279783a57",
+      "isAuth": true,
+      "id": 4
+    },
+    {
+      "username": "test",
+      "useremail": "test@gmail.com",
+      "password": "test",
+      "userid": "c42f874e-7e3b-4f73-9cbf-bc86ad304028",
+      "isAuth": true,
+      "id": 5
     }
   ],
   "post": [
