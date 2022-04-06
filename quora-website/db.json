@@ -17,16 +17,11 @@
     },
     {
       "username": "shahrukh",
-      "password": "shahrukh",
-      "id": 2
-    },
-    {
-      "username": "shahrukh",
       "useremail": "shahrukh",
       "password": "shahrukh",
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "userid": "d9d7f9fa-d645-4789-985a-1baa7908a40e",
       "isAuth": true,
-      "id": 3
+      "id": 2
     }
   ],
   "post": [
@@ -64,6 +59,13 @@
         {},
         {}
       ]
+    }
+  ],
+  "current_user": [
+    {
+      "isAuth": true,
+      "userid": "d9d7f9fa-d645-4789-985a-1baa7908a40e",
+      "id": 1
     }
   ]
 }
