@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './space.module.css'
+import styles from './spaceList.module.css'
 
 const SpaceList = () => {
 
