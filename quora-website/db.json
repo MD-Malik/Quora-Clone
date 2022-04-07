@@ -22,30 +22,33 @@
       "userid": "829ef848-26cf-4678-ae00-550279783a57",
       "isAuth": true,
       "id": 2
+    },
+    {
+      "username": "Ashish Sinha",
+      "useremail": "sinha123@gmail.com",
+      "password": "sinha123",
+      "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
+      "isAuth": true,
+      "id": 3
     }
   ],
   "post": [
     {
-      "id1":1,
+      "id": 1,
+      "postid": 1,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 2
+    },
+    {
+      "id": 2,
       "postid": 1,
       "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
       "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
       "paragraph": "I am an IIT KGP grad. I have worked in multiple companies as a data scientist. I have also ",
       "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 2,
-      "comments": {
-        "commentid": "",
-        "userid": "",
-        "comments": "",
-        "upvotes": "",
-        "reply": {
-          "upvotes": "",
-          "commentId": "",
-          "comments": "",
-          "userid": "",
-          "reply": ""
-        }
-      }
+      "upvotes": 2
     }
   ],
   "questions": [
@@ -65,7 +68,7 @@
   "current_user": [
     {
       "isAuth": true,
-      "userid": "d9d7f9fa-d645-4789-985a-1baa7908a40e",
+      "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
       "id": 1
     }
   ]
