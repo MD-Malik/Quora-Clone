@@ -12,9 +12,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { ChangeAuth } from '../../Redux/Auth Reducer/action';
 
 const Profile_div = styled.div`
+padding:10px;
 display:flex;
 height:90px;
-width:220px;
+width:240px;
 flex-direction:column;
 &>img{
   border-radius:50%;
@@ -40,6 +41,7 @@ const Logout_section = styled.div`
 `
 
 const Section_one = styled(MenuItem)`
+padding:10px;
 display:flex;
 flex-direction:row;
 justify-content:space-between;
@@ -56,6 +58,7 @@ height:25px;
 `
 const Section = styled(MenuItem)`
 font-size:13px;
+padding-left:10px;
 `
 
 export default function BasicMenu() {
@@ -115,23 +118,28 @@ export default function BasicMenu() {
           </Profile_div>
         </MenuItem>
         <hr/>
-        <MenuItem>
+        <MenuItem style={{padding:"10px"}}>
         <Img src="https://cdn-icons-png.flaticon.com/128/134/134808.png" alt="messae_icon" />
          Messages
         </MenuItem>
-        <MenuItem>
+        <br />
+        <MenuItem style={{padding:"10px"}}>
          <Img src="https://cdn-icons-png.flaticon.com/128/3179/3179416.png" alt="create_ad" />
         Create Ad</MenuItem>
-        <MenuItem>
+        <br />
+        <MenuItem style={{padding:"10px"}}>
          <Img src="https://cdn-icons-png.flaticon.com/128/991/991952.png" alt="monetization" />
         Monetization</MenuItem>
-        <MenuItem>
+        <br />
+        <MenuItem style={{padding:"10px"}}>
         <Img src="https://cdn-icons-png.flaticon.com/128/876/876222.png" alt="stats_icon" />
         Your content & stats</MenuItem>
-        <MenuItem>
+        <br />
+        <MenuItem style={{padding:"10px"}}>
         <Img src="https://cdn-icons-png.flaticon.com/128/7220/7220132.png" alt="bookmark_icon" />
         Bookmarks</MenuItem>
-        <MenuItem>
+        <br />
+        <MenuItem style={{padding:"10px"}}>
         <Img src="https://cdn-icons.flaticon.com/png/128/4173/premium/4173370.png?token=exp=1649242457~hmac=f49e8a86b0a1d6b07f566939def90611" alt="drafts_icon" />
         Drafts</MenuItem>
         <hr />
@@ -141,8 +149,11 @@ export default function BasicMenu() {
           <h6>OFF</h6>
           </Section_one>
           <Section>Settings</Section>
+          <br />
           <Section>Languages</Section>
+          <br />
           <Section>Help</Section>
+          <br />
          <Section onClick={handleLogout}>Logout</Section>
         </Logout_section>
          {/* <div>when footer section complete ho jayega then give element tag here</div> */}
