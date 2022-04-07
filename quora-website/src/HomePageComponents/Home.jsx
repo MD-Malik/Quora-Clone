@@ -6,6 +6,7 @@ import { Navbar } from './Navbar'
 import { Post } from './Post';
 import { Space } from './Space';
 import HomeLeftSpace from './HomeLeftSpace';
+import BasicMenu from './ProfileComponents/BasicMenu';
 
 export const Home = () => {
 
