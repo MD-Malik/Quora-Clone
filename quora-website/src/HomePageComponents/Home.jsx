@@ -20,13 +20,13 @@ export const Home = () => {
   }, [])
   return (
     <div>
-       <Navbar />
-       <div style={{display :"flex", gap: "25px", justifyContent:"center",alignItems:"center" }}>
-           <Space />
-           <Post />
-           <Feed />
-       </div>
-      <HomeLeftSpace />
+      <Navbar />
+      <div style={{ display: "flex", gap: "25px", justifyContent: "center", alignItems: "center" }}>
+        <Space />
+        <Post />
+        <Feed />
+      </div>
+
     </div>
   )
 }
