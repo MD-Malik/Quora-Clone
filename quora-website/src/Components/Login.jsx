@@ -89,8 +89,15 @@ export const Login_div = () => {
             }
         })
         if(isUserLogged===true){
-            localStorage.setItem("current_user", JSON.stringify({...current_user}));
-            navigate("/");
+            // localStorage.setItem("current_user", JSON.stringify({...current_user}));
+            fetch("http://localhost:3001/current_user/1",{
+                method:"PATCH",
+                body:JSON.stringify(current_user),
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
+            .then(()=>navigate("/"))
         }
         else{
             alert("User Does not exist");
