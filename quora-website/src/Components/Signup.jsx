@@ -145,7 +145,10 @@ let alreadyPresent=false
             body:JSON.stringify({
                 ...userDetails,
                 userid:uuid(),
-                isAuth:true
+                isAuth:true,
+                userimage:"https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+                followers: 0,
+                following: 0
             }),
             headers:{
                 "Content-Type":"application/json"

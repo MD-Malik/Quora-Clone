@@ -1,14 +1,16 @@
-import { USER_ID } from "./action";
+import { USER_DETAILS } from "./action";
 
 export const initState= {
-    userid:""
+    user_details:{
+
+    }
 }
 export const currentUserReducer = (store=initState, {type, payload}) => {
     switch(type){
-        case USER_ID:
+        case USER_DETAILS:
             return {
                 ...store,
-                userid:payload
+                user_details:{...payload}
             }
             default:
                 return store;

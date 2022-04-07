@@ -6,21 +6,20 @@
       "username": "Ashish",
       "useremail": "a4ashish04",
       "password": "12345",
-      "employability": {
-        "Position": "Sodt",
-        "Company": "lt",
-        "Startyear": "2015"
-      },
+      "Position": "Sodt",
+      "Company": "lt",
+      "Startyear": "2015",
       "education": {},
       "timestap": "April",
       "image": ""
     },
     {
-      "username": "upendra",
-      "useremail": "upendra@gmail.com",
-      "password": "abc123",
-      "userid": "829ef848-26cf-4678-ae00-550279783a57",
+      "username": "shahrukh",
+      "useremail": "shahrukh",
+      "password": "shahrukh",
+      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
       "isAuth": true,
+<<<<<<< HEAD
       "id": 2
     },
     {
@@ -29,6 +28,11 @@
       "password": "sinha123",
       "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
       "isAuth": true,
+=======
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+>>>>>>> 187390583ecd128c60387a4b1040fd0b82ef1907
       "id": 3
     }
   ],
@@ -83,7 +87,11 @@
   "current_user": [
     {
       "isAuth": true,
+<<<<<<< HEAD
       "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
+=======
+      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
+>>>>>>> 187390583ecd128c60387a4b1040fd0b82ef1907
       "id": 1
     }
   ]
