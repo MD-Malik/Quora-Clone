@@ -44,16 +44,18 @@ export const Login = () => {
     const {isAuth} = useSelector((state)=>state.authReducer)
     const navigate = useNavigate();
     const dispatch=useDispatch();
+
     
     useEffect(()=>{
-        const current_user=JSON.parse(localStorage.getItem("current_user"));
-        dispatch(ChangeAuth(current_user.isAuth));
-        // console.log(current_user)
-
-        if(current_user.isAuth===true){
-            navigate("/")
-            return false;
-        }
+        // const current_user=JSON.parse(localStorage.getItem("current_user"));
+        fetch("http://localhost:3001/current_user/1")
+        .then((res)=>res.json())
+        .then((res)=>{dispatch(ChangeAuth(res.isAuth))
+        if(res.isAuth===true){
+            navigate("/");
+            return;
+        }})
+        
     },[])
     
     return (

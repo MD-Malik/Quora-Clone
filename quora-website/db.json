@@ -6,43 +6,23 @@
       "username": "Ashish",
       "useremail": "a4ashish04",
       "password": "12345",
-      "employability": {
-        "Position": "Sodt",
-        "Company": "lt",
-        "Startyear": "2015"
-      },
+      "Position": "Sodt",
+      "Company": "lt",
+      "Startyear": "2015",
       "education": {},
       "timestap": "April",
       "image": ""
     },
     {
       "username": "shahrukh",
-      "password": "shahrukh",
-      "id": 2
-    },
-    {
-      "username": "shahrukh",
       "useremail": "shahrukh",
       "password": "shahrukh",
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
       "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
       "id": 3
-    },
-    {
-      "username": "upendra",
-      "useremail": "upendra@gmail.com",
-      "password": "abc123",
-      "userid": "829ef848-26cf-4678-ae00-550279783a57",
-      "isAuth": true,
-      "id": 4
-    },
-    {
-      "username": "test",
-      "useremail": "test@gmail.com",
-      "password": "test",
-      "userid": "c42f874e-7e3b-4f73-9cbf-bc86ad304028",
-      "isAuth": true,
-      "id": 5
     }
   ],
   "post": [
@@ -80,6 +60,13 @@
         {},
         {}
       ]
+    }
+  ],
+  "current_user": [
+    {
+      "isAuth": true,
+      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
+      "id": 1
     }
   ]
 }

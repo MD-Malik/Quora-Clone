@@ -72,6 +72,13 @@ padding-top:20px;
         }
     }
 }
+@media screen and (max-width: 1200px){
+    position:absolute;
+    left:10%;
+}
+@media screen and (max-width: 800px){
+    left:10%;
+}
 `
 
 export const Signup = ({state}) => {
@@ -88,18 +95,15 @@ export const Signup = ({state}) => {
         .then((res)=>dispatch(users(res)))
     }
 
-    const updateFromLocalStorage = () => {
-        let current_user = JSON.parse(localStorage.getItem("current_user"));
-        if(current_user===null){
-            localStorage.setItem("current_user", JSON.stringify({isAuth:false, userid:""}));
-            current_user= JSON.parse(localStorage.getItem("current_user"));
-        }
-        dispatch(ChangeAuth(current_user.isAuth));
+    const updateFromDataStorage = () => {
+        fetch("http://localhost:3001/current_user/1")
+        .then((res)=>res.json())
+        .then((res)=>dispatch(ChangeAuth(res.isAuth)))
     }
 
     useEffect(()=>{
         updateUsers();
-        updateFromLocalStorage();
+        updateFromDataStorage();
         console.log(userReducer.users)        
     },[])
 
@@ -141,7 +145,10 @@ let alreadyPresent=false
             body:JSON.stringify({
                 ...userDetails,
                 userid:uuid(),
-                isAuth:true
+                isAuth:true,
+                userimage:"https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+                followers: 0,
+                following: 0
             }),
             headers:{
                 "Content-Type":"application/json"
@@ -149,12 +156,21 @@ let alreadyPresent=false
         })
         .then((res)=>res.json())
         .then((res)=>{
-            localStorage.setItem("current_user", JSON.stringify({isAuth:true, userid:res.userid}));
+            // localStorage.setItem("current_user", JSON.stringify({isAuth:true, userid:res.userid}));
             // console.log(res);
-            updateUsers();
-            updateFromLocalStorage();
-            navigate("/")
-        })
+            fetch("http://localhost:3001/current_user/1",{
+                method:"PATCH",
+                body:JSON.stringify({
+                    isAuth:true,
+                    userid:res.userid
+                })
+            })
+            .then(()=>{
+                updateUsers();
+                updateFromDataStorage();
+            })
+         })
+         .then(()=>navigate("/"))
         }
     }
 

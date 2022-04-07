@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import "../CSS/Navbar.css";
 import { Link } from "react-router-dom";
+import BasicMenu from "./ProfileComponents/BasicMenu";
 
 export const Navbar = () => {
   return (
@@ -59,7 +60,8 @@ export const Navbar = () => {
           <input type="text" placeholder="Try Quora +" />
         </div>
         <div className="navbar-avtar">
-          <Avatar />
+          {/* <Avatar /> */}
+          <BasicMenu />
         </div>
         <LanguageIcon />
         <Button>Add Question</Button>
