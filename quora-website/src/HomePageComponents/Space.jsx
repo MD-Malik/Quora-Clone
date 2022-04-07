@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeLeftSpace from './HomeLeftSpace'
+import HomeLeftSpace from './HomeLeftSpace/HomeLeftSpace'
 
 export const Space = () => {
   return (
