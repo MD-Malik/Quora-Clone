@@ -13,8 +13,8 @@ export const Home = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    if(isAuth===false){
-      navigate("/login")
+    if(isAuth === false){
+      navigate("/login");
     }
   },[])
   return (
