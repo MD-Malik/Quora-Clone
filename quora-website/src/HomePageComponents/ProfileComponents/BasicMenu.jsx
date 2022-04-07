@@ -38,6 +38,7 @@ height:20px;
 margin-right:10px;`
 
 const Logout_section = styled.div`
+padding-left:10px;
 `
 
 const Section_one = styled(MenuItem)`
@@ -88,6 +89,10 @@ export default function BasicMenu() {
     navigate("/login")})
   }
 
+  const showProfile = () => {
+    navigate("/profile")
+  }
+
   return (
     <div>
       <Button
@@ -108,7 +113,7 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={showProfile}>
           <Profile_div>
             <img src="https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png" alt="img" />
             <div>
