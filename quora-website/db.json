@@ -35,7 +35,7 @@
   "post": [
     {
       "id": 1,
-      "postid": 1,
+      "postid": 2,
       "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
       "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
       "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
@@ -43,10 +43,25 @@
     },
     {
       "id": 2,
-      "postid": 1,
+      "postid": 2,
       "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
       "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "paragraph": "I am an IIT KGP grad. I have worked in multiple companies as a data scientist. I have also ",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 2
+    },
+    {
+      "id": 3,
+      "postid": 3,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 2
+    },
+    {
+      "id": 4,
+      "postid": 4,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
       "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
       "upvotes": 2
     }
