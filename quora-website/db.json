@@ -14,22 +14,6 @@
       "image": ""
     },
     {
-      "username": "shahrukh",
-      "useremail": "shahrukh",
-      "password": "shahrukh",
-      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
-      "isAuth": true,
-      "id": 2
-    },
-    {
-      "username": "Ashish Sinha",
-      "useremail": "sinha123@gmail.com",
-      "password": "sinha123",
-      "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
-      "isAuth": true,
-      "id": 3
-    },
-    {
       "username": "upendra",
       "useremail": "upendra@gmail.com",
       "password": "abc123",
@@ -39,6 +23,17 @@
       "followers": 0,
       "following": 0,
       "id": 4
+    },
+    {
+      "username": "Ishan",
+      "useremail": "ishan@gmail.com",
+      "password": "abc123",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 5
     }
   ],
   "post": [
@@ -73,6 +68,49 @@
       "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
       "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
       "upvotes": 6
+    },
+    {
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(86).png?alt=media&token=9bb0e518-ca33-43bd-b5d6-0880abe35235",
+      "title": "",
+      "postid": "66c5b4-c341-03cf-ce21-43c6fea7a8",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "id": 5
+    },
+    {
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(164).png?alt=media&token=29c2d414-1e22-4a28-840f-ed763b396c9c",
+      "title": "",
+      "message": "What's going on in Lanka ?",
+      "postid": "0b4efb8-7f17-3d83-f7e-a27be8e6ef7",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 6
+    },
+    {
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(164).png?alt=media&token=257c78ad-bf47-4757-9a0c-236bc2401a33",
+      "title": "",
+      "message": "What's going on in Lanka ?",
+      "postid": "3f646bc-004-7ced-30a-25b6fa5f0dc",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 7
+    },
+    {
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(168).png?alt=media&token=0705dfc3-60aa-4497-bccf-b0d60787aef9",
+      "title": "",
+      "message": "is it taravelista website clone",
+      "postid": "e3cdc-8ce5-2b8e-b704-b448bf3ae710",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 8
+    },
+    {
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(149).png?alt=media&token=05635ded-3f66-43a4-9ff9-32225f67f06e",
+      "title": "",
+      "message": "that's enough.....",
+      "postid": "1274ed3-d50f-e0f4-24cf-72b8376d206",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 9
     }
   ],
   "questions": [
@@ -92,7 +130,7 @@
   "current_user": [
     {
       "isAuth": true,
-      "userid": "08fc1535-37a9-4e6f-9795-7b60581ce066",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "id": 1
     }
   ]
