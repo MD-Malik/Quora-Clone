@@ -2,7 +2,7 @@ import React from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import styles from './homeLeftSpace.module.css'
 
-const HomeLeftSpace = () => {
+const Space = () => {
     const navigate = useNavigate()
     return (
         <>
@@ -84,4 +84,4 @@ const HomeLeftSpace = () => {
     )
 }
 
-export default HomeLeftSpace
+export default Space

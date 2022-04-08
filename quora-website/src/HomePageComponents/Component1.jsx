@@ -88,9 +88,9 @@ export const Component1 = () => {
         </div>
         <div>
         <h4>{post.title}</h4>
-        <img src = {post.images} alt = "" style={{width:"500px"}}/>
+        <img src = {post.images} alt = "" style={{width:"600px"}}/>
         </div>
-          <PostBottom />
+          <PostBottom upvote = {post.upvotes} />
            </div>
         ))}
       

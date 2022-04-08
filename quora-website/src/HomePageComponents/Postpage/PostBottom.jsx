@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
 import LoopSharpIcon from '@material-ui/icons/LoopSharp';
@@ -7,7 +7,11 @@ import ScreenShareOutlinedIcon from '@material-ui/icons/ScreenShareOutlined';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { Avatar, Button, Menu, MenuItem } from "@material-ui/core";
 
-export const PostBottom = () => {
+export const PostBottom = ({upvote}) => {
+
+    const[vote, setVote] = useState(1);
+    const[value, setValue] = useState(false);
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -19,7 +23,9 @@ export const PostBottom = () => {
   return (
     <div style={{ display: "flex", gap:"25px", fontSize:"25px", alignItems:"center" }}>
     <div>
-      <ArrowUpwardOutlinedIcon />
+      <ArrowUpwardOutlinedIcon onClick = {() =>(
+         upvote = upvote+vote
+      )}/>{upvote}
       <ArrowDownwardOutlinedIcon />
     </div>
     <div>
