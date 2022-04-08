@@ -1,0 +1,17 @@
+.FooterDiv {
+  padding: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.foot_item {
+  padding: 2px 5px;
+  font-size: 13px;
+  color: #636466;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.foot_item:hover {
+  text-decoration: underline;
+}
