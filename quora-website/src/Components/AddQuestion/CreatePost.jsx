@@ -222,14 +222,15 @@ export const CreatePost = () => {
             }
         })
         .then((res)=>res.json())
-        .then((res)=>console.log(res))
+        .then((res)=>dispatch(isBoxVisibleAction(true)))
     }
 
     return (
         <>
         <Outer_div hidden={isBoxVisible}>
           <Div>
-              <h1 onClick={()=>dispatch(isBoxVisibleAction(true))}>X</h1>
+              <h1 onClick={()=>{dispatch(isBoxVisibleAction(true))
+            }}>X</h1>
               <div>
                   <div props={task}>
                       <img src="https://cdn-icons-png.flaticon.com/128/942/942802.png" alt="?" />

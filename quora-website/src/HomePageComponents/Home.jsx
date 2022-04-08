@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Feed } from './Feed';
 import { Navbar } from './Navbar'
 import { Post } from './Post';
-import { Space } from './Space';
+import  Space  from './Space';
 import HomeLeftSpace from './HomeLeftSpace';
 import BasicMenu from './ProfileComponents/BasicMenu';
 import { currentUserReducer } from '../Redux/CurrentUser Reducer/reducer';
