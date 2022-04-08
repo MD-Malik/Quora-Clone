@@ -17,7 +17,6 @@ const SpaceToFollow = () => {
                             <span className={styles.content}>A space for english learners, fix your grammar, ...</span>
                         </div>
                     </div>
-                    {/* <div className={styles.modalDiv}></div> */}
                 </div>
                 <div className={styles.divOut} >
                     <div className={styles.divMid}>

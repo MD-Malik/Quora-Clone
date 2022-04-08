@@ -10,12 +10,17 @@ import BasicMenu from './ProfileComponents/BasicMenu';
 import { currentUserReducer } from '../Redux/CurrentUser Reducer/reducer';
 import { setUserDetails, setUserId } from '../Redux/CurrentUser Reducer/action';
 import { userReducer } from '../Redux/User Reducer/reducer';
+import { CreatePost } from '../Components/AddQuestion/CreatePost';
+
 
 export const Home = () => {
 
+
   const { isAuth } = useSelector((state) => state.authReducer)
   const currentuser_dispatch = useDispatch(currentUserReducer)
+
   const { users } = useSelector((state) => state.userReducer)
+  const { isBoxVisible } = useSelector((state) => state.isBoxVisibleReducer)
 
   const navigate = useNavigate();
 
@@ -36,14 +41,18 @@ export const Home = () => {
     }
   }, [])
   return (
-    <div style={{ backgroundColor: '#F1F2F2' }}>
-      <Navbar />
-      <div style={{ display: "flex", gap: "25px", justifyContent: "center", alignItems: "center" }}>
-        <Space />
-        <Post />
-        <Feed />
-      </div>
 
-    </div>
+    <>
+      <div props={isBoxVisible} style={{ filter: `blur${isBoxVisible === false ? "(5px)" : "(0px)"}` }}>
+        <Navbar />
+        <div style={{ display: "flex", gap: "25px", justifyContent: "center", alignItems: "center" }}>
+          <Space />
+          <Post />
+          <Feed />
+        </div>
+        {/* <HomeLeftSpace /> */}
+      </div>
+      <CreatePost />
+    </>
   )
 }

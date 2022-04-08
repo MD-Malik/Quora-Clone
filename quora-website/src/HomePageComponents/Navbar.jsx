@@ -10,13 +10,19 @@ import { Avatar } from "@material-ui/core";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import "../CSS/Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BasicMenu from "./ProfileComponents/BasicMenu";
+import { useDispatch, useSelector } from "react-redux";
+import { isBoxVisibleReducer } from "../Redux/ShowAddQuestion Reducer/reducer";
+import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
 
 export const Navbar = () => {
+  const navigate = useNavigate()
+
+  const dispatch = useDispatch(isBoxVisibleReducer);
   return (
     <div className="navbar">
-      <div className="navbar-logo">
+      <div className="navbar-logo" onClick={()=>navigate("/")}>
         <img src="https://www.vectorlogo.zone/logos/quora/quora-ar21.svg" />
       </div>
       <div className="navbar-icons">
@@ -64,7 +70,7 @@ export const Navbar = () => {
           <BasicMenu />
         </div>
         <LanguageIcon />
-        <Button>Add Question</Button>
+        <Button onClick={()=>dispatch(isBoxVisibleAction(false))}>Add Question</Button>
       </div>
     </div>
   );

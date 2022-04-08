@@ -15,6 +15,9 @@
     height:50px;
     margin-right: 20px;
 }
+.navbar-logo:hover{
+    cursor:pointer;
+}
 .navbar-icons{
    display: flex;
    margin-right: 20px;
