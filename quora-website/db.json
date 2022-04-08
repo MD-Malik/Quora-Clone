@@ -19,33 +19,49 @@
       "password": "shahrukh",
       "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
       "isAuth": true,
-      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
-      "followers": 0,
-      "following": 0,
+      "id": 2
+    },
+    {
+      "username": "Ashish Sinha",
+      "useremail": "sinha123@gmail.com",
+      "password": "sinha123",
+      "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
+      "isAuth": true,
       "id": 3
     }
   ],
   "post": [
     {
-      "postid": 1,
-      "userid": "",
-      "title": "",
-      "paragraph": [],
-      "images": [],
-      "upvotes": 2,
-      "comments": {
-        "commentid": "",
-        "userid": "",
-        "comments": "",
-        "upvotes": "",
-        "reply": {
-          "upvotes": "",
-          "commentId": "",
-          "comments": "",
-          "userid": "",
-          "reply": ""
-        }
-      }
+      "id": 1,
+      "postid": 2,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 2
+    },
+    {
+      "id": 2,
+      "postid": 2,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 4
+    },
+    {
+      "id": 3,
+      "postid": 3,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 5
+    },
+    {
+      "id": 4,
+      "postid": 4,
+      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
+      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
+      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
+      "upvotes": 6
     }
   ],
   "questions": [
@@ -65,7 +81,7 @@
   "current_user": [
     {
       "isAuth": true,
-      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
+      "userid": "",
       "id": 1
     }
   ]
