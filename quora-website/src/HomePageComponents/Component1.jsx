@@ -11,7 +11,7 @@ import { getPost } from "../Redux/PostReducer/action";
 
 export const Component1 = () => {
 
-  const {posts} = useSelector((state) => state.postReducer);
+  const { posts } = useSelector((state) => state.postReducer);
   // console.log("post", posts);
   const dispatch = useDispatch();
   const getPosts = () => {
@@ -67,9 +67,9 @@ export const Component1 = () => {
           </Button>
         </div>
       </div>
-            
-        {posts.map((post) =>(
-          <div
+
+      {posts.map((post) => (
+        <div
           style={{
             backgroundColor: "white",
             border: "1px solid black",
@@ -77,23 +77,23 @@ export const Component1 = () => {
             padding: "20px",
           }}
         >
-         <div style={{ display: "flex" }}>
-          <Avatar />
-          <div>
-            <h3>Ashish Kumar</h3>
-            <span>
-              Masters in Economics, IIT KGP and Co Founder at Skillslash Academy.
-            </span>
+          <div style={{ display: "flex" }}>
+            <Avatar />
+            <div>
+              <h3>{post.userid}</h3>
+              <span>
+                Masters in Economics, IIT KGP and Co Founder at Skillslash Academy.
+              </span>
+            </div>
           </div>
+          <div>
+            <h4>{post.title}</h4>
+            <img src={post.images} alt="" style={{ width: "600px" }} />
+          </div>
+          <PostBottom upvote={post.upvotes} />
         </div>
-        <div>
-        <h4>{post.title}</h4>
-        <img src = {post.images} alt = "" style={{width:"600px"}}/>
-        </div>
-          <PostBottom upvote = {post.upvotes} />
-           </div>
-        ))}
-      
+      ))}
+
     </>
   );
 };

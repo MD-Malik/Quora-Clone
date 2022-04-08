@@ -249,7 +249,7 @@ export const CreatePost = () => {
             (err) => console.log(err),
             () => {
                 getDownloadURL(uploadTask.snapshot.ref)
-                    .then((url) => save({ images: url, title: '', message: msg, postid: uuid(), userid: user_details.userid, upvotes: 0, }))
+                    .then((url) => save({ userimage: user_details.userimage, images: url, title: '', message: msg, postid: uuid(), userid: user_details.userid, upvotes: 0, }))
             }
         );
 
@@ -264,7 +264,7 @@ export const CreatePost = () => {
             body: JSON.stringify(param)
         })
             .then(e => e.json())
-            .then(e => console.log(e));
+            .then(e => true);
     }
 
     return (
