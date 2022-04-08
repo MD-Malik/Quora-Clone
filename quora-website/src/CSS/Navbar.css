@@ -20,8 +20,16 @@
 }
 .navbar-icons{
    display: flex;
+   gap: 15px;
    margin-right: 20px;
+   font-size: 35px;
 }
+
+.icon{
+    display: flex;
+    font-size: 35px;
+}
+
 .icon > .MuiSvgIcon-root{
     color: gray;
     cursor: pointer;

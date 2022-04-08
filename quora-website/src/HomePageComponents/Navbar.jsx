@@ -35,7 +35,9 @@ export const Navbar = () => {
         </div>
         <div className="icon">
           <Tooltip title="Following">
+            <Link to ="/">
             <FeaturedPlayListOutlinedIcon />
+            </Link>
           </Tooltip>
         </div>
         <div className="icon">
@@ -48,12 +50,16 @@ export const Navbar = () => {
         </div>
         <div className="icon">
           <Tooltip title="Spaces">
+            <Link to = "/">
             <PeopleAltOutlinedIcon />
+            </Link>
           </Tooltip>
         </div>
         <div className="icon">
           <Tooltip title="Notification">
+            <Link to = "/">
             <NotificationsOutlinedIcon />
+            </Link>
           </Tooltip>
         </div>
       </div>
