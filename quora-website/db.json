@@ -1,25 +1,12 @@
 {
   "users": [
     {
-      "userid": "",
-      "id": 1,
-      "username": "Ashish",
-      "useremail": "a4ashish04",
-      "password": "12345",
-      "Position": "Sodt",
-      "Company": "lt",
-      "Startyear": "2015",
-      "education": {},
-      "timestap": "April",
-      "image": ""
-    },
-    {
       "username": "shahrukh",
       "useremail": "shahrukh",
       "password": "shahrukh",
-      "userid": "9cc701c4-e226-4146-9704-c4b096f66a7d",
+      "userid": "f5c7cab5-a42d-44f9-8c7a-547cd892c192",
       "isAuth": true,
-      "id": 2
+      "id": 1
     },
     {
       "username": "Ashish Sinha",
@@ -27,7 +14,7 @@
       "password": "sinha123",
       "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
       "isAuth": true,
-      "id": 3
+      "id": 2
     },
     {
       "username": "upendra",
@@ -38,7 +25,7 @@
       "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "followers": 0,
       "following": 0,
-      "id": 4
+      "id": 3
     }
   ],
   "post": [
@@ -73,20 +60,64 @@
       "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
       "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
       "upvotes": 6
+    },
+    {
+      "postid": "e0bcdaad-873c-4f5e-af47-c36b9af88071",
+      "message": "My name is shahrukh",
+      "title": "what is your name?",
+      "username": "shahrukh",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 5
+    },
+    {
+      "postid": "110712a4-dd48-4eb5-aa22-31a082ee8abc",
+      "message": "shahrukh",
+      "title": "what is your name?",
+      "upvotes": 0,
+      "id": 6
     }
   ],
   "questions": [
     {
-      "userid": "",
-      "question": "",
-      "answer": [
-        {
-          "userid": "",
-          "answer": ""
-        },
-        {},
-        {}
-      ]
+      "question": "what is your name?",
+      "questionid": "88d590a6-29fe-471c-afd2-b884be6fd352",
+      "id": 1
+    },
+    {
+      "question": "Start your question with what, how and why?",
+      "questionid": "8a6b1ed1-bfee-4650-a74d-0a03141fc23e",
+      "id": 3
+    },
+    {
+      "question": "ask questions?",
+      "questionid": "e95831af-f188-44b0-a25e-4c27310f323b",
+      "id": 6
+    },
+    {
+      "question": "Tips on getting good answers quickly?",
+      "questionid": "1e612d8e-d009-4f99-8855-e9647c516bcd",
+      "id": 7
+    },
+    {
+      "question": "I don’t feel comfortable near rich people. Why?",
+      "questionid": "26a2ee16-4892-48a6-80cb-ff03ff3fdb76",
+      "id": 8
+    },
+    {
+      "question": "What is the unscrambled word of \"IFCNAEN\"?",
+      "questionid": "c1c2ea0c-614c-4bd2-81f3-0bf9c248fe1d",
+      "id": 9
+    },
+    {
+      "question": "Why is a steady mindset important for achieving ambition? Hide",
+      "questionid": "ee4fe322-ac97-4e8d-9d00-4b5a718b8753",
+      "id": 10
+    },
+    {
+      "question": "where is ashish?",
+      "questionid": "4ffda3c1-ecd7-4fae-820f-6b3d08b2d967",
+      "id": 11
     }
   ],
   "current_user": [

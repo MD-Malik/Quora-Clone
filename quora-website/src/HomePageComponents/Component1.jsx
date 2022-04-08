@@ -69,7 +69,7 @@ export const Component1 = () => {
       </div>
             
         {posts.map((post) =>(
-          <div
+          <div key={post.id}
           style={{
             backgroundColor: "white",
             border: "1px solid black",

@@ -4,7 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { Feed } from './Feed';
 import { Navbar } from './Navbar'
 import { Post } from './Post';
+<<<<<<< HEAD
+import  Space  from './Space';
+import HomeLeftSpace from './HomeLeftSpace';
+=======
 import { Space } from './Space';
+>>>>>>> 04f7a0f3b49799c1a5ead1a43ac84abaef4b18af
 import BasicMenu from './ProfileComponents/BasicMenu';
 import { currentUserReducer } from '../Redux/CurrentUser Reducer/reducer';
 import { setUserDetails, setUserId } from '../Redux/CurrentUser Reducer/action';
