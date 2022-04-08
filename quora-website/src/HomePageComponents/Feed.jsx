@@ -1,7 +1,9 @@
 import React from 'react'
-
+import HomeRightSpace from './HomeRightSpace/SpaceToFollow'
 export const Feed = () => {
   return (
-    <div>Feed</div>
+    <div>
+      <HomeRightSpace />
+    </div>
   )
 }

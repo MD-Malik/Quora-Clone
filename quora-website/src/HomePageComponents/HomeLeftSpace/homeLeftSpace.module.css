@@ -1,0 +1,8 @@
+.LeftContainer {
+  overflow: auto;
+  height: 80vh;
+  padding: 50px 10px;
+  width: 250px;
+  margin-top: 40px;
+  /* background-color: aqua; */
+}
