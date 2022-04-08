@@ -5,7 +5,6 @@ import { Feed } from './Feed';
 import { Navbar } from './Navbar'
 import { Post } from './Post';
 import { Space } from './Space';
-import HomeLeftSpace from './HomeLeftSpace';
 import BasicMenu from './ProfileComponents/BasicMenu';
 import { currentUserReducer } from '../Redux/CurrentUser Reducer/reducer';
 import { setUserDetails, setUserId } from '../Redux/CurrentUser Reducer/action';
@@ -14,11 +13,12 @@ import { CreatePost } from '../Components/AddQuestion/CreatePost';
 
 
 export const Home = () => {
-  
+
   const { isAuth } = useSelector((state) => state.authReducer)
   const currentuser_dispatch = useDispatch(currentUserReducer)
-  const {users} = useSelector((state)=>state.userReducer)
-  const { isBoxVisible } = useSelector((state)=>state.isBoxVisibleReducer)
+
+  const { users } = useSelector((state) => state.userReducer)
+  const { isBoxVisible } = useSelector((state) => state.isBoxVisibleReducer)
 
   const navigate = useNavigate();
 
@@ -26,30 +26,31 @@ export const Home = () => {
     if (isAuth === false) {
       navigate("/login")
     }
-    else{
+    else {
       fetch("http://localhost:3001/current_user/1")
-      .then((res)=>res.json())
-      .then((res)=>{
-        users.forEach((item)=>{
-          if(item.userid===res.userid){
-            currentuser_dispatch(setUserDetails(item))
-          }
+        .then((res) => res.json())
+        .then((res) => {
+          users.forEach((item) => {
+            if (item.userid === res.userid) {
+              currentuser_dispatch(setUserDetails(item))
+            }
+          })
         })
-      })
     }
   }, [])
   return (
+
     <>
-    <div props={isBoxVisible} style={{filter:`blur${isBoxVisible===false?"(5px)":"(0px)"}`}}>
-      <Navbar />
-       <div style={{display :"flex", gap: "25px", justifyContent:"center",alignItems:"center"}}>
-           <HomeLeftSpace />
-           <Post />
-           <Feed />
-       </div>
-      {/* <HomeLeftSpace /> */}
-    </div>
-    <CreatePost/>
+      <div props={isBoxVisible} style={{ filter: `blur${isBoxVisible === false ? "(5px)" : "(0px)"}` }}>
+        <Navbar />
+        <div style={{ display: "flex", gap: "25px", justifyContent: "center", alignItems: "flex-start" }}>
+          <Space />
+          <Post />
+          <Feed />
+        </div>
+        {/* <HomeLeftSpace /> */}
+      </div>
+      <CreatePost />
     </>
   )
 }

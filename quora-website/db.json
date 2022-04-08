@@ -28,6 +28,17 @@
       "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
       "isAuth": true,
       "id": 3
+    },
+    {
+      "username": "upendra",
+      "useremail": "upendra@gmail.com",
+      "password": "abc123",
+      "userid": "08fc1535-37a9-4e6f-9795-7b60581ce066",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 4
     }
   ],
   "post": [
@@ -81,7 +92,7 @@
   "current_user": [
     {
       "isAuth": true,
-      "userid": "",
+      "userid": "08fc1535-37a9-4e6f-9795-7b60581ce066",
       "id": 1
     }
   ]
