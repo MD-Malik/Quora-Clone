@@ -15,7 +15,6 @@ import { CreatePost } from '../Components/AddQuestion/CreatePost';
 
 export const Home = () => {
   
-
   const { isAuth } = useSelector((state) => state.authReducer)
   const currentuser_dispatch = useDispatch(currentUserReducer)
   const {users} = useSelector((state)=>state.userReducer)
@@ -44,7 +43,7 @@ export const Home = () => {
     <div props={isBoxVisible} style={{filter:`blur${isBoxVisible===false?"(5px)":"(0px)"}`}}>
       <Navbar />
        <div style={{display :"flex", gap: "25px", justifyContent:"center",alignItems:"center"}}>
-           <Space />
+           <HomeLeftSpace />
            <Post />
            <Feed />
        </div>
