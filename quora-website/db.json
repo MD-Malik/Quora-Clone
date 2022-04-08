@@ -23,6 +23,17 @@
       "followers": 0,
       "following": 0,
       "id": 3
+    },
+    {
+      "username": "aamir",
+      "useremail": "aamir",
+      "password": "aamir",
+      "userid": "47352980-6404-45c3-b419-19b371e9d5cf",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 4
     }
   ],
   "post": [
