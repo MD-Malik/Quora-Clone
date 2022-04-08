@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components"
 import { isBoxVisibleReducer } from "../../Redux/ShowAddQuestion Reducer/reducer";
 import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
+import { v4 as uuid } from "uuid"
 
 const Div = styled.div`
 background:rgba(255, 255, 250, 1);
@@ -203,6 +204,27 @@ export const CreatePost = () => {
     const [task, setTask] = useState("addquestion")
 
     const dispatch = useDispatch(isBoxVisibleReducer);
+
+    const [question, setQuestion] = React.useState("")
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        const question_data = {
+            question:question,
+            questionid:uuid()
+        }
+
+        fetch("http://localhost:3001/questions",{
+            method:"POST",
+            body: JSON.stringify({...question_data}),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        .then((res)=>res.json())
+        .then((res)=>console.log(res))
+    }
+
     return (
         <>
         <Outer_div hidden={isBoxVisible}>
@@ -235,10 +257,10 @@ export const CreatePost = () => {
                   </button>
               </div>
               <div>
-                  <input type="text" placeholder={task==="addquestion"?'Start your question with "What", "Why", etc.':'Say something...'}/>
+                  <input type="text" placeholder={task==="addquestion"?'Start your question with "What", "Why", etc.':'Say something...'} onChange={(e)=>setQuestion(e.target.value)}/>
               </div>
               <div style={task==="createpost"?{border:"none"}:{borderTop:"2px solid grey"}}>
-                  <button hidden={task==="createpost"}>Add question</button>
+                  <button hidden={task==="createpost"} onClick={handleClick}>Add question</button>
                   <button hidden={task==="createpost"} onClick={()=>dispatch(isBoxVisibleAction(true))}>Cancel</button>
               </div>
               <CreatePostStyle hidden={task==="addquestion"}>

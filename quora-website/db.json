@@ -50,16 +50,14 @@
   ],
   "questions": [
     {
-      "userid": "",
+      "questionid": "",
       "question": "",
-      "answer": [
-        {
-          "userid": "",
-          "answer": ""
-        },
-        {},
-        {}
-      ]
+      "id": 1
+    },
+    {
+      "question": "what is your name?",
+      "questionid": "88d590a6-29fe-471c-afd2-b884be6fd352",
+      "id": 2
     }
   ],
   "current_user": [
