@@ -5,7 +5,7 @@ import styles from './homeLeftSpace.module.css'
 const HomeLeftSpace = () => {
     const navigate = useNavigate()
     return (
-        <>
+        <div>
             <div className={styles.LeftContainer}>
                 <div className={styles.LinksDiv} >
                     <div className={styles.divOut} >
@@ -79,12 +79,8 @@ const HomeLeftSpace = () => {
                     <span className={styles.foot_item}>Your ad choices</span>.
 
                 </div>
-
-
-
-
             </div>
-        </>
+            </div>
     )
 }
 

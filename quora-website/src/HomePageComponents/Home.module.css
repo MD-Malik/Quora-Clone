@@ -1,0 +1,10 @@
+.content{
+    display: grid;
+    grid-template-columns: auto 600px auto;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 50px;
+    border:1px solid red;
+}

@@ -48,7 +48,7 @@ export const Home = () => {
            <Post />
            <Feed />
        </div>
-      <HomeLeftSpace />
+      {/* <HomeLeftSpace /> */}
     </div>
     <CreatePost/>
     </>
