@@ -5,7 +5,6 @@ import { Feed } from './Feed';
 import { Navbar } from './Navbar'
 import { Post } from './Post';
 import { Space } from './Space';
-// import HomeLeftSpace from './HomeLeftSpace/HomeLeftSpace';
 import BasicMenu from './ProfileComponents/BasicMenu';
 import { currentUserReducer } from '../Redux/CurrentUser Reducer/reducer';
 import { setUserDetails, setUserId } from '../Redux/CurrentUser Reducer/action';
@@ -45,7 +44,7 @@ export const Home = () => {
     <>
       <div props={isBoxVisible} style={{ filter: `blur${isBoxVisible === false ? "(5px)" : "(0px)"}` }}>
         <Navbar />
-        <div style={{ display: "flex", gap: "25px", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "25px", justifyContent: "center", alignItems: "flex-start" }}>
           <Space />
           <Post />
           <Feed />

@@ -7,7 +7,7 @@ import styled from "styled-components"
 import { useDispatch } from 'react-redux';
 // import { ChangeAuth } from '../Redux/Auth Reducer/action';
 import { useNavigate } from 'react-router-dom';
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from '@material-ui/icons/Delete';
 // import { LoginFooter } from '../Components/LoginFooter';
 import { ChangeAuth } from '../../Redux/Auth Reducer/action';
 
