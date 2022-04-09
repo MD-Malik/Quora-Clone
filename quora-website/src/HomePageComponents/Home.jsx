@@ -19,7 +19,6 @@ import { CreatePost } from '../Components/AddQuestion/CreatePost';
 
 export const Home = () => {
 
-
   const { isAuth } = useSelector((state) => state.authReducer)
   const currentuser_dispatch = useDispatch(currentUserReducer)
 
