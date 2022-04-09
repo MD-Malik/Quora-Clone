@@ -5,17 +5,9 @@ import { useSearchParams } from "react-router-dom";
 import styled from "styled-components"
 import { isBoxVisibleReducer } from "../../Redux/ShowAddQuestion Reducer/reducer";
 import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
-<<<<<<< HEAD
 import { v4 as uuid } from "uuid"
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
 import { storage } from './firebase'
-=======
-import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
-import { storage } from './firebase'
-
-
-
->>>>>>> e27e1c116ba6311f623cca3ba1b7f5b1a04ddee6
 
 const Div = styled.div`
 background:rgba(255, 255, 250, 1);
