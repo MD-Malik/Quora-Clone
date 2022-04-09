@@ -82,10 +82,10 @@ export const Component1 = () => {
          <div style={{ display: "flex" }}>
           <Avatar />
           <div>
-            <h3>Ashish Kumar</h3>
-            <span>
+            <h3>{post.username}</h3>
+            {/* <span>
               Masters in Economics, IIT KGP and Co Founder at Skillslash Academy.
-            </span>
+            </span> */}
           </div>
         </div>
         <div>
