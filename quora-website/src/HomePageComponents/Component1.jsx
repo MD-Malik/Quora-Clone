@@ -40,7 +40,7 @@ export const Component1 = () => {
       >
         <div style={{ display: "flex" }}>
           <Avatar />
-          <Button href="#text-buttons" size="large"  onClick={()=>dispatch(isBoxVisibleAction(false))}>
+          <Button href="#text-buttons" size="large" onClick={() => dispatch(isBoxVisibleAction(false))}>
             What do you want to ask or share?
           </Button>
         </div>
@@ -52,7 +52,7 @@ export const Component1 = () => {
             justifyContent: "center",
           }}
         >
-          <Button  onClick={()=>dispatch(isBoxVisibleAction(false))}>
+          <Button onClick={() => dispatch(isBoxVisibleAction(false))}>
             <LiveHelpOutlinedIcon />
             Ask
           </Button>
@@ -62,7 +62,7 @@ export const Component1 = () => {
             Answer
           </Button>
           |
-          <Button onClick={()=>dispatch(isBoxVisibleAction(false))}>
+          <Button onClick={() => dispatch(isBoxVisibleAction(false))}>
             <BorderColorOutlinedIcon />
             Post
           </Button>
@@ -76,7 +76,7 @@ export const Component1 = () => {
             border: "1px solid black",
             margin: "20px",
             padding: "20px",
-            width:"550px"
+            width: "550px"
           }}
         >
           <div style={{ display: "flex" }}>
@@ -94,13 +94,8 @@ export const Component1 = () => {
           </div>
           <PostBottom upvote={post.upvotes} />
 
-        <div>
-         <h4>{post.title}</h4>
-         <img src = {post.images} alt = "" style={{width:"100%"}}/>
         </div>
-          <PostBottom upvote = {post.upvotes} />
-        </div>
-        ))}
+      ))}
     </>
   );
 };

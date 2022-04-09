@@ -7,7 +7,9 @@ const Career = () => {
             <div className={styles.container} >
                 <div className={styles.section1} >
                     <div className={styles.section1_a} >
-                        <img className={styles.section1_a_img} src="//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_careers_page.light_mode.Main_LM.png-26-5e2fb710a02435db.png" alt={1} />
+                        <span>
+                            <img className={styles.section1_a_img} src="//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_careers_page.light_mode.Main_LM.png-26-5e2fb710a02435db.png" alt={1} />
+                        </span>
                     </div>
                     <div className={styles.section1_b} >Our mission is to share and grow the world’s knowledge</div>
                     <div className={styles.section1_c}>
@@ -24,12 +26,14 @@ const Career = () => {
                 <div className={styles.section2}>
                     <div className={styles.section2_a}>
                         <div className={styles.section2_a_img_div} >
-                            <img className={styles.section2_a_i_img} src="//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_careers_page.light_mode.Trap_Head_Knowledge_LM.png-26-8b3cb87eeab117db.png" alt={1} />
+                            <span>
+                                <img className={styles.section2_a_i_img} src="//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_careers_page.light_mode.Trap_Head_Knowledge_LM.png-26-8b3cb87eeab117db.png" alt={1} />
+                            </span>
                         </div>
                     </div>
                     <div className={styles.section2_b} >
                         <div className={styles.section2_b_a}>
-                            <div className={styles.section2_b_a_i}> <span ><span >Our mission</span></span> </div>
+                            <div className={styles.section2_b_a_i}> <span >Our mission</span> </div>
                             <div className={styles.section2_b_a_ii}>
                                 The vast majority of human knowledge is still not on the internet. Most of it is trapped in the form of experience in people’s heads, or buried in books and papers that only experts can access. More than a billion people use the internet yet only a tiny fraction contribute their knowledge to it. We want to democratize access to knowledge of all kinds—from politics to painting, cooking to coding, etymology to experiences—so if someone out there knows something, anyone else can learn it. Our mission is to share and grow the world's knowledge, and we're building a  team to help us achieve this mission.
                             </div>
@@ -105,7 +109,7 @@ const Career = () => {
                             <span className={styles.section4_a_span} >Learn and grow with us</span>
                         </div>
                         <div className={styles.section4_a_head_content} >
-                            At Quora, team members are empowered to solve high-impact problems in creative ways and constantly experiment with new directions. We set people up for success by pairing them with experienced mentors, and foster a culture of learning across the company. We celebrate our wins and learnings together, and make sure everyone has an opportunity to sit at the table, be heard, and impact decisions.
+                            At Quora, team members are empowered to solve problems in creative ways and constantly experiment with new directions. We set people up for success by pairing them with experienced mentors, and foster a culture of learning across the company. We celebrate our wins and learnings together, be heard, and impact decisions.
                         </div>
                         <div className={styles.section4_a_img_div} >
                             <img className={styles.section4_a_img} src="//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_careers_page.light_mode.Community_LM.png-26-968f10722d33bde6.png" alt={1} />
