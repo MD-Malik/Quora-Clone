@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+import uuid from 'react-uuid'
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import styled from "styled-components"
 import { isBoxVisibleReducer } from "../../Redux/ShowAddQuestion Reducer/reducer";
 import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
-<<<<<<< HEAD
-import { v4 as uuid } from "uuid"
-=======
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
 import { storage } from './firebase'
->>>>>>> 04f7a0f3b49799c1a5ead1a43ac84abaef4b18af
+
+
+
 
 const Div = styled.div`
 background:rgba(255, 255, 250, 1);
@@ -200,101 +200,40 @@ margin-top:170px;
     }
 }
 `
-const fileLabel = styled.label`
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+const ProgressH2 = styled.h2`
+text-align: center;
 `
-const fileInput = styled.input`
-display: none;
+const FileLabel = styled.label`
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+ 
+    `
+const FileInput = styled.input`
+    display: none;
+    `
+const Aa = styled.img`
+    width: 40px;
+    height: 50px;
 `
 
 export const CreatePost = () => {
+
     const { user_details } = useSelector((state) => state.currentUserReducer)
+    // console.log(user_details)
 
     const { isBoxVisible } = useSelector((state) => state.isBoxVisibleReducer)
 
     const [task, setTask] = useState("addquestion")
 
+    const [msg, setMsg] = useState('')
     const [image, setImage] = useState(null)
 
     const [progress, setProgress] = useState(0)
 
     const dispatch = useDispatch(isBoxVisibleReducer);
 
-<<<<<<< HEAD
-    const [question, setQuestion] = React.useState("")
-    const navigate = useNavigate()
-
-    const handleClick = () => {
-        const question_data = {
-            question:question,
-            questionid:uuid()
-        }
-
-        fetch("http://localhost:3001/questions",{
-            method:"POST",
-            body: JSON.stringify({...question_data}),
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-        .then((res)=>res.json())
-        .then((res)=>dispatch(isBoxVisibleAction(true)))
-    }
-
-    return (
-        <>
-        <Outer_div hidden={isBoxVisible}>
-          <Div>
-              <h1 onClick={()=>{dispatch(isBoxVisibleAction(true))
-            }}>X</h1>
-              <div>
-                  <div props={task}>
-                      <img src="https://cdn-icons-png.flaticon.com/128/942/942802.png" alt="?" />
-                      <p onClick={()=>setTask("addquestion")}>Add Question</p>
-                  </div>
-                  <div props={task}>
-                      <img src="https://cdn-icons-png.flaticon.com/128/1250/1250615.png" alt="pencil" />
-                      <p onClick={()=>setTask("createpost")}>Create Post</p>
-                  </div>
-              </div>
-              <div hidden={task==="createpost"}>
-                  <h5>Tips on getting good ansers quickly</h5>
-                  <ul>
-                      <li>Make sure your question has not been asked already</li>
-                      <li>Keep your question short and to the point</li>
-                      <li>Double-check grammer and spelling</li>
-                  </ul>
-              </div>
-              <div style={{marginTop:"20px"}}>
-                  <img src={user_details.userimage} alt="profile_img" />
-                  <button>
-                      <img src="https://cdn-icons-png.flaticon.com/128/615/615075.png" alt="public" />
-                      <p>Public</p>
-                      <p>{">"}</p>
-                  </button>
-              </div>
-              <div>
-                  <input type="text" placeholder={task==="addquestion"?'Start your question with "What", "Why", etc.':'Say something...'} onChange={(e)=>setQuestion(e.target.value)}/>
-              </div>
-              <div style={task==="createpost"?{border:"none"}:{borderTop:"2px solid grey"}}>
-                  <button hidden={task==="createpost"} onClick={handleClick}>Add question</button>
-                  <button hidden={task==="createpost"} onClick={()=>dispatch(isBoxVisibleAction(true))}>Cancel</button>
-              </div>
-              <CreatePostStyle hidden={task==="addquestion"}>
-                  <div hidden={task==="addquestion"}>
-                  <div>
-                      <img src="https://cdn-icons.flaticon.com/png/128/4662/premium/4662541.png?token=exp=1649400399~hmac=b4e4677969be74cf96596cae7f09cf30" alt="Aa" />
-                      <img src="https://cdn-icons-png.flaticon.com/128/1060/1060418.png" alt="galary" />
-                  </div>
-                  <button>Post</button>
-                  </div>
-              </CreatePostStyle>
-          </Div>
-         </Outer_div>
-=======
+    // upload file method to save pic to firebase;
     const uploadFiles = (file) => {
         if (file == null) return;
 
@@ -310,11 +249,47 @@ export const CreatePost = () => {
         },
             (err) => console.log(err),
             () => {
-                getDownloadURL(uploadTask.snapshot.ref).then((url) => console.log(url))
+                getDownloadURL(uploadTask.snapshot.ref)
+                    .then((url) =>
+                        // console.log('hi')
+                        save({ userimage: user_details.userimage, username: user_details.username, images: url, title: '', message: msg, postid: uuid(), userid: user_details.userid, upvotes: 0, })
+                    )
             }
         );
 
     };
+    // save image on firebase method;
+    function save(param) {
+        return fetch('http://localhost:3001/post', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(param)
+        })
+            .then(e => e.json())
+            .then(e =>
+                dispatch(isBoxVisibleAction(true))
+            );
+    }
+
+    // save question method;
+    function saveQuestion(msg) {
+        console.log(msg)
+        return fetch('http://localhost:3001/questions', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: msg,
+                questionid: uuid()
+            })
+        })
+            .then(e => e.json())
+            .then(e => dispatch(isBoxVisibleAction(true)));
+    }
+
     return (
         <>
             <Outer_div hidden={isBoxVisible}>
@@ -347,33 +322,35 @@ export const CreatePost = () => {
                         </button>
                     </div>
                     <div>
-                        <input type="text" placeholder={task === "addquestion" ? 'Start your question with "What", "Why", etc.' : 'Say something...'} />
+                        <input type="text" placeholder={task === "addquestion" ? 'Start your question with "What", "Why", etc.' : 'Say something...'} onChange={
+                            (e) => { setMsg(e.currentTarget.value) }
+                        } />
                         {
-                            progress ? <h2>Progress {progress}%</h2> : null
+                            progress > 0 && progress < 100 ? <ProgressH2>Progress {progress}%</ProgressH2> : null
                         }
                     </div>
                     <div style={task === "createpost" ? { border: "none" } : { borderTop: "2px solid grey" }}>
-                        <button hidden={task === "createpost"}>Add question</button>
+                        <button hidden={task === "createpost"} onClick={() => { saveQuestion(msg) }} >Add question</button>
                         <button hidden={task === "createpost"} onClick={() => dispatch(isBoxVisibleAction(true))}>Cancel</button>
                     </div>
                     <CreatePostStyle hidden={task === "addquestion"}>
                         <div hidden={task === "addquestion"}>
 
                             <div>
-                                <img src="https://cdn-icons.flaticon.com/png/128/4662/premium/4662541.png?token=exp=1649400399~hmac=b4e4677969be74cf96596cae7f09cf30" alt="Aa" />
+                                <Aa src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5SxHC7ffYgiTMbHkxBG_a1E5QJlIOB8VCTz8UlNN-7hDz7Cg&s" alt="Aa" />
 
-                                {/* <fileLabel for="file-upload" class="custom-file-upload">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/1060/1060418.png" type="file" alt="galary" />
-                                </fileLabel> */}
-                                <input id="file-upload" type='file' onChange={e => { e.target.files[0] != null ? setImage(e.target.files[0]) : setImage(null) }} />
+                                <FileLabel for="file-upload" >
+                                    <img src="https://cdn-icons-png.flaticon.com/128/1060/1060418.png" width='25px' type="file" alt="galary" />
+                                </FileLabel>
+                                <FileInput id="file-upload" type='file' onChange={e => { e.target.files[0] != null ? setImage(e.target.files[0]) : setImage(null) }} />
 
                             </div>
+
                             <button onClick={() => uploadFiles(image)}>Post</button>
                         </div>
                     </CreatePostStyle>
                 </Div>
             </Outer_div>
->>>>>>> 04f7a0f3b49799c1a5ead1a43ac84abaef4b18af
         </>
     )
 }
