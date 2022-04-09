@@ -1,12 +1,17 @@
 {
   "users": [
     {
-      "username": "shahrukh",
-      "useremail": "shahrukh",
-      "password": "shahrukh",
-      "userid": "f5c7cab5-a42d-44f9-8c7a-547cd892c192",
-      "isAuth": true,
-      "id": 1
+      "userid": "",
+      "id": 1,
+      "username": "Ashish",
+      "useremail": "a4ashish04",
+      "password": "12345",
+      "Position": "Sodt",
+      "Company": "lt",
+      "Startyear": "2015",
+      "education": {},
+      "timestap": "April",
+      "image": ""
     },
     {
       "username": "Ashish Sinha",
@@ -25,56 +30,62 @@
       "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "followers": 0,
       "following": 0,
-      "id": 3
+      "id": 4
+    },
+    {
+      "username": "Ishan",
+      "useremail": "ishan@gmail.com",
+      "password": "abc123",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 5
     }
   ],
   "post": [
     {
-      "id": 1,
-      "postid": 2,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 2
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FMasai-partners-with-NSDC.jpg?alt=media&token=59dc4e28-d224-4319-a48a-c3090539a8a7",
+      "title": "",
+      "message": "Masai School partners with NSDC for tech skilling",
+      "postid": "3b20378-ced-e1fd-4501-6f0bd153d475",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 17
     },
     {
-      "id": 2,
-      "postid": 2,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 4
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2Fmicro.jpg?alt=media&token=d4d9a2be-9bc7-4c06-b3b2-f408360c23f6",
+      "title": "",
+      "message": "Microsoft and NSDC to empower the indian youth",
+      "postid": "72c3ab5-3f8f-f55a-c751-0ff4587303b",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 18
     },
     {
-      "id": 3,
-      "postid": 3,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 5
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2Frussia.webp?alt=media&token=1329fe38-6540-4d61-82df-859dc561965e",
+      "title": "",
+      "message": "Rocket attack on Ukraine train station kills",
+      "postid": "07caf60-8800-dc47-21db-4de3a802c86",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 19
     },
     {
-      "id": 4,
-      "postid": 4,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 6
-    },
-    {
-      "postid": "e0bcdaad-873c-4f5e-af47-c36b9af88071",
-      "message": "My name is shahrukh",
-      "title": "what is your name?",
-      "username": "shahrukh",
+      "postid": "240998d9-5695-4b5c-ac46-dc0fde7a5c69",
+      "message": "Because Russia didn't let Ukraine to merge to NATO.",
+      "title": "Why Russia attacks Ukranion people ?",
+      "username": "Ishan",
       "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "upvotes": 0,
-      "id": 5
-    },
-    {
-      "postid": "110712a4-dd48-4eb5-aa22-31a082ee8abc",
-      "message": "shahrukh",
-      "title": "what is your name?",
-      "upvotes": 0,
+<<<<<<< HEAD
       "id": 6
     },
     {
@@ -94,6 +105,9 @@
       "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "upvotes": 0,
       "id": 8
+=======
+      "id": 20
+>>>>>>> e27e1c116ba6311f623cca3ba1b7f5b1a04ddee6
     }
   ],
   "questions": [
@@ -136,12 +150,22 @@
       "question": "where is ashish?",
       "questionid": "4ffda3c1-ecd7-4fae-820f-6b3d08b2d967",
       "id": 11
+    },
+    {
+      "question": "Who is founder of Masai School ?",
+      "questionid": "1465d4-f6-3fd8-a3e6-dd3ed617e0d1",
+      "id": 12
+    },
+    {
+      "question": "Why Russia attacks Ukranion people ?",
+      "questionid": "82515d-542-c013-1350-7dfee814ff62",
+      "id": 13
     }
   ],
   "current_user": [
     {
       "isAuth": true,
-      "userid": "08fc1535-37a9-4e6f-9795-7b60581ce066",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "id": 1
     }
   ]

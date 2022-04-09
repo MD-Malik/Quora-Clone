@@ -12,7 +12,7 @@ import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
 
 export const Component1 = () => {
 
-  const {posts} = useSelector((state) => state.postReducer);
+  const { posts } = useSelector((state) => state.postReducer);
   // console.log("post", posts);
   const dispatch = useDispatch();
   const getPosts = () => {
@@ -68,9 +68,9 @@ export const Component1 = () => {
           </Button>
         </div>
       </div>
-            
-        {posts.map((post) =>(
-          <div key={post.id}
+
+      {posts.map((post) => (
+        <div key={post.id}
           style={{
             backgroundColor: "white",
             border: "1px solid black",
@@ -79,21 +79,27 @@ export const Component1 = () => {
             width:"550px"
           }}
         >
-         <div style={{ display: "flex" }}>
-          <Avatar />
-          <div>
-            <h3>{post.username}</h3>
-            {/* <span>
-              Masters in Economics, IIT KGP and Co Founder at Skillslash Academy.
-            </span> */}
+          <div style={{ display: "flex" }}>
+            <Avatar />
+            <div>
+              <h6 style={{ paddingLeft: '5px' }}>Answered by {post.username}</h6>
+              <p style={{ padding: '0px', fontWeight: 'bold' }}>{post.title}</p>
+            </div>
           </div>
-        </div>
+          <div>
+            <p style={{ paddingLeft: '3px' }}>
+              {post.message}
+            </p>
+            <img src={post.images} alt="" style={{ width: "600px" }} />
+          </div>
+          <PostBottom upvote={post.upvotes} />
+
         <div>
-        <h4>{post.title}</h4>
-        <img src = {post.images} alt = "" style={{width:"550px"}}/>
+         <h4>{post.title}</h4>
+         <img src = {post.images} alt = "" style={{width:"550px"}}/>
         </div>
           <PostBottom upvote = {post.upvotes} />
-           </div>
+        </div>
         ))}
     </>
   );
