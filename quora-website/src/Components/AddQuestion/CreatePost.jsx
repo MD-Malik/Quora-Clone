@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components"
 import { isBoxVisibleReducer } from "../../Redux/ShowAddQuestion Reducer/reducer";
 import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
+<<<<<<< HEAD
+import { v4 as uuid } from "uuid"
+=======
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
 import { storage } from './firebase'
+>>>>>>> 04f7a0f3b49799c1a5ead1a43ac84abaef4b18af
 
 const Div = styled.div`
 background:rgba(255, 255, 250, 1);
@@ -219,6 +223,78 @@ export const CreatePost = () => {
 
     const dispatch = useDispatch(isBoxVisibleReducer);
 
+<<<<<<< HEAD
+    const [question, setQuestion] = React.useState("")
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        const question_data = {
+            question:question,
+            questionid:uuid()
+        }
+
+        fetch("http://localhost:3001/questions",{
+            method:"POST",
+            body: JSON.stringify({...question_data}),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        .then((res)=>res.json())
+        .then((res)=>dispatch(isBoxVisibleAction(true)))
+    }
+
+    return (
+        <>
+        <Outer_div hidden={isBoxVisible}>
+          <Div>
+              <h1 onClick={()=>{dispatch(isBoxVisibleAction(true))
+            }}>X</h1>
+              <div>
+                  <div props={task}>
+                      <img src="https://cdn-icons-png.flaticon.com/128/942/942802.png" alt="?" />
+                      <p onClick={()=>setTask("addquestion")}>Add Question</p>
+                  </div>
+                  <div props={task}>
+                      <img src="https://cdn-icons-png.flaticon.com/128/1250/1250615.png" alt="pencil" />
+                      <p onClick={()=>setTask("createpost")}>Create Post</p>
+                  </div>
+              </div>
+              <div hidden={task==="createpost"}>
+                  <h5>Tips on getting good ansers quickly</h5>
+                  <ul>
+                      <li>Make sure your question has not been asked already</li>
+                      <li>Keep your question short and to the point</li>
+                      <li>Double-check grammer and spelling</li>
+                  </ul>
+              </div>
+              <div style={{marginTop:"20px"}}>
+                  <img src={user_details.userimage} alt="profile_img" />
+                  <button>
+                      <img src="https://cdn-icons-png.flaticon.com/128/615/615075.png" alt="public" />
+                      <p>Public</p>
+                      <p>{">"}</p>
+                  </button>
+              </div>
+              <div>
+                  <input type="text" placeholder={task==="addquestion"?'Start your question with "What", "Why", etc.':'Say something...'} onChange={(e)=>setQuestion(e.target.value)}/>
+              </div>
+              <div style={task==="createpost"?{border:"none"}:{borderTop:"2px solid grey"}}>
+                  <button hidden={task==="createpost"} onClick={handleClick}>Add question</button>
+                  <button hidden={task==="createpost"} onClick={()=>dispatch(isBoxVisibleAction(true))}>Cancel</button>
+              </div>
+              <CreatePostStyle hidden={task==="addquestion"}>
+                  <div hidden={task==="addquestion"}>
+                  <div>
+                      <img src="https://cdn-icons.flaticon.com/png/128/4662/premium/4662541.png?token=exp=1649400399~hmac=b4e4677969be74cf96596cae7f09cf30" alt="Aa" />
+                      <img src="https://cdn-icons-png.flaticon.com/128/1060/1060418.png" alt="galary" />
+                  </div>
+                  <button>Post</button>
+                  </div>
+              </CreatePostStyle>
+          </Div>
+         </Outer_div>
+=======
     const uploadFiles = (file) => {
         if (file == null) return;
 
@@ -297,6 +373,7 @@ export const CreatePost = () => {
                     </CreatePostStyle>
                 </Div>
             </Outer_div>
+>>>>>>> 04f7a0f3b49799c1a5ead1a43ac84abaef4b18af
         </>
     )
 }
