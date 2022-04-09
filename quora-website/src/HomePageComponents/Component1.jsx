@@ -69,7 +69,7 @@ export const Component1 = () => {
       </div>
 
       {posts.map((post) => (
-        <div
+        <div key={post.id}
           style={{
             backgroundColor: "white",
             border: "1px solid black",
@@ -80,14 +80,14 @@ export const Component1 = () => {
           <div style={{ display: "flex" }}>
             <Avatar />
             <div>
-              <h3>{post.userid}</h3>
-              <span>
-                Masters in Economics, IIT KGP and Co Founder at Skillslash Academy.
-              </span>
+              <h6 style={{ paddingLeft: '5px' }}>Answered by {post.username}</h6>
+              <p style={{ padding: '0px', fontWeight: 'bold' }}>{post.title}</p>
             </div>
           </div>
           <div>
-            <h4>{post.title}</h4>
+            <p style={{ paddingLeft: '3px' }}>
+              {post.message}
+            </p>
             <img src={post.images} alt="" style={{ width: "600px" }} />
           </div>
           <PostBottom upvote={post.upvotes} />

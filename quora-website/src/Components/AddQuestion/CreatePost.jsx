@@ -220,6 +220,7 @@ const Aa = styled.img`
 export const CreatePost = () => {
 
     const { user_details } = useSelector((state) => state.currentUserReducer)
+    // console.log(user_details)
 
     const { isBoxVisible } = useSelector((state) => state.isBoxVisibleReducer)
 
@@ -249,12 +250,15 @@ export const CreatePost = () => {
             (err) => console.log(err),
             () => {
                 getDownloadURL(uploadTask.snapshot.ref)
-                    .then((url) => save({ userimage: user_details.userimage, images: url, title: '', message: msg, postid: uuid(), userid: user_details.userid, upvotes: 0, }))
+                    .then((url) =>
+                        // console.log('hi')
+                        save({ userimage: user_details.userimage, username: user_details.username, images: url, title: '', message: msg, postid: uuid(), userid: user_details.userid, upvotes: 0, })
+                    )
             }
         );
 
     };
-    // save post method;
+    // save image on firebase method;
     function save(param) {
         return fetch('http://localhost:3001/post', {
             method: "POST",
@@ -264,7 +268,26 @@ export const CreatePost = () => {
             body: JSON.stringify(param)
         })
             .then(e => e.json())
-            .then(e => true);
+            .then(e =>
+                dispatch(isBoxVisibleAction(true))
+            );
+    }
+
+    // save question method;
+    function saveQuestion(msg) {
+        console.log(msg)
+        return fetch('http://localhost:3001/questions', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: msg,
+                questionid: uuid()
+            })
+        })
+            .then(e => e.json())
+            .then(e => dispatch(isBoxVisibleAction(true)));
     }
 
     return (
@@ -307,7 +330,7 @@ export const CreatePost = () => {
                         }
                     </div>
                     <div style={task === "createpost" ? { border: "none" } : { borderTop: "2px solid grey" }}>
-                        <button hidden={task === "createpost"}>Add question</button>
+                        <button hidden={task === "createpost"} onClick={() => { saveQuestion(msg) }} >Add question</button>
                         <button hidden={task === "createpost"} onClick={() => dispatch(isBoxVisibleAction(true))}>Cancel</button>
                     </div>
                     <CreatePostStyle hidden={task === "addquestion"}>

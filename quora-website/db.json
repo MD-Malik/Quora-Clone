@@ -14,6 +14,14 @@
       "image": ""
     },
     {
+      "username": "Ashish Sinha",
+      "useremail": "sinha123@gmail.com",
+      "password": "sinha123",
+      "userid": "cb983476-1af8-48d8-a82b-7322e579ba5d",
+      "isAuth": true,
+      "id": 2
+    },
+    {
       "username": "upendra",
       "useremail": "upendra@gmail.com",
       "password": "abc123",
@@ -38,101 +46,98 @@
   ],
   "post": [
     {
-      "id": 1,
-      "postid": 2,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 2
-    },
-    {
-      "id": 2,
-      "postid": 2,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 4
-    },
-    {
-      "id": 3,
-      "postid": 3,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 5
-    },
-    {
-      "id": 4,
-      "postid": 4,
-      "userid": "8f082f82-395c-4625-a6d1-aec94ab8785f",
-      "title": "What is the best way to learn full stack AI and ML with project certification directly from companies/startups?",
-      "images": "https://qphs.fs.quoracdn.net/main-qimg-24d8f46996da4c31a442da3d9e1f0e04-lq",
-      "upvotes": 6
-    },
-    {
-      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(86).png?alt=media&token=9bb0e518-ca33-43bd-b5d6-0880abe35235",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FMasai-partners-with-NSDC.jpg?alt=media&token=59dc4e28-d224-4319-a48a-c3090539a8a7",
       "title": "",
-      "postid": "66c5b4-c341-03cf-ce21-43c6fea7a8",
-      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
-      "id": 5
-    },
-    {
-      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(164).png?alt=media&token=29c2d414-1e22-4a28-840f-ed763b396c9c",
-      "title": "",
-      "message": "What's going on in Lanka ?",
-      "postid": "0b4efb8-7f17-3d83-f7e-a27be8e6ef7",
+      "message": "Masai School partners with NSDC for tech skilling",
+      "postid": "3b20378-ced-e1fd-4501-6f0bd153d475",
       "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "upvotes": 0,
-      "id": 6
+      "id": 17
     },
     {
-      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(164).png?alt=media&token=257c78ad-bf47-4757-9a0c-236bc2401a33",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2Fmicro.jpg?alt=media&token=d4d9a2be-9bc7-4c06-b3b2-f408360c23f6",
       "title": "",
-      "message": "What's going on in Lanka ?",
-      "postid": "3f646bc-004-7ced-30a-25b6fa5f0dc",
+      "message": "Microsoft and NSDC to empower the indian youth",
+      "postid": "72c3ab5-3f8f-f55a-c751-0ff4587303b",
       "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "upvotes": 0,
-      "id": 7
+      "id": 18
     },
     {
-      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(168).png?alt=media&token=0705dfc3-60aa-4497-bccf-b0d60787aef9",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2Frussia.webp?alt=media&token=1329fe38-6540-4d61-82df-859dc561965e",
       "title": "",
-      "message": "is it taravelista website clone",
-      "postid": "e3cdc-8ce5-2b8e-b704-b448bf3ae710",
+      "message": "Rocket attack on Ukraine train station kills",
+      "postid": "07caf60-8800-dc47-21db-4de3a802c86",
       "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "upvotes": 0,
-      "id": 8
+      "id": 19
     },
     {
-      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(149).png?alt=media&token=05635ded-3f66-43a4-9ff9-32225f67f06e",
-      "title": "",
-      "message": "that's enough.....",
-      "postid": "1274ed3-d50f-e0f4-24cf-72b8376d206",
-      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "postid": "240998d9-5695-4b5c-ac46-dc0fde7a5c69",
+      "message": "Because Russia didn't let Ukraine to merge to NATO.",
+      "title": "Why Russia attacks Ukranion people ?",
+      "username": "Ishan",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "upvotes": 0,
-      "id": 9
-    },
-    {
-      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FScreenshot%20(162).png?alt=media&token=51c672b5-4c19-4bad-8986-ae2b6c89bc74",
-      "title": "",
-      "message": "Hello Ashish Sir......",
-      "postid": "bc8afae-045b-46-03f5-ce0d62f2504",
-      "upvotes": 0,
-      "id": 10
+      "id": 20
     }
   ],
   "questions": [
     {
-      "userid": "",
-      "question": "",
-      "answer": [
-        {
-          "userid": "",
-          "answer": ""
-        },
-        {},
-        {}
-      ]
+      "question": "what is your name?",
+      "questionid": "88d590a6-29fe-471c-afd2-b884be6fd352",
+      "id": 1
+    },
+    {
+      "question": "Start your question with what, how and why?",
+      "questionid": "8a6b1ed1-bfee-4650-a74d-0a03141fc23e",
+      "id": 3
+    },
+    {
+      "question": "ask questions?",
+      "questionid": "e95831af-f188-44b0-a25e-4c27310f323b",
+      "id": 6
+    },
+    {
+      "question": "Tips on getting good answers quickly?",
+      "questionid": "1e612d8e-d009-4f99-8855-e9647c516bcd",
+      "id": 7
+    },
+    {
+      "question": "I don’t feel comfortable near rich people. Why?",
+      "questionid": "26a2ee16-4892-48a6-80cb-ff03ff3fdb76",
+      "id": 8
+    },
+    {
+      "question": "What is the unscrambled word of \"IFCNAEN\"?",
+      "questionid": "c1c2ea0c-614c-4bd2-81f3-0bf9c248fe1d",
+      "id": 9
+    },
+    {
+      "question": "Why is a steady mindset important for achieving ambition? Hide",
+      "questionid": "ee4fe322-ac97-4e8d-9d00-4b5a718b8753",
+      "id": 10
+    },
+    {
+      "question": "where is ashish?",
+      "questionid": "4ffda3c1-ecd7-4fae-820f-6b3d08b2d967",
+      "id": 11
+    },
+    {
+      "question": "Who is founder of Masai School ?",
+      "questionid": "1465d4-f6-3fd8-a3e6-dd3ed617e0d1",
+      "id": 12
+    },
+    {
+      "question": "Why Russia attacks Ukranion people ?",
+      "questionid": "82515d-542-c013-1350-7dfee814ff62",
+      "id": 13
     }
   ],
   "current_user": [
