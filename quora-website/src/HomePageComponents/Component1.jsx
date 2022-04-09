@@ -8,6 +8,7 @@ import { PostBottom } from "./Postpage/PostBottom";
 import { PostMiddle } from "./Postpage/PostMiddle";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../Redux/PostReducer/action";
+import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
 
 export const Component1 = () => {
 
@@ -34,12 +35,12 @@ export const Component1 = () => {
           backgroundColor: "white",
           border: "1px solid black",
           margin: "20px",
-          padding: "20px",
+          padding: "10px",
         }}
       >
         <div style={{ display: "flex" }}>
           <Avatar />
-          <Button href="#text-buttons" size="large">
+          <Button href="#text-buttons" size="large"  onClick={()=>dispatch(isBoxVisibleAction(false))}>
             What do you want to ask or share?
           </Button>
         </div>
@@ -51,7 +52,7 @@ export const Component1 = () => {
             justifyContent: "center",
           }}
         >
-          <Button>
+          <Button  onClick={()=>dispatch(isBoxVisibleAction(false))}>
             <LiveHelpOutlinedIcon />
             Ask
           </Button>
@@ -61,7 +62,7 @@ export const Component1 = () => {
             Answer
           </Button>
           |
-          <Button>
+          <Button onClick={()=>dispatch(isBoxVisibleAction(false))}>
             <BorderColorOutlinedIcon />
             Post
           </Button>
@@ -75,6 +76,7 @@ export const Component1 = () => {
             border: "1px solid black",
             margin: "20px",
             padding: "20px",
+            width:"550px"
           }}
         >
           <div style={{ display: "flex" }}>
@@ -91,9 +93,14 @@ export const Component1 = () => {
             <img src={post.images} alt="" style={{ width: "600px" }} />
           </div>
           <PostBottom upvote={post.upvotes} />
-        </div>
-      ))}
 
+        <div>
+         <h4>{post.title}</h4>
+         <img src = {post.images} alt = "" style={{width:"550px"}}/>
+        </div>
+          <PostBottom upvote = {post.upvotes} />
+        </div>
+        ))}
     </>
   );
 };
