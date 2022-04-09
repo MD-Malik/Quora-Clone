@@ -76,6 +76,15 @@
       "title": "what is your name?",
       "upvotes": 0,
       "id": 6
+    },
+    {
+      "postid": "9ac12b83-c3ea-49bb-a54c-e1e12e4d216a",
+      "message": "Quora Clone",
+      "title": "what is your name?",
+      "username": "upendra",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 7
     }
   ],
   "questions": [
