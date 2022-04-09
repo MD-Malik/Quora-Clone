@@ -1,17 +1,13 @@
 html,
 body {
   height: 100vh;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: calc(15px * var(--dynamic-font-scale, 1));
+  font-family: -apple-system, sans-serif;
   line-height: 1.4;
   color: rgb(40, 40, 41);
-  direction: ltr;
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .container {
-  /* padding: 64px 150px 24px 150px; */
+  padding: 10%;
   padding-top: 64px;
   padding-bottom: 24px;
   box-sizing: border-box;
@@ -79,19 +75,15 @@ body {
   box-sizing: border-box;
   display: flex;
   max-width: 100%;
-  transition-property: opacity;
-  transition-duration: 60ms;
-  transition-timing-function: ease-in-out;
   justify-content: center;
   align-items: center;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.6);
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   text-transform: none;
   text-rendering: auto;
   letter-spacing: normal;
-  word-spacing: normal;
+  /* word-spacing: normal; */
   text-indent: 0px;
   text-shadow: none;
 }
@@ -103,12 +95,10 @@ body {
   overflow: hidden;
   display: inline-flex;
   color: #fff;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.6);
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   text-transform: none;
-  writing-mode: horizontal-tb !important;
   text-rendering: auto;
   letter-spacing: normal;
   word-spacing: normal;
@@ -125,7 +115,6 @@ body {
   font-size: 14px;
   font-weight: 500;
   color: #fff;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.6);
   text-align: center;
   cursor: pointer;
   text-transform: none;
@@ -187,7 +176,6 @@ body {
 .section3_a_span {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -219,7 +207,6 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(15px * var(--dynamic-font-scale, 1)) !important;
   text-align: center;
   word-break: break-word;
   color: #282829;
@@ -227,7 +214,6 @@ body {
 .section3_a_ii_span {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(15px * var(--dynamic-font-scale, 1)) !important;
   text-align: center;
   word-break: break-word;
   color: #282829;
@@ -253,14 +239,12 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
 .section4_a_span {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -295,14 +279,12 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
 .section4_a_foot_span {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -327,14 +309,12 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
 .section5_a_span {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -370,13 +350,11 @@ body {
 .section5_a_right_i {
   text-align: left;
   box-sizing: border-box;
-  font-size: calc(13px * var(--dynamic-font-scale, 1)) !important;
   color: #939598;
 }
 .section5_a_right_ii {
   text-align: left;
   box-sizing: border-box;
-  font-size: calc(13px * var(--dynamic-font-scale, 1)) !important;
   color: #939598;
   margin-top: 8px;
 }
@@ -406,14 +384,12 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
 .section6_a_span {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(21px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -462,7 +438,6 @@ body {
   min-height: 65px;
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(15px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
   margin-left: 8px;
@@ -470,7 +445,6 @@ body {
 .section6_a_span_sub {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(15px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -538,7 +512,6 @@ body {
 }
 .section6_b {
   box-sizing: border-box;
-  font-size: calc(13px * var(--dynamic-font-scale, 1)) !important;
   text-align: center;
   color: #939598;
   margin-top: 24px;
