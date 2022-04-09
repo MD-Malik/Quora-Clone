@@ -90,13 +90,13 @@ export const Component1 = () => {
             <p style={{ paddingLeft: '3px' }}>
               {post.message}
             </p>
-            <img src={post.images} alt="" style={{ width: "600px" }} />
+            <img src={post.images} alt="" style={{ width: "100%" }} />
           </div>
           <PostBottom upvote={post.upvotes} />
 
         <div>
          <h4>{post.title}</h4>
-         <img src = {post.images} alt = "" style={{width:"550px"}}/>
+         <img src = {post.images} alt = "" style={{width:"100%"}}/>
         </div>
           <PostBottom upvote = {post.upvotes} />
         </div>
