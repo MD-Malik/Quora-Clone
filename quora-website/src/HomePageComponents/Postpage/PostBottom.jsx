@@ -50,7 +50,7 @@ export const PostBottom = ({ upvote }) => {
           </Button>
         </div>
         <div>
-          <Button onClick={()=>setBox(!box)}>
+          <Button>
             <ChatBubbleOutlineOutlinedIcon />
           </Button>
         </div>
@@ -87,9 +87,9 @@ export const PostBottom = ({ upvote }) => {
         </Menu>
       </div>
     </div>
-    <div hidden={box}>
+    {/* <div hidden={box}>
          <h1>Comment</h1>
-      </div>
+      </div> */}
     </>
   );
 };

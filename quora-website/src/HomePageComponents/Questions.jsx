@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import RssFeedOutlinedIcon from "@material-ui/icons/RssFeedOutlined";
 import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
-import ScreenShareIcon from "@material-ui/icons/ScreenShare";
+import ScreenShareIcon from "@material-ui/icons//ScreenShare";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
 import styled from "styled-components"
@@ -61,7 +61,7 @@ export const Questions = () => {
         </Ques_Link>
         <p>No answer yet</p>
       </div>
-        <div style={{ justifyContent: "end" }}>
+        {/* <div style={{ justifyContent: "end" }}> */}
       <div style={{ display: "flex" }}>
         <div style={{ display: "flex", gap: "20px" }}>
           <div>
@@ -83,19 +83,13 @@ export const Questions = () => {
               gap: "20px",
               justifyContent: "space-around",
               alignContent: "flex-end",
-            }}
-          >
-            <Button>
-              <ArrowDownwardOutlinedIcon />
-            </Button>
-            <Button>
-              <ScreenShareIcon />
-            </Button>
-            <Button>
-              <MoreHorizIcon />
-            </Button>
+            }}>
+            <ArrowDownwardOutlinedIcon />
+            <ScreenShareIcon />
+            <MoreHorizIcon />
           </div>
         </div>
+      </div>
       </div>
     </div>
     ))}
