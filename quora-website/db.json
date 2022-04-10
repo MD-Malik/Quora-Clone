@@ -76,6 +76,24 @@
       "title": "what is your name?",
       "upvotes": 0,
       "id": 6
+    },
+    {
+      "postid": "e529816e-42c3-437e-965f-d092884d6905",
+      "message": "Shahrukh",
+      "title": "what is your name?",
+      "username": "upendra",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 7
+    },
+    {
+      "postid": "ea463f62-bac0-4d50-8077-3c74f77d9515",
+      "message": "i don't know",
+      "title": "I don’t feel comfortable near rich people. Why?",
+      "username": "upendra",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 8
     }
   ],
   "questions": [
@@ -123,7 +141,7 @@
   "current_user": [
     {
       "isAuth": true,
-      "userid": "08fc1535-37a9-4e6f-9795-7b60581ce066",
+      "userid": "f5c7cab5-a42d-44f9-8c7a-547cd892c192",
       "id": 1
     }
   ]
