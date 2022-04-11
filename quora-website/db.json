@@ -42,6 +42,17 @@
       "followers": 0,
       "following": 0,
       "id": 5
+    },
+    {
+      "username": "shahrukh",
+      "useremail": "md.shahrukhmalik2012@gmail.com",
+      "password": "2012",
+      "userid": "778dbb85-c3a9-4f69-b7ed-8b07d978d3d4",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 6
     }
   ],
   "post": [
@@ -88,10 +99,10 @@
       "id": 20
     },
     {
-      "postid": "286bfb73-1563-45b7-845b-4b4de290ccdb",
-      "message": "it's cool",
-      "title": "How is the weather today?",
-      "username": "Ishan",
+      "postid": "ea463f62-bac0-4d50-8077-3c74f77d9515",
+      "message": "i don't know",
+      "title": "I don’t feel comfortable near rich people. Why?",
+      "username": "upendra",
       "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "upvotes": 0,
       "id": 21
@@ -126,6 +137,31 @@
       "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "upvotes": 0,
       "id": 24
+    },
+    {
+      "postid": "d22f6945-4197-494e-b019-1bc32c3811e0",
+      "message": "Because it is made up of spherical particals called atom",
+      "title": "Why earch is shperical???",
+      "upvotes": 0,
+      "id": 25
+    },
+    {
+      "postid": "c7ce6795-c7ec-490c-936b-304de8218111",
+      "message": "Because you are not rich.",
+      "title": "I don’t feel comfortable near rich people. Why?",
+      "username": "shahrukh",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 26
+    },
+    {
+      "postid": "6e675a15-32fd-41e5-bc7f-6b45255d57b5",
+      "message": "I am here to answer not to ask.",
+      "title": "ask questions?",
+      "username": "Ishan",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 27
     }
   ],
   "questions": [
@@ -188,6 +224,11 @@
       "question": "how is the weather today.....?",
       "questionid": "da5754-208f-d5de-e3db-1306baa728a",
       "id": 15
+    },
+    {
+      "question": "Why earch is shperical???",
+      "questionid": "d44c9bfc-19a1-4c7a-8c99-9a266bc3d04d",
+      "id": 16
     }
   ],
   "current_user": [

@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Avatar } from "@material-ui/core";
 import styled from "styled-components"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { ChangeAuth } from '../Redux/Auth Reducer/action';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -66,6 +66,8 @@ export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { user_details } = useSelector((state)=>state.currentUserReducer)
+  // console.log(user_details)
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -117,7 +119,7 @@ export default function BasicMenu() {
           <Profile_div>
             <img src="https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png" alt="img" />
             <div>
-              <h3>User Name</h3>
+              <h3>{user_details.username}</h3>
               <h2>{">"}</h2>
             </div>
           </Profile_div>
@@ -145,7 +147,7 @@ export default function BasicMenu() {
         Bookmarks</MenuItem>
         <br />
         <MenuItem style={{padding:"10px"}}>
-        <Img src="https://cdn-icons.flaticon.com/png/128/4173/premium/4173370.png?token=exp=1649242457~hmac=f49e8a86b0a1d6b07f566939def90611" alt="drafts_icon" />
+        <Img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/draft-1764815-1501695.png" alt="drafts_icon" />
         Drafts</MenuItem>
         <hr />
         <Logout_section>
