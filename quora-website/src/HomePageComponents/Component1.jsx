@@ -33,37 +33,42 @@ export const Component1 = () => {
       <div
         style={{
           backgroundColor: "white",
-          border: "1px solid black",
+          border: "1px solid #dee0dc",
+          borderRadius: '5px',
           margin: "20px",
-          padding: "10px",
-        }}
-      >
-        <div style={{ display: "flex" }}>
-          <Avatar />
-          <Button href="#text-buttons" size="large" onClick={() => dispatch(isBoxVisibleAction(false))}>
+          padding: "10px 0px 0px 0px",
+          display: "flex",
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignContent: 'space-around',
+        }} >
+        <div style={{ display: "flex", alignContent: 'space-around', justifyContent: 'center', columnGap: '1%' }}>
+          <Avatar style={{ height: "30px", width: "30px" }} />
+          <Button style={{
+            textAlign: 'left', width: '90%', border: "1px solid #dee0dc", borderRadius: '70px', backgroundColor: '#F1F2F2', justifyContent: 'start', color: '#A6A8AA', fontSize: '11px', padding: '0px 10px'
+          }} href="#text-buttons" size="large" onClick={() => dispatch(isBoxVisibleAction(false))}>
             What do you want to ask or share?
           </Button>
         </div>
         <div
           style={{
             display: "flex",
-            gap: "20px",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-evenly",
           }}
         >
-          <Button onClick={() => dispatch(isBoxVisibleAction(false))}>
-            <LiveHelpOutlinedIcon />
+          <Button style={{ textTransform: 'capitalize', columnGap: '15px' }} onClick={() => dispatch(isBoxVisibleAction(false))}>
+            <LiveHelpOutlinedIcon />&nbsp;
             Ask
           </Button>
           |
-          <Button>
-            <AssignmentTurnedInOutlinedIcon />
+          <Button style={{ textTransform: 'capitalize', columnGap: '5px' }}>
+            <AssignmentTurnedInOutlinedIcon />&nbsp;
             Answer
           </Button>
           |
-          <Button onClick={() => dispatch(isBoxVisibleAction(false))}>
-            <BorderColorOutlinedIcon />
+          <Button style={{ textTransform: 'capitalize', columnGap: '5px' }} onClick={() => dispatch(isBoxVisibleAction(false))}>
+            <BorderColorOutlinedIcon />&nbsp;
             Post
           </Button>
         </div>
@@ -73,18 +78,22 @@ export const Component1 = () => {
         <div key={post.id}
           style={{
             backgroundColor: "white",
-            border: "1px solid black",
+            border: "1px solid #dee0dc",
+            borderRadius: '5px',
             margin: "20px",
             padding: "20px",
             width: "550px"
-          }}
-        >
-          <div style={{ display: "flex" }}>
-            <Avatar />
-            <div>
-              <h6 style={{ paddingLeft: '5px' }}>Answered by {post.username}</h6>
-              <p style={{ padding: '0px', fontWeight: 'bold' }}>{post.title}</p>
+          }} >
+          <div >
+            <div style={{
+              display: "flex",
+              columnGap: '1%',
+              alignItems: 'center'
+            }}>
+              <Avatar style={{ height: "35px", width: "35px" }} />
+              <span> {post.username}</span>
             </div>
+            <p style={{ padding: '0px', fontWeight: 'bold' }}>{post.title}</p>
           </div>
           <div>
             <p style={{ paddingLeft: '3px' }}>

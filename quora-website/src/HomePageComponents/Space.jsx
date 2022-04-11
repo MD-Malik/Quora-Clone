@@ -3,7 +3,7 @@ import HomeLeftSpace from './HomeLeftSpace/HomeLeftSpace'
 
 export const Space = () => {
     return (
-        <div style={{ display: 'flex', justifyContent: "space-around" }}>
+        <div style={{ position: 'sticky', top: '80px' }}>
             <HomeLeftSpace />
         </div>
     )
