@@ -8,10 +8,11 @@ import { PostBottom } from "./Postpage/PostBottom";
 import { PostMiddle } from "./Postpage/PostMiddle";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../Redux/PostReducer/action";
+import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
 
 export const Component1 = () => {
 
-  const {posts} = useSelector((state) => state.postReducer);
+  const { posts } = useSelector((state) => state.postReducer);
   // console.log("post", posts);
   const dispatch = useDispatch();
   const getPosts = () => {
@@ -34,12 +35,12 @@ export const Component1 = () => {
           backgroundColor: "white",
           border: "1px solid black",
           margin: "20px",
-          padding: "20px",
+          padding: "10px",
         }}
       >
         <div style={{ display: "flex" }}>
           <Avatar />
-          <Button href="#text-buttons" size="large">
+          <Button href="#text-buttons" size="large" onClick={() => dispatch(isBoxVisibleAction(false))}>
             What do you want to ask or share?
           </Button>
         </div>
@@ -51,7 +52,7 @@ export const Component1 = () => {
             justifyContent: "center",
           }}
         >
-          <Button>
+          <Button onClick={() => dispatch(isBoxVisibleAction(false))}>
             <LiveHelpOutlinedIcon />
             Ask
           </Button>
@@ -61,39 +62,40 @@ export const Component1 = () => {
             Answer
           </Button>
           |
-          <Button>
+          <Button onClick={() => dispatch(isBoxVisibleAction(false))}>
             <BorderColorOutlinedIcon />
             Post
           </Button>
         </div>
       </div>
-            
-        {posts.map((post) =>(
-          <div key={post.id}
+
+      {posts.map((post) => (
+        <div key={post.id}
           style={{
             backgroundColor: "white",
             border: "1px solid black",
             margin: "20px",
             padding: "20px",
+            width: "550px"
           }}
         >
-         <div style={{ display: "flex" }}>
-          <Avatar />
-          <div>
-            <h3>Ashish Kumar</h3>
-            <span>
-              Masters in Economics, IIT KGP and Co Founder at Skillslash Academy.
-            </span>
+          <div style={{ display: "flex" }}>
+            <Avatar />
+            <div>
+              <h6 style={{ paddingLeft: '5px' }}>Answered by {post.username}</h6>
+              <p style={{ padding: '0px', fontWeight: 'bold' }}>{post.title}</p>
+            </div>
           </div>
+          <div>
+            <p style={{ paddingLeft: '3px' }}>
+              {post.message}
+            </p>
+            <img src={post.images} alt="" style={{ width: "100%" }} />
+          </div>
+          <PostBottom upvote={post.upvotes} />
+
         </div>
-        <div>
-        <h4>{post.title}</h4>
-        <img src = {post.images} alt = "" style={{width:"600px"}}/>
-        </div>
-          <PostBottom upvote = {post.upvotes} />
-           </div>
-        ))}
-      
+      ))}
     </>
   );
 };

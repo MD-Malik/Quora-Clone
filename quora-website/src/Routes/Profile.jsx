@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Navbar } from "../HomePageComponents/Navbar";
 import { setUserDetails } from "../Redux/CurrentUser Reducer/action";
 import { currentUserReducer } from "../Redux/CurrentUser Reducer/reducer";
+import ScreenShareIcon from "@material-ui/icons/ScreenShare";
 
 // const Div_one = styled.div`
 // display:flex:
@@ -243,7 +244,8 @@ export const Profile = () => {
                    <div>
                        <div>
                            <h1>{user_details.username}</h1>
-                           <img src="https://cdn-icons.flaticon.com/png/128/2958/premium/2958783.png?token=exp=1649332032~hmac=941381c757a33bdd610f3c1e43baf4ee" alt="share icon" />
+                           {/* <img src="https://cdn-icons.flaticon.com/png/128/2958/premium/2958783.png?token=exp=1649332032~hmac=941381c757a33bdd610f3c1e43baf4ee" alt="share icon" /> */}
+                           <ScreenShareIcon />
                        </div>
                        <p>Add profile credential</p>
                        <div>{user_details.followers} followers . {user_details.following} following</div>

@@ -61,6 +61,7 @@ export const Questions = () => {
         </Ques_Link>
         <p>No answer yet</p>
       </div>
+        {/* <div style={{ justifyContent: "end" }}> */}
       <div style={{ display: "flex" }}>
         <div style={{ display: "flex", gap: "20px" }}>
           <div>

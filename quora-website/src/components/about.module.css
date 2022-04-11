@@ -3,9 +3,8 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: rgb(255, 255, 255);
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: calc(11px * var(--dynamic-font-scale, 1));
+  font-family: sans-serif;
+  /* font-size: calc(11px * var(--dynamic-font-scale, 1)); */
   line-height: 1.4;
   color: rgb(40, 40, 41);
   direction: ltr;
@@ -50,7 +49,6 @@ body {
 .section_1.upperSpan {
   font-weight: bold;
   line-height: 1.4;
-  font-size: calc(27px * var(--dynamic-font-scale, 1)) !important;
   word-break: break-word;
   color: #282829;
 }
@@ -71,10 +69,7 @@ body {
 
 .svg1 {
   width: 100%;
-  fill: rgb(249, 249, 239);
-
   display: block;
-  transform-origin: center center;
   transform: scale(-1, -1);
 }
 .svg1:not(:root) {
@@ -224,8 +219,6 @@ body {
 
 .svg3 {
   width: 100%;
-  fill: rgb(249, 249, 239);
-
   display: block;
   transform-origin: center center;
   transform: scale(-1, -1);
@@ -259,7 +252,6 @@ body {
 .section_4_inner3_1 {
   box-sizing: border-box;
   width: 65%;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.6);
   text-size-adjust: 100%;
 }
 .section_4_inner3_1_image {
