@@ -4,8 +4,6 @@ import styled from "styled-components"
 import { Navbar } from "../HomePageComponents/Navbar";
 import { setUserDetails } from "../Redux/CurrentUser Reducer/action";
 import { currentUserReducer } from "../Redux/CurrentUser Reducer/reducer";
-import ScreenShareIcon from "@material-ui/icons/ScreenShare";
-import UploadButtons from "../HomePageComponents/ProfileComponents/editProfileImage";
 
 // const Div_one = styled.div`
 // display:flex:
@@ -242,7 +240,6 @@ export const Profile = () => {
            <div>
                <div>
                    <img src={user_details.userimage} alt="userimage icon" />
-                   <UploadButtons />
                    <div>
                        <div>
                            <h1>{user_details.username}</h1>
