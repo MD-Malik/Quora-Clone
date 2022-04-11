@@ -6,11 +6,12 @@ import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineO
 import ScreenShareOutlinedIcon from "@material-ui/icons/ScreenShareOutlined";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Avatar, Button, Menu, MenuItem } from "@material-ui/core";
+import { brown } from "@material-ui/core/colors";
 
 export const PostBottom = ({ upvote }) => {
   const [vote, setVote] = useState(1);
   const [value, setValue] = useState(false);
-  const[box,setBox] = useState(false)
+  const [box, setBox] = useState(false)
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -22,72 +23,75 @@ export const PostBottom = ({ upvote }) => {
   };
   return (
     <>
-    <div
-      style={{
-        display: "flex",
-        gap: "20px",
-        fontSize: "25px",
-        justifyContent:"space-between"
-      }}
-    >
-      <div style={{ display: "flex", gap: "5px" }}>
-        <div>
-          <Button onClick={() => (upvote = upvote + vote)}>
-            <ArrowUpwardOutlinedIcon />
-            {upvote}
-          </Button>
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          fontSize: "25px",
+          justifyContent: "space-between"
+        }}
+      >
+        <div style={{ display: "flex", gap: "5px" }}>
+          <div style={{ color: '#929294' }}>
+            <Button onClick={() => (upvote = upvote + vote)}>
+              <ArrowUpwardOutlinedIcon />
+              {upvote}
+            </Button>
+            |
+            <Button>
+              <ArrowDownwardOutlinedIcon />
+            </Button>
+          </div>
         </div>
-        <div>
-          <Button>
-            <ArrowDownwardOutlinedIcon />
-          </Button>
+        <div style={{ display: "flex", gap: "5px" }}>
+          <div>
+            <Button>
+              <LoopSharpIcon />
+            </Button>
+          </div>
+          <div>
+            <Button>
+              <ChatBubbleOutlineOutlinedIcon />
+            </Button>
+          </div>
         </div>
-      </div>
-      <div style={{ display: "flex", gap: "5px" }}>
-        <div>
-          <Button>
-            <LoopSharpIcon />
-          </Button>
-        </div>
-        <div>
-          <Button>
-            <ChatBubbleOutlineOutlinedIcon />
-          </Button>
-        </div>
-      </div>
-      <div style={{ display: "flex", gap: "5px" }}>
-        <div>
-          <Button>
-            <ScreenShareOutlinedIcon />
-          </Button>
-        </div>
-        <div>
-          <Button
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
+        <div style={{ display: "flex", gap: "5px" }}>
+          <div>
+            <Button>
+              <ScreenShareOutlinedIcon />
+            </Button>
+          </div>
+          <div>
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              <MoreHorizIcon />
+            </Button>
+          </div>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
           >
-            <MoreHorizIcon />
-          </Button>
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
         </div>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
-        </Menu>
       </div>
-    </div>
-    {/* <div hidden={box}>
+
+
+
+
+      {/* <div hidden={box}>
          <h1>Comment</h1>
       </div> */}
     </>
