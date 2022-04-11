@@ -1,6 +1,7 @@
 .container {
   margin-top: 20px;
   margin-bottom: 30px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,10 +10,19 @@
 }
 
 .modalDiv {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-  display: none;
+  /* hide scrollbar but allow scrolling */
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+
+  overflow-y: scroll;
+  height: 80vh;
+  width: 250px;
+  margin-top: 0px;
+}
+
+*::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .divOut {
@@ -26,14 +36,14 @@
   column-gap: 5px;
 }
 .topDiv {
+  border-radius: 5px 5px 0px 0px;
   box-sizing: border-box;
   padding-left: 15px;
   height: 40px;
   width: 250px;
   font-weight: 500;
   font-size: 15px;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, sans-serif;
   display: flex;
   align-items: center;
   justify-content: flex-start;

@@ -1,8 +1,15 @@
 .LeftContainer {
-  overflow: auto;
+  /* hide scrollbar but allow scrolling */
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+
+  overflow-y: scroll;
   height: 80vh;
-  padding: 50px 10px;
   width: 250px;
-  margin-top: 40px;
-  /* background-color: aqua; */
+  margin-top: 0px;
+}
+
+*::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
