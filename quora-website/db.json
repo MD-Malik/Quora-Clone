@@ -126,6 +126,26 @@
       "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
       "upvotes": 0,
       "id": 24
+    },
+    {
+      "postid": "f2b4320a-e56e-40ff-97da-b1e7d492f49f",
+      "message": "It's global warming.",
+      "title": "Why temperature is so high in April itself ?",
+      "username": "Ishan",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 25
+    },
+    {
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FlaptopAlgoGiffy.gif?alt=media&token=d21da853-c8c3-4dd8-80a2-3aebd575212a",
+      "title": "",
+      "message": "Global warming is increasing...",
+      "postid": "8e72e58d-9513-43b4-86a8-11aaeb24b74f",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 26
     }
   ],
   "questions": [
@@ -188,6 +208,11 @@
       "question": "how is the weather today.....?",
       "questionid": "da5754-208f-d5de-e3db-1306baa728a",
       "id": 15
+    },
+    {
+      "question": "Why temperature is so high in April itself ?",
+      "questionid": "de7839a8-8c8c-40ed-8f49-8e5ecb546ea8",
+      "id": 16
     }
   ],
   "current_user": [
