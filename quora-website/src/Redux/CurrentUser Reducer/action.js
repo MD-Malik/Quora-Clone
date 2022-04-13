@@ -4,3 +4,7 @@ export const setUserDetails = (payload) => ({
     type:USER_DETAILS,
     payload:payload
 })
+// {
+//     type:USER_DETAILS,
+//     payload:payload
+// }
