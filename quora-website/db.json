@@ -42,6 +42,17 @@
       "followers": 0,
       "following": 0,
       "id": 5
+    },
+    {
+      "username": "shahrukh",
+      "useremail": "md.shahrukhmalik2012@gmail.com",
+      "password": "2012",
+      "userid": "8fd546a2-4bb3-4e5d-b749-5c1d02f129d7",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 6
     }
   ],
   "post": [
@@ -218,7 +229,7 @@
   "current_user": [
     {
       "isAuth": true,
-      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "userid": "8fd546a2-4bb3-4e5d-b749-5c1d02f129d7",
       "id": 1
     }
   ]
