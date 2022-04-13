@@ -10,6 +10,7 @@ Quora clone - It's a clone of an American social question-and-answer 'Quora' web
 - Javascript
 - React
 - Redux
+- Firebase
 
 ## Run Locally 💻
 
