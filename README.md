@@ -1,6 +1,6 @@
 # Quora 🌇
 
-Quora clone - Social media plateform to share imformation posts and Ask question and post answers. 
+Quora clone - It's a clone of an American social question-and-answer 'Quora' website that allows to ask questions, get useful answers, and share what you know with the world. 
 
 
 ## Tech Stack Used 👩‍💻
