@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Avatar } from "@material-ui/core";
 import styled from "styled-components"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { ChangeAuth } from '../Redux/Auth Reducer/action';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -66,8 +66,6 @@ export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user_details } = useSelector((state)=>state.currentUserReducer)
-  // console.log(user_details)
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -77,18 +75,20 @@ export default function BasicMenu() {
   };
 
   const handleLogout = () => {
-    fetch("http://localhost:3001/current_user/1",{
-      method:"PATCH",
-      body:JSON.stringify({
-        isAuth:false,
-        userid:""
+    fetch("http://localhost:3001/current_user/1", {
+      method: "PATCH",
+      body: JSON.stringify({
+        isAuth: false,
+        userid: ""
       }),
-      headers:{
-        "Content-Type":"application/json"
+      headers: {
+        "Content-Type": "application/json"
       }
     })
-    .then(()=>{dispatch(ChangeAuth(false))
-    navigate("/login")})
+      .then(() => {
+        dispatch(ChangeAuth(false))
+        navigate("/login")
+      })
   }
 
   const showProfile = () => {
@@ -119,41 +119,41 @@ export default function BasicMenu() {
           <Profile_div>
             <img src="https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png" alt="img" />
             <div>
-              <h3>{user_details.username}</h3>
+              <h3>User Name</h3>
               <h2>{">"}</h2>
             </div>
           </Profile_div>
         </MenuItem>
-        <hr/>
-        <MenuItem style={{padding:"10px"}}>
-        <Img src="https://cdn-icons-png.flaticon.com/128/134/134808.png" alt="messae_icon" />
-         Messages
+        <hr />
+        <MenuItem style={{ padding: "10px" }}>
+          <Img src="https://cdn-icons-png.flaticon.com/128/134/134808.png" alt="messae_icon" />
+          Messages
         </MenuItem>
         <br />
-        <MenuItem style={{padding:"10px"}}>
-         <Img src="https://cdn-icons-png.flaticon.com/128/3179/3179416.png" alt="create_ad" />
-        Create Ad</MenuItem>
+        <MenuItem style={{ padding: "10px" }}>
+          <Img src="https://cdn-icons-png.flaticon.com/128/3179/3179416.png" alt="create_ad" />
+          Create Ad</MenuItem>
         <br />
-        <MenuItem style={{padding:"10px"}}>
-         <Img src="https://cdn-icons-png.flaticon.com/128/991/991952.png" alt="monetization" />
-        Monetization</MenuItem>
+        <MenuItem style={{ padding: "10px" }}>
+          <Img src="https://cdn-icons-png.flaticon.com/128/991/991952.png" alt="monetization" />
+          Monetization</MenuItem>
         <br />
-        <MenuItem style={{padding:"10px"}}>
-        <Img src="https://cdn-icons-png.flaticon.com/128/876/876222.png" alt="stats_icon" />
-        Your content & stats</MenuItem>
+        <MenuItem style={{ padding: "10px" }}>
+          <Img src="https://cdn-icons-png.flaticon.com/128/876/876222.png" alt="stats_icon" />
+          Your content & stats</MenuItem>
         <br />
-        <MenuItem style={{padding:"10px"}}>
-        <Img src="https://cdn-icons-png.flaticon.com/128/7220/7220132.png" alt="bookmark_icon" />
-        Bookmarks</MenuItem>
+        <MenuItem style={{ padding: "10px" }}>
+          <Img src="https://cdn-icons-png.flaticon.com/128/7220/7220132.png" alt="bookmark_icon" />
+          Bookmarks</MenuItem>
         <br />
-        <MenuItem style={{padding:"10px"}}>
-        <Img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/draft-1764815-1501695.png" alt="drafts_icon" />
-        Drafts</MenuItem>
+        <MenuItem style={{ padding: "10px" }}>
+          <Img src="https://cdn-icons.flaticon.com/png/128/4173/premium/4173370.png?token=exp=1649242457~hmac=f49e8a86b0a1d6b07f566939def90611" alt="drafts_icon" />
+          Drafts</MenuItem>
         <hr />
         <Logout_section>
           <Section_one>
-          <p>Dark mode</p>
-          <h6>OFF</h6>
+            <p>Dark mode</p>
+            <h6>OFF</h6>
           </Section_one>
           <Section>Settings</Section>
           <br />
@@ -161,9 +161,9 @@ export default function BasicMenu() {
           <br />
           <Section>Help</Section>
           <br />
-         <Section onClick={handleLogout}>Logout</Section>
+          <Section onClick={handleLogout}>Logout</Section>
         </Logout_section>
-         {/* <div>when footer section complete ho jayega then give element tag here</div> */}
+        {/* <div>when footer section complete ho jayega then give element tag here</div> */}
       </Menu>
     </div>
   );

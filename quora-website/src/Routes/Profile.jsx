@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Navbar } from "../HomePageComponents/Navbar";
 import { setUserDetails } from "../Redux/CurrentUser Reducer/action";
 import { currentUserReducer } from "../Redux/CurrentUser Reducer/reducer";
+import ScreenShareIcon from "@material-ui/icons/ScreenShare";
 
 // const Div_one = styled.div`
 // display:flex:
@@ -243,8 +244,8 @@ export const Profile = () => {
                    <div>
                        <div>
                            <h1>{user_details.username}</h1>
-                           <img src="https://cdn.onlinewebfonts.com/svg/img_335000.png" alt="share icon" />
-                           {/* <ScreenShareIcon /> */}
+                           {/* <img src="https://cdn-icons.flaticon.com/png/128/2958/premium/2958783.png?token=exp=1649332032~hmac=941381c757a33bdd610f3c1e43baf4ee" alt="share icon" /> */}
+                           <ScreenShareIcon />
                        </div>
                        <p>Add profile credential</p>
                        <div>{user_details.followers} followers . {user_details.following} following</div>
@@ -275,29 +276,29 @@ export const Profile = () => {
                <div>
                    <div>
                        <p>Credentials and Highlights</p>
-                       <img src="https://th.bing.com/th/id/R.e3956e57360db26f1bfb076dc8c6b993?rik=nnqKo%2fU0PIULJQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_194863.png&ehk=rBnNrjucmayGnMHH13LzpLSRgf09IrhS3tDD49erb6U%3d&risl=&pid=ImgRaw&r=0" alt="pencil_icon" />
+                       <img src="https://cdn-icons.flaticon.com/png/128/1024/premium/1024143.png?token=exp=1649337546~hmac=0e4aa55d25da9fdcec5b9975764f06fe" alt="pencil_icon" />
                    </div>
                    <div>
                        <img src="https://cdn-icons-png.flaticon.com/128/639/639394.png" alt="bag_icon" />
                        <p>Add employment credential</p>
                    </div>
                    <div>
-                       <img src="https://th.bing.com/th/id/R.f3b5f8e51d2e37ab4d4bc8aa39c91682?rik=z3CDGTM4BH4uTA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_342432.png&ehk=%2bS7UdmlFFPru%2fnKdV1gh5YQRQe3ikNTtTPe04tVpy6I%3d&risl=&pid=ImgRaw&r=0" alt="icon" />
+                       <img src="https://cdn-icons.flaticon.com/png/128/2939/premium/2939207.png?token=exp=1649335652~hmac=b0014efb7eeb31ae3d900339882315a3" alt="icon" />
                        <p>Add education credential</p>
                    </div>
                    <div>
-                       <img src="https://th.bing.com/th/id/R.77d5550ca774e1eab6aeb2d82232d719?rik=xfAR0L86cBxbYw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_395473.png&ehk=1ZJqmLjphtmW0Oz7DA8CTnuBtJy30mDNlgzlZ3i4zvA%3d&risl=&pid=ImgRaw&r=0" alt="icon" />
+                       <img src="https://cdn-icons.flaticon.com/png/128/2838/premium/2838912.png?token=exp=1649335679~hmac=da2a8be6f79bd4cda7638b6a95db1871" alt="icon" />
                        <p>Add location credential</p>
                    </div>
                    <div>
-                       <img src="https://th.bing.com/th/id/R.936307c4bdfc208aca39f2cf7560e0cb?rik=e%2bhhlTmeuBMPnw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fcalendar-icon-1600.png&ehk=hSPnpPEoV4FnISmJi7qsYZuoyDstW%2fa744SxmIaFuKQ%3d&risl=&pid=ImgRaw&r=0" alt="icon" />
-                       <p style={{color:"black"}}>Joined April 2022</p>
+                       <img src="https://cdn-icons.flaticon.com/png/128/2278/premium/2278049.png?token=exp=1649335711~hmac=bbfd255a8be6d33be1a3d3e000a17a1a" alt="icon" />
+                       <p>Join April 2022</p>
                    </div>
                </div>
                <div>
                    <div>
                        <p>Knows about</p>
-                       <img src="https://th.bing.com/th/id/R.e3956e57360db26f1bfb076dc8c6b993?rik=nnqKo%2fU0PIULJQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_194863.png&ehk=rBnNrjucmayGnMHH13LzpLSRgf09IrhS3tDD49erb6U%3d&risl=&pid=ImgRaw&r=0" alt="edit icon" />
+                       <img src="https://cdn-icons.flaticon.com/png/128/1024/premium/1024143.png?token=exp=1649337546~hmac=0e4aa55d25da9fdcec5b9975764f06fe" alt="edit icon" />
                    </div>
                    <div>
                        <img src="https://cdn-icons-png.flaticon.com/128/869/869078.png" alt="empty icon" />
