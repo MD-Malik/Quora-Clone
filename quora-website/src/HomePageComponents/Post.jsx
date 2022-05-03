@@ -4,7 +4,7 @@ import { Component1 } from './Component1'
 export const Post = () => {
   return (
     <div>
-        <Component1 />
+      <Component1 />
     </div>
   )
 }

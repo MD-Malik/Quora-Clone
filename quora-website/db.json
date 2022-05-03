@@ -42,6 +42,17 @@
       "followers": 0,
       "following": 0,
       "id": 5
+    },
+    {
+      "username": "shahrukh",
+      "useremail": "md.shahrukhmalik2012@gmail.com",
+      "password": "2012",
+      "userid": "8fd546a2-4bb3-4e5d-b749-5c1d02f129d7",
+      "isAuth": true,
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "followers": 0,
+      "following": 0,
+      "id": 6
     }
   ],
   "post": [
@@ -86,6 +97,66 @@
       "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
       "upvotes": 0,
       "id": 20
+    },
+    {
+      "postid": "286bfb73-1563-45b7-845b-4b4de290ccdb",
+      "message": "it's cool",
+      "title": "How is the weather today?",
+      "username": "Ishan",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 21
+    },
+    {
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2Fdownload%20(2).jpg?alt=media&token=2917b723-0099-47cb-b1e3-66be4575fa37",
+      "title": "",
+      "message": "What's going on in the world ?",
+      "postid": "0ee14f3-fefe-4716-56b7-e4aa0851e04a",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 22
+    },
+    {
+      "postid": "b13d6f38-38c1-4a1e-b0f0-e09b6575b49f",
+      "message": "it's shiny today.....",
+      "title": "how is the weather today.....?",
+      "username": "Ishan",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 23
+    },
+    {
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2Fdownload%20(1).jpg?alt=media&token=725a1c00-ccdb-449d-ad53-c1afd794b192",
+      "title": "",
+      "message": "hello users....",
+      "postid": "6411c5-b42-100f-0021-6b40ab37d27",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 24
+    },
+    {
+      "postid": "f2b4320a-e56e-40ff-97da-b1e7d492f49f",
+      "message": "It's global warming.",
+      "title": "Why temperature is so high in April itself ?",
+      "username": "Ishan",
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "upvotes": 0,
+      "id": 25
+    },
+    {
+      "userimage": "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
+      "username": "Ishan",
+      "images": "https://firebasestorage.googleapis.com/v0/b/quora-clone-63b45.appspot.com/o/images%2FlaptopAlgoGiffy.gif?alt=media&token=d21da853-c8c3-4dd8-80a2-3aebd575212a",
+      "title": "",
+      "message": "Global warming is increasing...",
+      "postid": "8e72e58d-9513-43b4-86a8-11aaeb24b74f",
+      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "upvotes": 0,
+      "id": 26
     }
   ],
   "questions": [
@@ -138,12 +209,27 @@
       "question": "Why Russia attacks Ukranion people ?",
       "questionid": "82515d-542-c013-1350-7dfee814ff62",
       "id": 13
+    },
+    {
+      "question": "How is the weather today?",
+      "questionid": "350ed6c-3e31-5557-4e28-6f5c2761db3",
+      "id": 14
+    },
+    {
+      "question": "how is the weather today.....?",
+      "questionid": "da5754-208f-d5de-e3db-1306baa728a",
+      "id": 15
+    },
+    {
+      "question": "Why temperature is so high in April itself ?",
+      "questionid": "de7839a8-8c8c-40ed-8f49-8e5ecb546ea8",
+      "id": 16
     }
   ],
   "current_user": [
     {
       "isAuth": true,
-      "userid": "8f2f09ff-f71a-4cbd-a174-2ff6a270d661",
+      "userid": "8fd546a2-4bb3-4e5d-b749-5c1d02f129d7",
       "id": 1
     }
   ]

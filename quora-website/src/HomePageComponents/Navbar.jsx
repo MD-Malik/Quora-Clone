@@ -22,8 +22,8 @@ export const Navbar = () => {
   const dispatch = useDispatch(isBoxVisibleReducer);
   return (
     <div className="navbar">
-      <div className="navbar-logo" onClick={()=>navigate("/")}>
-        <img src="https://www.vectorlogo.zone/logos/quora/quora-ar21.svg" />
+      <div className="navbar-logo" onClick={() => navigate("/")}>
+        <img src="https://www.vectorlogo.zone/logos/quora/quora-ar21.svg" alt="pic" />
       </div>
       <div className="navbar-icons">
         <div className="icon">
@@ -35,8 +35,8 @@ export const Navbar = () => {
         </div>
         <div className="icon">
           <Tooltip title="Following">
-            <Link to ="/">
-            <FeaturedPlayListOutlinedIcon />
+            <Link to="/">
+              <FeaturedPlayListOutlinedIcon />
             </Link>
           </Tooltip>
         </div>
@@ -50,15 +50,15 @@ export const Navbar = () => {
         </div>
         <div className="icon">
           <Tooltip title="Spaces">
-            <Link to = "/">
-            <PeopleAltOutlinedIcon />
+            <Link to="/">
+              <PeopleAltOutlinedIcon />
             </Link>
           </Tooltip>
         </div>
         <div className="icon">
           <Tooltip title="Notification">
-            <Link to = "/">
-            <NotificationsOutlinedIcon />
+            <Link to="/">
+              <NotificationsOutlinedIcon />
             </Link>
           </Tooltip>
         </div>
@@ -76,7 +76,7 @@ export const Navbar = () => {
           <BasicMenu />
         </div>
         <LanguageIcon />
-        <Button onClick={()=>dispatch(isBoxVisibleAction(false))}>Add Question</Button>
+        <Button onClick={() => dispatch(isBoxVisibleAction(false))}>Add Question</Button>
       </div>
     </div>
   );
