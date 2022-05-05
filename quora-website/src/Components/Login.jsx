@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import api from "../apiLink";
 
 const Fp_login_div = styled.div`
 display:flex;
@@ -80,31 +81,29 @@ export const Login_div = () => {
     let current_user;
 
     const handleLogin = () => {
-        // console.log(userDetails);
-        users.forEach((item) => {
-            if (item.password === userDetails.password && item.useremail === userDetails.useremail) {
-                current_user = { isAuth: true, userid: item.userid };
-                isUserLogged = true;
-                return;
+        fetch(`${api}/signIn`, {
+            method: "POST",
+            body : JSON.stringify(userDetails),
+            headers:{
+                "Content-Type":"application/json"
             }
         })
-        if (isUserLogged === true) {
-            // localStorage.setItem("current_user", JSON.stringify({...current_user}));
-            fetch("http://localhost:3001/current_user/1", {
-                method: "PATCH",
-                body: JSON.stringify(current_user),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(() => navigate("/"))
-        }
-        else {
-            alert("User Does not exist");
-        }
-        setUserDetails({
-            useremail: "",
-            password: ""
+        .then((res)=>res.json())
+        .then((res)=>{
+            if(res.status=="failed"){
+                alert(`${res.message}`)
+                return;
+            }
+            else{
+                localStorage.setItem("current_user", JSON.stringify({token: res.token}));
+
+                setUserDetails({
+                    useremail:"",
+                    password:""
+                })
+
+                navigate("/")
+            }
         })
     }
 
