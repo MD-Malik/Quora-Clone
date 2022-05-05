@@ -62,70 +62,70 @@ font-size:14px;
 `
 
 export const Login_div = () => {
-    const {users}=useSelector((state)=>state.userReducer)
+    const { users } = useSelector((state) => state.userReducer)
     const navigate = useNavigate();
     // console.log(users)
     const [userDetails, setUserDetails] = React.useState({
-        useremail:"",
-        password:""
+        useremail: "",
+        password: ""
     })
 
     const handleChange = (e) => {
         setUserDetails({
             ...userDetails,
-            [e.target.className]:e.target.value
+            [e.target.className]: e.target.value
         })
     }
-    let isUserLogged=false;
+    let isUserLogged = false;
     let current_user;
 
     const handleLogin = () => {
         // console.log(userDetails);
-        users.forEach((item)=>{
-            if(item.password===userDetails.password && item.useremail===userDetails.useremail){
-                current_user = {isAuth:true, userid:item.userid};
-                isUserLogged=true;
+        users.forEach((item) => {
+            if (item.password === userDetails.password && item.useremail === userDetails.useremail) {
+                current_user = { isAuth: true, userid: item.userid };
+                isUserLogged = true;
                 return;
             }
         })
-        if(isUserLogged===true){
+        if (isUserLogged === true) {
             // localStorage.setItem("current_user", JSON.stringify({...current_user}));
-            fetch("http://localhost:3001/current_user/1",{
-                method:"PATCH",
-                body:JSON.stringify(current_user),
-                headers:{
-                    "Content-Type":"application/json"
+            fetch("http://localhost:3001/current_user/1", {
+                method: "PATCH",
+                body: JSON.stringify(current_user),
+                headers: {
+                    "Content-Type": "application/json"
                 }
             })
-            .then(()=>navigate("/"))
+                .then(() => navigate("/"))
         }
-        else{
+        else {
             alert("User Does not exist");
         }
         setUserDetails({
-            useremail:"",
-            password:""
+            useremail: "",
+            password: ""
         })
     }
 
-    const {useremail, password}=userDetails;
+    const { useremail, password } = userDetails;
     return (
         <>
-          <Right_div>
-             <h4>Login</h4>
-             <hr />
-             <label>Email</label>
-             <br />
-             <input type="text" placeholder="Your email" onChange={handleChange} className="useremail" value={useremail}/>
-             <br />
-             <label>Password</label>
-             <br />
-             <input type="password" placeholder="Your password" onChange={handleChange} className="password" value={password}/>
-             <Fp_login_div>
-                <p>Forgot password?</p>
-             <Login_button onClick={handleLogin}>Login</Login_button>
-             </Fp_login_div>
-         </Right_div>
+            <Right_div>
+                <h4>Login</h4>
+                <hr />
+                <label>Email</label>
+                <br />
+                <input type="text" placeholder="Your email" onChange={handleChange} className="useremail" value={useremail} />
+                <br />
+                <label>Password</label>
+                <br />
+                <input type="password" placeholder="Your password" onChange={handleChange} className="password" value={password} />
+                <Fp_login_div>
+                    <p>Forgot password?</p>
+                    <Login_button onClick={handleLogin}>Login</Login_button>
+                </Fp_login_div>
+            </Right_div>
         </>
     )
 }
