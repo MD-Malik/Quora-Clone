@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const post = new mongoose.Schema({
-    "postTitle": {type: string, required: true},
-    "postAnswers": [{"Images": {type: string},"content":{type: string, required: true}}],
-    "postedBy": { type: mongoose.Types.ObjectId, required: true},
-    "upvote": {type: number}
+    "title": {type: String, required: true},
+    "userId": {type: Number},
+    "comments": [{type: mongoose.Types.ObjectId, ref:"comment"}],
+    "descriptionId": [{type: mongoose.Schema.Types.ObjectId, ref: 'description'}],
 })
 
 module.exports = mongoose.model('post', post);
