@@ -69,4 +69,8 @@ app.get('/auth/facebook/callback',
   app.get('/verifyToken/:token', userController.verifyToken)
 
 
+app.post('/post',userController.createPost);
+app.get('/post', userController.getAllPost);
+app.get('/descriptionInfo/:postId', userController.getDescription)
+
 module.exports = app;
