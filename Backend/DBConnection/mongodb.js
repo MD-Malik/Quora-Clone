@@ -11,7 +11,7 @@ class mongo{
             console.log('MongoDB is Connected');
         })
         mongoose.connection.on('error', ()=>{
-            consolelog("error in mongodb connection")
+            console.log("error in mongodb connection")
         })
     }
 }

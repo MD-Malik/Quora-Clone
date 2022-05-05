@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 // import { LoginFooter } from '../Components/LoginFooter';
 import { ChangeAuth } from '../../Redux/Auth Reducer/action';
+import  api  from '../../apiLink';
 
 const Profile_div = styled.div`
 padding:10px;
@@ -75,20 +76,35 @@ export default function BasicMenu() {
   };
 
   const handleLogout = () => {
-    fetch("http://localhost:3001/current_user/1", {
-      method: "PATCH",
-      body: JSON.stringify({
-        isAuth: false,
-        userid: ""
-      }),
-      headers: {
-        "Content-Type": "application/json"
+    // fetch("http://localhost:3001/current_user/1", {
+    //   method: "PATCH",
+    //   body: JSON.stringify({
+    //     isAuth: false,
+    //     userid: ""
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   }
+    // })
+    //   .then(() => {
+    //     dispatch(ChangeAuth(false))
+    //     navigate("/login")
+    //   })
+    let current_user = JSON.parse(localStorage.getItem("current_user"))
+    fetch(`${api}/logout/${current_user.token}`, {
+      method : "DELETE",
+      headers : {
+        "Content-Type":"application/json"
       }
     })
-      .then(() => {
-        dispatch(ChangeAuth(false))
-        navigate("/login")
-      })
+    .then((res)=>res.json())
+    .then((res)=>{
+      if(res.status == "success"){
+        navigate("/login");
+        alert(res.message);
+        return;
+      }
+    })
   }
 
   const showProfile = () => {

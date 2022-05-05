@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid"
+import api from "../apiLink";
 import { ChangeAuth } from "../Redux/Auth Reducer/action";
 import { users } from "../Redux/User Reducer/action";
 
@@ -89,22 +90,20 @@ export const Signup = ({state}) => {
     const navigate = useNavigate();
     const {userReducer} = useSelector((state)=>state)
 
-    const updateUsers = () => {
-        fetch("http://localhost:3001/users")
-        .then((res)=>res.json())
-        .then((res)=>dispatch(users(res)))
-    }
-
-    const updateFromDataStorage = () => {
-        fetch("http://localhost:3001/current_user/1")
-        .then((res)=>res.json())
-        .then((res)=>dispatch(ChangeAuth(res.isAuth)))
-    }
 
     useEffect(()=>{
-        updateUsers();
-        updateFromDataStorage();
-        console.log(userReducer.users)        
+        let current_user = JSON.parse(localStorage.getItem("current_user"));
+        if(!current_user){
+            navigate('/login')
+            return;
+        }
+        fetch(`${api}/verifyToken/${current_user.token}`)
+        .then((res)=>res.json())
+        .then((res)=>{
+            if(res.isAuth){
+                navigate('/')
+            }
+        })
     },[])
 
     const [userDetails, setUserDetails] = React.useState({
@@ -121,57 +120,25 @@ export const Signup = ({state}) => {
 
         setUserDetails(payload)
     }
-let alreadyPresent=false
 
     const handleSubmit = () => {
-        console.log("done")
-        updateUsers();
-        userReducer.users.forEach((item)=>{
-            if(item.password===userDetails.password || item.useremail===userDetails.useremail){
-                alreadyPresent=true;
-                return;
-            }
-        })
-        if(alreadyPresent===true){
-            alreadyPresent=false;
-            alert("User Already Exist");
-            setNextCount(0)
-            return;
-        }
-        else{
-            
-            fetch("http://localhost:3001/users",{
+            fetch(`${api}/register`,{
             method:"POST",
-            body:JSON.stringify({
-                ...userDetails,
-                userid:uuid(),
-                isAuth:true,
-                userimage:"https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png",
-                followers: 0,
-                following: 0
-            }),
+            body:JSON.stringify(userDetails),
             headers:{
                 "Content-Type":"application/json"
             }
         })
         .then((res)=>res.json())
         .then((res)=>{
-            // localStorage.setItem("current_user", JSON.stringify({isAuth:true, userid:res.userid}));
-            // console.log(res);
-            fetch("http://localhost:3001/current_user/1",{
-                method:"PATCH",
-                body:JSON.stringify({
-                    isAuth:true,
-                    userid:res.userid
-                })
-            })
-            .then(()=>{
-                updateUsers();
-                updateFromDataStorage();
-            })
+            if(res.status=="failed"){
+                alert(res.message);
+                setNextCount(0)
+                return;
+            }
+            localStorage.setItem("current_user", JSON.stringify({token: res.token}));
+                navigate("/")
          })
-         .then(()=>navigate("/"))
-        }
     }
 
     return (

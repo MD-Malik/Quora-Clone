@@ -11,6 +11,8 @@ import { setUserDetails, setUserId } from '../Redux/CurrentUser Reducer/action';
 import { userReducer } from '../Redux/User Reducer/reducer';
 import { CreatePost } from '../Components/AddQuestion/CreatePost';
 import { ChangeAuth } from '../Redux/Auth Reducer/action';
+import api from '../apiLink';
+import { CleaningServicesOutlined } from '@mui/icons-material';
 
 
 export const Home = () => {
@@ -24,20 +26,23 @@ export const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuth === false) {
-      navigate("/login")
-    }
-    else {
-      fetch("http://localhost:3001/current_user/1")
-        .then((res) => res.json())
-        .then((res) => {
-          users.forEach((item) => {
-            if (item.userid === res.userid) {
-              currentuser_dispatch(setUserDetails(item))
-            }
-          })
-        })
-    }
+      // currentuser_dispatch(setUserDetails(item))
+      let current_user = JSON.parse(localStorage.getItem("current_user"));
+      console.log(current_user);
+      if(!current_user){
+        navigate("/login")
+        return;
+      }
+      fetch(`${api}/verifyToken/${current_user.token}`)
+      .then((res)=>res.json())
+      .then((res)=>{
+        console.log(res)
+        if(res.isAuth==false){
+          navigate("/login")
+          return;
+        }
+        navigate("/");
+      })
   }, [])
   return (
 
