@@ -1,65 +1,80 @@
-.navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    background-color: white;
-    width:100%;
-    position: sticky;
-    z-index: 1000;
-    top:0;
-    box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.5);
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: white;
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.5);
 }
 
-.navbar-logo > img{
-    height:50px;
-    margin-right: 20px;
+.navbar-logo > img {
+  height: 50px;
+  margin-right: 20px;
 }
-.navbar-logo:hover{
-    cursor:pointer;
+.navbar-logo:hover {
+  cursor: pointer;
 }
-.navbar-icons{
-   display: flex;
-   gap: 15px;
-   margin-right: 20px;
-   font-size: 35px;
-}
-
-.icon{
-    display: flex;
-    font-size: 35px;
+.navbar-icons {
+  display: flex;
+  gap: 25px;
+  /* margin-right: 20px; */
+  font-size: 35px;
 }
 
-.icon > .MuiSvgIcon-root{
-    color: gray;
-    cursor: pointer;
-    font-size: xx-large;
-    padding: 5px 15px;
+.icon {
+  display: flex;
+  font-size: 35px;
 }
 
-.navbar-search{
-    display: flex;
-    align-items: center;
-    border: 1px solid lightgray;
-    padding: 5px;
-    border-radius: 5px ;
+.icon > .MuiSvgIcon-root {
+  color: gray;
+  cursor: pointer;
+  font-size: xx-large;
+  padding: 5px 15px;
 }
 
-.navbar-search > input{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: rgb(49,49,49);
-}
-.navbar-right{
-    display: flex;
-    gap:15px;
-    margin-left: 25px;
-    align-items: center;
+.navbar-search {
+  display: flex;
+  margin: 0px 15px;
+  align-items: center;
+  border: 1px solid lightgray;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.navbar-right input{
-    border: 1px solid lightgray;
-    padding: 5px;
-    border-radius: 10px ;
+.navbar-search > input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgb(49, 49, 49);
+}
+.navbar-right {
+  display: flex;
+  gap: 12px;
+  margin-left: 25px;
+  align-items: center;
+}
+
+.navbar-right input {
+  border: 1px solid lightgray;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.try-quora-div {
+  width: 25%;
+}
+.try-quora-div input {
+  padding: 5px 7px;
+  width: 80%;
+  background-color: #eeeef1;
+}
+.try-quora-div input:hover {
+  cursor: pointer;
+  background-color: #d1d1d4;
 }

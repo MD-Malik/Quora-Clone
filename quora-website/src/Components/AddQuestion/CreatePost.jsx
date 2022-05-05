@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import uuid from 'react-uuid'
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import CloseIcon from '@mui/icons-material/Close';
 import styled from "styled-components"
 import { isBoxVisibleReducer } from "../../Redux/ShowAddQuestion Reducer/reducer";
 import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
@@ -152,7 +153,7 @@ flex-direction:column;
     }
 }
 `
-const Outer_div = styled.div`
+const OuterDiv = styled.div`
 position:absolute;
 width:100%;
 top:100px;
@@ -290,19 +291,21 @@ export const CreatePost = () => {
 
     return (
         <>
-            <Outer_div hidden={isBoxVisible}>
+            <OuterDiv hidden={isBoxVisible}>
                 <Div>
-                    <h1 onClick={() => dispatch(isBoxVisibleAction(true))}>X</h1>
-                    <div>
-                        <div props={task}>
-                            <img src="https://cdn-icons-png.flaticon.com/128/942/942802.png" alt="?" />
+
+                    <div onClick={() => dispatch(isBoxVisibleAction(true))}>
+                        <CloseIcon />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <div props={task} >
                             <p onClick={() => setTask("addquestion")}>Add Question</p>
                         </div>
-                        <div props={task}>
-                            <img src="https://cdn-icons-png.flaticon.com/128/1250/1250615.png" alt="pencil" />
+                        <div props={task} >
                             <p onClick={() => setTask("createpost")}>Create Post</p>
                         </div>
                     </div>
+
                     <div hidden={task === "createpost"}>
                         <h5>Tips on getting good ansers quickly</h5>
                         <ul>
@@ -311,14 +314,18 @@ export const CreatePost = () => {
                             <li>Double-check grammer and spelling</li>
                         </ul>
                     </div>
+
                     <div style={{ marginTop: "20px" }}>
                         <img src={user_details.userimage} alt="profile_img" />
-                        <button>
-                            <img src="https://cdn-icons-png.flaticon.com/128/615/615075.png" alt="public" />
+                        <button style={{ border: '1px solid #D5D4D4', display: 'flex', alignContent: 'center' }}>
+                            <div>
+                                <img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/128/615/615075.png" alt="public" />
+                            </div>
                             <p>Public</p>
                             <p>{">"}</p>
                         </button>
                     </div>
+
                     <div>
                         <input type="text" placeholder={task === "addquestion" ? 'Start your question with "What", "Why", etc.' : 'Say something...'} onChange={
                             (e) => { setMsg(e.currentTarget.value) }
@@ -327,10 +334,12 @@ export const CreatePost = () => {
                             progress > 0 && progress < 100 ? <ProgressH2>Progress {progress}%</ProgressH2> : null
                         }
                     </div>
+
                     <div style={task === "createpost" ? { border: "none" } : { borderTop: "2px solid grey" }}>
                         <button hidden={task === "createpost"} onClick={() => { saveQuestion(msg) }} >Add question</button>
                         <button hidden={task === "createpost"} onClick={() => dispatch(isBoxVisibleAction(true))}>Cancel</button>
                     </div>
+
                     <CreatePostStyle hidden={task === "addquestion"}>
                         <div hidden={task === "addquestion"}>
 
@@ -347,8 +356,9 @@ export const CreatePost = () => {
                             <button onClick={() => uploadFiles(image)}>Post</button>
                         </div>
                     </CreatePostStyle>
+
                 </Div>
-            </Outer_div>
+            </OuterDiv>
         </>
     )
 }
