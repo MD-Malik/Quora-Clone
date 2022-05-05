@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import api from "../apiLink";
 import { Login_div } from "../Components/Login";
 import { LoginFooter } from "../Components/LoginFooter";
 import { LoginLeftDiv } from "../Components/LoginLeftDiv";
 import { Signup } from "../Components/Signup";
 import { ChangeAuth } from "../Redux/Auth Reducer/action";
+
 
 const login_box = {
     backgroundColor:"white",
@@ -47,14 +49,19 @@ export const Login = () => {
 
     
     useEffect(()=>{
-        // const current_user=JSON.parse(localStorage.getItem("current_user"));
-        fetch("http://localhost:3001/current_user/1")
-        .then((res)=>res.json())
-        .then((res)=>{dispatch(ChangeAuth(res.isAuth))
-        if(res.isAuth===true){
-            navigate("/");
+        const current_user=JSON.parse(localStorage.getItem("current_user"));
+        if(!current_user){
             return;
-        }})
+        }
+        fetch(`${api}/verifyToken/${current_user.token}`)
+        .then((res)=>res.json())
+        .then((res)=>{
+            if(res.isAuth==true){
+                navigate("/")
+                return;
+            }
+            navigate('/login')
+        })
         
     },[])
     
