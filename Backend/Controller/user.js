@@ -12,13 +12,13 @@ async function createPost(req, res, next){
     try{
         let post = req.body;
         let response = await postModel.insertMany([post]);
-        let description = {
+        let descriptioninfo = {
             postId: response[0]._id,
             title: req.body.description.title,
             images: req.body.description.images
         }
-        console.log(description);
-        await descriptionModel.insertMany([description]);
+        console.log(descriptioninfo);
+        await descriptionModel.insertMany([descriptioninfo]);
         console.log(response);
         res.status(200).json(response);
     }
@@ -29,7 +29,7 @@ async function createPost(req, res, next){
 
 async function getAllPost(req,res,next){
     try{
-        let response = await postModel.find({})
+        let response = await postModel.find({}).populate('descriptionId');
         console.log(response);
         res.json(response)
     }
@@ -41,7 +41,7 @@ async function getAllPost(req,res,next){
 async function getDescription(req,res,next){
     try{
         console.log(req.params);
-        let response = await descriptionModel.find({ postId: mongoose.Types.ObjectId(req.params.postId) });
+        let response = await descriptionModel.find({ postId: mongoose.Types.ObjectId(req.params.postId)}).populate('postId');
         res.json(response);
     }
     catch (error) {
