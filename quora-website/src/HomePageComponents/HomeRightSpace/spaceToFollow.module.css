@@ -62,9 +62,13 @@
   align-items: flex-start;
   column-gap: 10px;
 }
+.divMidImg {
+  width: 45px;
+  height: 45px;
+}
 .image_base {
-  width: 25px;
-  height: 25px;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .title {
