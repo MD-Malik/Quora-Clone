@@ -74,7 +74,6 @@ export const Navbar = () => {
           <input type="text" placeholder="Try Quora +" />
         </div>
         <div className="navbar-avtar">
-          {/* <Avatar style={{ width: '25px', height: "25px" }} /> */}
           <BasicMenu style={{ width: '5px', height: "5px" }} />
         </div>
         <LanguageIcon style={{ width: '30px', height: "30px" }} />
