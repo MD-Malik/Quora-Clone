@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
 import { isBoxVisibleReducer } from "../Redux/ShowAddQuestion Reducer/reducer";
 import FormDialog from "../Components/Answer/Giveanswer";
+import api from "../apiLink";
 
 const Ques_Link = styled(Link)`
 text-decoration:none;
@@ -34,9 +35,12 @@ export const Questions = () => {
   // console.log(isBoxVisible)
 
   useEffect(()=>{
-    fetch("http://localhost:3001/questions")
-    .then((res)=>res.json())
-    .then((res)=>setQuestionList(res))
+    fetch(`${api}/allQuestion`)
+    .then((res)=>res.json()) 
+    .then((res)=>{
+      console.log(res)
+      setQuestionList(res)
+    })
   },[])
 
   return (
@@ -56,7 +60,7 @@ export const Questions = () => {
       <div>
         <Ques_Link to="/">
           <h3>
-            {item.question}
+            {item.questionName}
           </h3>
         </Ques_Link>
         <p>No answer yet</p>

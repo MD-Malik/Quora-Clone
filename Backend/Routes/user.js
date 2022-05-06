@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const userController = require('../Controller/user')
+const postController = require('../Controller/post')
 const passportFacebook = require('../Authentication/facebookLogin');
 const passportGoogle = require('../Authentication/googleLogin');
 const user = require('../Models/user');
@@ -69,8 +70,10 @@ app.get('/auth/facebook/callback',
   app.get('/verifyToken/:token', userController.verifyToken)
 
 
-app.post('/post',userController.createPost);
-app.get('/post', userController.getAllPost);
-app.get('/descriptionInfo/:postId', userController.getDescription)
+app.post('/post',postController.createPost);
+app.get('/post', postController.getAllPost);
+app.post('/postQuestion', postController.createQuestion);
+app.get('/allQuestion',postController.getAllQuestion);
+app.post('/addAnswer', postController.addAnswer);
 
 module.exports = app;

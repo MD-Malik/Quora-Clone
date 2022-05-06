@@ -9,6 +9,7 @@ import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
 import { v4 as uuid } from "uuid"
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
 import { storage } from './firebase'
+import api from "../../apiLink";
 
 const Div = styled.div`
 background:rgba(255, 255, 250, 1);
@@ -275,14 +276,14 @@ export const CreatePost = () => {
     // save question method;
     function saveQuestion(msg) {
         console.log(msg)
-        return fetch('http://localhost:3001/questions', {
+        return fetch(`${api}/postQuestion`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                question: msg,
-                questionid: uuid()
+                questionName: msg,
+                questionBy: "62740fba0499fee8d08776e3"
             })
         })
             .then(e => e.json())

@@ -9,6 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useSelector } from 'react-redux';
 import styled from "styled-components";
 import {v4 as uuid } from "uuid";
+import api from "../../apiLink";
 
 const User_name_p = styled.p`
 &:hover{
@@ -43,15 +44,18 @@ export default function FormDialog() {
 
   const handleSubmit = () => {
     console.log(ques_statement, answer_Statement )
-    fetch("http://localhost:3001/post", {
+    fetch(`${api}/addAnswer`, {
       method:"POST",
       body:JSON.stringify({
-        postid:uuid(),
-        message:answer_Statement,
-        title:ques_statement,
-        username:user_details.username,
-        userimage:user_details.userimage,
-        upvotes:0,
+        // postid:uuid(),
+        // message:answer_Statement,
+        // title:ques_statement,
+        questionId: "6274a57d85b8794d665de7e6",
+        answers: answer_Statement,
+        answeredBy:"62739960dd1c710ceb8584e8"
+        // username:user_details.username,
+        // userimage:user_details.userimage,
+        // upvotes:0,
       }),
       headers:{
         "Content-Type":"application/json"
