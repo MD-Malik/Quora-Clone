@@ -2,8 +2,9 @@
 const tokenModel = require('../Models/token');
 const encryptDecrypt = require('../CommonLib/encryption-decryption');
 const JWTService = require('../CommonLib/JWTtoken');
-const emailService = require('../Notification/emailService')
 const userModel = require('../Models/user');
+const emailService = require('../Notification/emailService');
+const { getMaxListeners } = require('../Models/post');
 
 async function registerUser(req, res, next){
     
@@ -71,13 +72,15 @@ async function loginUsingFacebook(req, res, next){
     if(userDetails){
         let token = JWTService.generateToken({...userDetails});
         await tokenModel.insertMany([{userid : userDetails._id, token}]);
-        localStorage.setItem("current_user", JSON.stringify({token}))
-        res.status(200).json(
-            {
-                message: "Success login",
-                token
-            }
-        )
+        // localStorage.setItem("current_user", JSON.stringify({token}))
+        // res.status(200).json(
+            // {
+            //     message: "Success login",
+            //     token
+            // }
+            
+        // )
+        res.render('home', {name: "Facebook LogIn", token});
     }
     else{
 
@@ -100,13 +103,14 @@ async function loginUsingFacebook(req, res, next){
             text: `Welcome ${resObject.username}`, // plain text body
             html: `<h2> Welcome ${resObject.username} you have been successfully registered to quora.com</h2>`, // html body
         });
-        HttpContext.Current.Response.Cookies["token"].Value = token;
+        // HttpContext.Current.Response.Cookies["token"].Value = token;
 
-        res.status(200).json(
-            {
-                message : "Registration Success",
-                token
-            })
+        // res.status(200).json(
+        //     {
+        //         message : "Registration Success",
+        //         token
+        //     })
+        res.render('home', {name: "Facebook LogIn", token});
     }
 
     
@@ -122,12 +126,9 @@ async function loginUsingGoogle(req, res){
     let response = await userModel.findOne({useremail})
 
     if(response){
-        let token = JWTService.generateToken({...response});
+        const token = JWTService.generateToken({...response});
         await tokenModel.insertMany([{userid : response._id, token}])
-        res.json({
-         message : "LogIn Successfull",
-         token
-     })
+        res.render('home', {name: "Google SignIn", token});
     }
     else{
         let userDetails = {
@@ -148,30 +149,34 @@ async function loginUsingGoogle(req, res){
             text: `Welcome ${userDetails.username}`, // plain text body
             html: `<h2> Welcome ${userDetails.username} you have been successfully registered to quora.com</h2>`, // html body
         });
-
-        res.json({
-            message : "SignUp Successfull",
-            token
-        })
+        console.log(response4)
+        res.render('home', {name: "Google SignUp", token});
     }
 }
 
 async function forgotPassword(req, res, next){
     let useremail = req.body.useremail;
+    if(useremail=='' || useremail.trim().split("@")[1]!="gmail.com"){
+        res.json({status : "failed", message : "Invalid email" })
+        return;
+    }
+     let userDetails = await userModel.findOne({useremail})
+    if(!userDetails){
+        res.json({status : "failed", message : "Invalid email" })
+        return;
+    }
     let randomNumber = Math.round(Math.random(10)*1000000);
-    let response = await userModel.updateOne({useremail},{$set:{password : `${randomNumber}`}});
-    if(!response){
-        res.json({status : "failed ", message : "Invalid password"})
-    }    
+     await userModel.updateOne({useremail},{$set:{password : `${randomNumber}`}});
+    
 
     await emailService.sendMail({
-
-        from: '"Quora.com" <noreply@gamil.com>', // sender address
+        from: '"Quora website" <noreply@gamil.com>', // sender address
         to: `${useremail}`, // list of receivers
-        subject: "Pawword reset mail", // Subject line
-        text: `${req.body.username}, please comfirm your email`, // plain text body
-        html: `<h2>  ${userDetails.username}, Your email confirmation code ${randomNumber}</h2>`, // html body
+        subject: "Password reset mail", // Subject line
+        text: `${userDetails.username}, please comfirm your email`, // plain text body
+        html: `<h2>  ${userDetails.username}, Your email confirmation code is ${randomNumber}</h2>`, // html body
     });
+    res.json({status : "success"})
     
 }
 
@@ -185,13 +190,14 @@ async function emailConfirmation(req, res, next){
     if(response.password!=usercode){
         res.json({status : "failed", message :"Wrong Confirmation code"})
     }
-    res.json({status : "Success", message : "Code Confirmed", userid : response.userid})
+    res.json({status : "Success", message : "Code Confirmed", userid : response._id})
 }
 
 async function resetPassword(req, res, next){
     let new_password = req.body.password;
     let userid = req.body.userid;
-    await userModel.updateOne({_id : userid},{$set:{password : new_password}});
+    let encryptedPassword = encryptDecrypt.encryptPassword(new_password)
+    await userModel.updateOne({_id : userid},{$set:{password : encryptedPassword}});
     res.json({status : "Success", message : 'Password Reset Done'})
 }
 

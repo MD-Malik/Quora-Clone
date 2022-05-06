@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 // import { LoginFooter } from '../Components/LoginFooter';
 import { ChangeAuth } from '../../Redux/Auth Reducer/action';
-import  api  from '../../apiLink';
+import  {api}  from '../../apiLink';
 
 const Profile_div = styled.div`
 padding:10px;
@@ -20,8 +20,8 @@ width:240px;
 flex-direction:column;
 &>img{
   border-radius:50%;
-  height:40px;
-  width:40px;
+  height:30px;
+  width:30px;
 }
 &>div{
   display:flex;

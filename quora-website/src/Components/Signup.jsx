@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid"
-import api from "../apiLink";
+import {api} from "../apiLink";
 import { ChangeAuth } from "../Redux/Auth Reducer/action";
 import { users } from "../Redux/User Reducer/action";
 

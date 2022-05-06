@@ -120,12 +120,21 @@ export const Component1 = () => {
           </div>
           <PostBottom upvote={post.upvotes} />
 
+<<<<<<< HEAD
         {/* {/* <div>
          <h4>{post.title}</h4>
          <img src = {post.images} alt = "" style={{width:"100%"}}/>
         </div>
           <PostBottom upvote = {post.upvotes} /> */}
         {/* </div>
+=======
+          {/* <div>
+         <h4>{post.title}</h4>
+         <img src = {post.images} alt = "" style={{width:"100%"}}/>
+        </div>
+          <PostBottom upvote = {post.upvotes} /> }
+        </div>
+>>>>>>> a0dfd77265a5ff5c815e31c816dd63353131179c
         ))} */}
         </PostList>
       ))

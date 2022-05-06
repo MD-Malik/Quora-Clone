@@ -1,0 +1,10 @@
+<p>
+    {{name}} successfull 
+    <input type="hidden" id="token" value="{{token}}">
+</p>
+<script>
+    let token = document.getElementById("token").value
+    {{!-- localStorage.setItem("current_user", JSON.stringify({token})) --}}
+    window.location.href=`http://localhost:3000/token/${token}`
+    
+</script>
