@@ -4,7 +4,7 @@ const SECRET_KEY = "MY_secret_key";
 
 function generateToken(payload) {
 
-    let token = jwt.sign(payload, SECRET_KEY, { expiresIn: "60s" });
+    let token = jwt.sign(payload, SECRET_KEY);
     return token;
 }
 

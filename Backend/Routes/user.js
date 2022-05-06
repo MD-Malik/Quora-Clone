@@ -6,13 +6,15 @@ const passportFacebook = require('../Authentication/facebookLogin');
 const passportGoogle = require('../Authentication/googleLogin');
 const user = require('../Models/user');
 const cors = require('cors');
+const { engine } = require('express-handlebars')
 
 app.use(bodyParser.json([]))
 app.use(passportGoogle.initialize());
 app.use(cors())
 
-
-
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 app.get('/getAllUsers', userController.getAllUsers)
 

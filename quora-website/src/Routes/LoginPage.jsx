@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import api from "../apiLink";
+import { api } from "../apiLink";
 import { Login_div } from "../Components/Login";
 import { LoginFooter } from "../Components/LoginFooter";
 import { LoginLeftDiv } from "../Components/LoginLeftDiv";
