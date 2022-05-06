@@ -38,7 +38,7 @@
   font-size: xx-large;
   padding: 5px 15px;
 }
-.MuiAvatar-root {
+/* .MuiAvatar-root {
   width: 20px;
   height: 20px;
   display: flex;
@@ -52,7 +52,7 @@
   user-select: none;
   border-radius: 50%;
   justify-content: center;
-}
+} */
 .navbar-search {
   display: flex;
   margin: 0px 15px;
@@ -93,4 +93,8 @@
 .try-quora-div input:hover {
   cursor: pointer;
   background-color: #d1d1d4;
+}
+
+.icon_svg-fill_as_stroke:hover {
+  fill: red;
 }

@@ -3,10 +3,10 @@ import React from "react";
 // import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
 // import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
 // import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
-import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
+// import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
 import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
-import { Avatar } from "@material-ui/core";
+// import { Avatar } from "@material-ui/core";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import "../CSS/Navbar.css";
@@ -29,7 +29,7 @@ export const Navbar = () => {
         <div className="icon">
           <Tooltip title="Home">
             <Link to="/">
-              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m.308 12.058-.063.072a.625.625 0 0 0 .505.995h3.125V22.5c0 .345.28.625.625.625h5c.345 0 .625-.28.625-.625v-5a1.875 1.875 0 0 1 3.75 0v5c0 .345.28.625.625.625h5l.092-.007a.625.625 0 0 0 .533-.618v-9.375h3.125a.625.625 0 0 0 .442-1.067L12.442.808a.625.625 0 0 0-.884 0L.308 12.058ZM12 2.133l9.742 9.742H19.5l-.092.007a.625.625 0 0 0-.533.618v9.375h-3.75V17.5c0-1.726-1.4-3.125-3.125-3.125l-.177.005a3.125 3.125 0 0 0-2.948 3.12v4.375h-3.75V12.5l-.007-.092a.625.625 0 0 0-.618-.533H2.257L12 2.133Z" class="icon_svg-fill_as_stroke" fill="#666"></path></svg>
+              <svg class="icon_svg-fill_as_stroke" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m.308 12.058-.063.072a.625.625 0 0 0 .505.995h3.125V22.5c0 .345.28.625.625.625h5c.345 0 .625-.28.625-.625v-5a1.875 1.875 0 0 1 3.75 0v5c0 .345.28.625.625.625h5l.092-.007a.625.625 0 0 0 .533-.618v-9.375h3.125a.625.625 0 0 0 .442-1.067L12.442.808a.625.625 0 0 0-.884 0L.308 12.058ZM12 2.133l9.742 9.742H19.5l-.092.007a.625.625 0 0 0-.533.618v9.375h-3.75V17.5c0-1.726-1.4-3.125-3.125-3.125l-.177.005a3.125 3.125 0 0 0-2.948 3.12v4.375h-3.75V12.5l-.007-.092a.625.625 0 0 0-.618-.533H2.257L12 2.133Z" class="icon_svg-fill_as_stroke" fill="#666"></path></svg>
             </Link>
           </Tooltip>
         </div>
