@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import uuid from 'react-uuid'
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import CloseIcon from '@mui/icons-material/Close';
 import styled from "styled-components"
 import { isBoxVisibleReducer } from "../../Redux/ShowAddQuestion Reducer/reducer";
@@ -9,6 +10,8 @@ import { isBoxVisibleAction } from "../../Redux/ShowAddQuestion Reducer/action";
 import { v4 as uuid } from "uuid"
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
 import { storage } from './firebase'
+import { api } from "../../apiLink";
+import { Component1 } from "../../HomePageComponents/Component1";
 
 const Div = styled.div`
 background:rgba(255, 255, 250, 1);
@@ -230,7 +233,27 @@ export const CreatePost = () => {
 
     const [progress, setProgress] = useState(0)
 
+    const[user,setUser] = useState({})
+
     const dispatch = useDispatch(isBoxVisibleReducer);
+
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        let current_user = JSON.parse(localStorage.getItem("current_user"));
+        if(!current_user){
+            navigate('/login')
+            return;
+        }
+        fetch(`${api}/user/${current_user.token}`)
+        .then((res)=>res.json())
+        .then((res)=>{
+            // if(res.isAuth){
+            //     navigate('/')
+            // }
+            setUser(res)
+        })
+    },[])
 
     // upload file method to save pic to firebase;
     const uploadFiles = (file) => {
@@ -251,7 +274,22 @@ export const CreatePost = () => {
                 getDownloadURL(uploadTask.snapshot.ref)
                     .then((url) =>
                         // console.log('hi')
-                        save({ userimage: user_details.userimage, username: user_details.username, images: url, title: '', message: msg, postid: uuid(), userid: user_details.userid, upvotes: 0, })
+                        // save({ userimage: user_details.userimage, 
+                        //     username: user_details.username, 
+                        //     images: url, 
+                        //     title: '', 
+                        //     message: msg, 
+                        //     postid: uuid(), 
+                        //     userid: user_details.userid, 
+                        //     upvotes: 0, 
+                        // })
+                        save({ 
+                            title: msg, 
+                            userId: user._id, 
+                            descriptions:{
+                                image:url,
+                            }
+                        })
                     )
             }
         );
@@ -259,7 +297,7 @@ export const CreatePost = () => {
     };
     // save image on firebase method;
     function save(param) {
-        return fetch('http://localhost:3001/post', {
+        return fetch(`${api}/post`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -267,22 +305,24 @@ export const CreatePost = () => {
             body: JSON.stringify(param)
         })
             .then(e => e.json())
-            .then(e =>
+            .then(e =>{
                 dispatch(isBoxVisibleAction(true))
+                console.log(e)
+             }
             );
     }
 
     // save question method;
     function saveQuestion(msg) {
         console.log(msg)
-        return fetch('http://localhost:3001/questions', {
+        return fetch(`${api}/postQuestion`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                question: msg,
-                questionid: uuid()
+                questionName: msg,
+                questionBy: "62740fba0499fee8d08776e3"
             })
         })
             .then(e => e.json())

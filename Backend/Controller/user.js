@@ -1,11 +1,8 @@
 
-const postModel = require('../Models/post');
-const questionModel = require('../Models/question');
-const descriptionModel = require('../Models/description');
-const userModel = require('../Models/user');
 const tokenModel = require('../Models/token');
 const encryptDecrypt = require('../CommonLib/encryption-decryption');
 const JWTService = require('../CommonLib/JWTtoken');
+const userModel = require('../Models/user');
 const emailService = require('../Notification/emailService');
 const { getMaxListeners } = require('../Models/post');
 
@@ -213,12 +210,14 @@ async function verifyToken(req, res, next){
 
 async function getUserByToken(req, res, next){
     let token = req.params.token;
+    console.log(token)
     let response1 = await tokenModel.findOne({token});
     if(!response1){
         res.json({status : "failed", message : "Invalid Token"})
         return;
     }
     let response2 = await userModel.findOne({_id: response1.userid});
+    console.log(response2);
     if(!response2){
         res.json({status : "failed", message : "Invalid Token"})
         return;
@@ -226,58 +225,6 @@ async function getUserByToken(req, res, next){
     res.json(response2);
 }
 
-async function createPost(req, res, next){
-    try{
-        let post = req.body;
-        let response = await postModel.insertMany([post]);
-        let descriptioninfo = {
-            postId: response[0]._id,
-            title: req.body.description.title,
-            images: req.body.description.images
-        }
-        console.log(descriptioninfo);
-        await descriptionModel.insertMany([descriptioninfo]);
-        console.log(response);
-        res.status(200).json(response);
-    }
-    catch (error) {
-        res.status(500).json(error);
-    }
-}
-
-async function getAllPost(req,res,next){
-    try{
-        let response = await postModel.find({}).populate('descriptionId');
-        console.log(response);
-        res.json(response)
-    }
-    catch (error) {
-        res.status(500).json(error);
-    }
-}
-
-async function getDescription(req,res,next){
-    try{
-        console.log(req.params);
-        let response = await descriptionModel.find({ postId: mongoose.Types.ObjectId(req.params.postId)}).populate('postId');
-        res.json(response);
-    }
-    catch (error) {
-        res.status(500).json(error);
-    }
-}
-
-async function  createQuestion(req, res, next){
-    try{
-        let question = req.body;
-        let response = await questionModel.insertMany([question]);
-        console.log(response);
-        res.json(response)
-    }
-    catch (error) {
-        res.status(500).json(error);
-    }
-}
 
 async function uploadImage(req, res, next){
     let userimage = req.body.userimage;
@@ -291,10 +238,6 @@ async function uploadImage(req, res, next){
     res.json({status : "success", message : "Profile Image uploaded successfully"})
 }
 module.exports = {
-    createPost,
-    getAllPost,
-    createQuestion,
-    getDescription,
     registerUser,
     signIn,
     logout,
