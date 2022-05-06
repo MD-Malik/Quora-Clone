@@ -75,4 +75,6 @@ app.post('/post',userController.createPost);
 app.get('/post', userController.getAllPost);
 app.get('/descriptionInfo/:postId', userController.getDescription)
 
+app.post('/uploadImage', userController.uploadImage)
+
 module.exports = app;

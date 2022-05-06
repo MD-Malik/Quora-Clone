@@ -350,7 +350,6 @@ export const CreatePost = () => {
                                     <img src="https://cdn-icons-png.flaticon.com/128/1060/1060418.png" width='25px' type="file" alt="galary" />
                                 </FileLabel>
                                 <FileInput id="file-upload" type='file' onChange={e => { e.target.files[0] != null ? setImage(e.target.files[0]) : setImage(null) }} />
-
                             </div>
 
                             <button onClick={() => uploadFiles(image)}>Post</button>

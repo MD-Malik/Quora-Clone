@@ -68,6 +68,18 @@ export default function BasicMenu() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const open = Boolean(anchorEl);
+  const [userInfo, setUserInfo] = React.useState({});
+
+  React.useEffect(()=>{
+    let current_user = JSON.parse(localStorage.getItem("current_user"))
+    fetch(`${api}/user/${current_user.token}`)
+    .then((res)=>res.json())
+    .then((res)=>{
+      // console.log(res)
+      setUserInfo(res)
+    })
+  },[])
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -76,20 +88,7 @@ export default function BasicMenu() {
   };
 
   const handleLogout = () => {
-    // fetch("http://localhost:3001/current_user/1", {
-    //   method: "PATCH",
-    //   body: JSON.stringify({
-    //     isAuth: false,
-    //     userid: ""
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   }
-    // })
-    //   .then(() => {
-    //     dispatch(ChangeAuth(false))
-    //     navigate("/login")
-    //   })
+    
     let current_user = JSON.parse(localStorage.getItem("current_user"))
     fetch(`${api}/logout/${current_user.token}`, {
       method : "DELETE",
@@ -133,9 +132,9 @@ export default function BasicMenu() {
       >
         <MenuItem onClick={showProfile}>
           <Profile_div>
-            <img src="https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png" alt="img" />
+            <img src={userInfo.userimage} alt="img" style={{width:"40px"}}/>
             <div>
-              <h3>User Name</h3>
+              <h3>{userInfo.username}</h3>
               <h2>{">"}</h2>
             </div>
           </Profile_div>
