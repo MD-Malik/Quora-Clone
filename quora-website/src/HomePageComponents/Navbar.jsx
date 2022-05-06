@@ -74,8 +74,8 @@ export const Navbar = () => {
           <input type="text" placeholder="Try Quora +" />
         </div>
         <div className="navbar-avtar">
-          <Avatar style={{ width: '25px', height: "25px" }} />
-          {/* <BasicMenu style={{ width: '10px', height: "10px" }} /> */}
+          {/* <Avatar style={{ width: '25px', height: "25px" }} /> */}
+          <BasicMenu style={{ width: '5px', height: "5px" }} />
         </div>
         <LanguageIcon style={{ width: '30px', height: "30px" }} />
         <Button onClick={() => dispatch(isBoxVisibleAction(false))} style={{ backgroundColor: 'red', textTransform: 'none', borderRadius: '50px', height: '30px', padding: '0px 10px', color: 'white' }}>Add Question

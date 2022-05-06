@@ -2,7 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import api from "../apiLink";
+import {api} from "../apiLink";
+import { Popover } from '@mui/material';
 
 const Fp_login_div = styled.div`
 display:flex;
@@ -77,8 +78,6 @@ export const Login_div = () => {
             [e.target.className]: e.target.value
         })
     }
-    let isUserLogged = false;
-    let current_user;
 
     const handleLogin = () => {
         fetch(`${api}/signIn`, {
@@ -107,6 +106,25 @@ export const Login_div = () => {
         })
     }
 
+    const handleForgotPassword = () => {
+        fetch(`${api}/forgotPassword`, {
+            method : "POST",
+            body: JSON.stringify({useremail : userDetails.useremail}),
+            headers : {
+                "Content-Type":"application/json"
+            }
+        })
+        .then((res)=>res.json())
+        .then((res)=>{
+            if(res.status=="failed"){
+                alert(res.message)
+                return;
+            }
+            navigate('/confirmPassword')
+        })
+        
+    }
+
     const { useremail, password } = userDetails;
     return (
         <>
@@ -121,7 +139,9 @@ export const Login_div = () => {
                 <br />
                 <input type="password" placeholder="Your password" onChange={handleChange} className="password" value={password} />
                 <Fp_login_div>
-                    <p>Forgot password?</p>
+                <p onClick={handleForgotPassword}>
+                    Forgot Password
+                </p>
                     <Login_button onClick={handleLogin}>Login</Login_button>
                 </Fp_login_div>
             </Right_div>
