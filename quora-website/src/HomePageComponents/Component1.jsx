@@ -12,6 +12,7 @@ import { PostMiddle } from "./Postpage/PostMiddle";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../Redux/PostReducer/action";
 import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
+import {api} from "../apiLink";
 
 export const Component1 = () => {
 
@@ -19,10 +20,10 @@ export const Component1 = () => {
   // console.log("post", posts);
   const dispatch = useDispatch();
   const getPosts = () => {
-    fetch(`http://localhost:3001/post`)
+    fetch(`${api}/post`)
       .then((res) => res.json())
       .then((res) => {
-        // console.log("res:", res);
+        console.log("resPost:", res);
         dispatch(getPost(res));
       });
   };
@@ -105,7 +106,7 @@ export const Component1 = () => {
                 alignItems: 'center'
               }}>
                 <Avatar style={{ height: "35px", width: "35px" }} />
-                <span style={{ marginLeft: '5px' }}> {post.username}</span>
+                <span style={{ marginLeft: '5px' }}> {post.userId.username}</span>
               </div>
 
               <CloseIcon style={{ alignItems: 'flex-end', width: '20px', alignContent: 'flex-end' }} />
@@ -114,27 +115,17 @@ export const Component1 = () => {
           </div>
           <div >
             <p style={{ padding: '3px 23px' }}>
-              {post.message}
+              {post.descriptions.content}
             </p>
-            <img src={post.images} alt="" style={{ width: "100%" }} />
+            <img src={post.descriptions.image} alt="" style={{ width: "100%" }} />
           </div>
           <PostBottom upvote={post.upvotes} />
-
-<<<<<<< HEAD
-        {/* {/* <div>
-         <h4>{post.title}</h4>
-         <img src = {post.images} alt = "" style={{width:"100%"}}/>
-        </div>
-          <PostBottom upvote = {post.upvotes} /> */}
-        {/* </div>
-=======
           {/* <div>
          <h4>{post.title}</h4>
          <img src = {post.images} alt = "" style={{width:"100%"}}/>
         </div>
           <PostBottom upvote = {post.upvotes} /> }
         </div>
->>>>>>> a0dfd77265a5ff5c815e31c816dd63353131179c
         ))} */}
         </PostList>
       ))

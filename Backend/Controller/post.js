@@ -26,8 +26,7 @@ async function createPost(req, res, next){
 
 async function getAllPost(req,res,next){
     try{
-        let response = await postModel.find({});
-        console.log(response);
+        let response = await postModel.find({}).populate('userId');
         res.json(response)
     }
     catch (error) {
@@ -37,7 +36,6 @@ async function getAllPost(req,res,next){
 async function getAllQuestion(req,res,next){
     try{
         let response = await questionModel.find({});
-        console.log(response);
         res.json(response)
     }
     catch (error) {
@@ -60,7 +58,6 @@ async function  createQuestion(req, res, next){
     try{
         let question = req.body;
         let response = await questionModel.insertMany([question]);
-        console.log(response);
         res.json(response)
     }
     catch (error) {
@@ -73,11 +70,21 @@ async function addAnswer (req,res,next){
         req.body.questionId = mongoose.Types.ObjectId(req.body.questionId);
         let response = await answerModel.insertMany([req.body]);
         await questionModel.updateOne({_id: req.body.questionId}, {$push :{answers: response[0]._id}})
-        console.log(response);
+        let response1 = await questionModel.findOne({_id: req.body.questionId})
+        console.log("response1", response1)
+        let postData = {
+            title: response1.questionName,
+            userId: response1.questionBy,
+            descriptions:{
+                content: response[0].answers.content
+            }
+        }
+        console.log(postData);
+        await postModel.insertMany([postData]);
         res.status(200).json(response);
     }
     catch (error) {
-        res.status(500).json(error);
+        res.json(error);
     }
 }
 

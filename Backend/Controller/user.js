@@ -223,8 +223,10 @@ async function verifyToken(req, res, next){
 
 async function getUserByToken(req, res, next){
     let token = req.params.token;
+    console.log(token)
     let response1 = await tokenModel.findOne({token});
     let response2 = await userModel.findOne({_id: response1.userid});
+    console.log(response2);
     res.json(response2);
 }
 
