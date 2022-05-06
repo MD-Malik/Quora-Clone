@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components"
+import { api } from "../apiLink";
 import { Navbar } from "../HomePageComponents/Navbar";
 import { setUserDetails } from "../Redux/CurrentUser Reducer/action";
 import { currentUserReducer } from "../Redux/CurrentUser Reducer/reducer";
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import { styled as styledmui}  from '@mui/material/styles';
+import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage"
+import { v4 as uuid} from "uuid"
+import { storage } from "../Components/AddQuestion/firebase";
 
-// const Div_one = styled.div`
-// display:flex:
-// flex-direction:row;
-// `
+
 
 const Profile_div = styled.div`
 display:flex;
@@ -218,28 +222,80 @@ margin:auto;
     }
 }
 `
+// const FileInput = styled.input`
+//     display: none;
+//     `
+const Input = styledmui('input')({
+    display: 'none'
+  });
 
 export const Profile = () => {
-    const { user_details } = useSelector((state)=>state.currentUserReducer)
-    const dispatch = useDispatch(currentUserReducer)
+    const [user_details, setUserDetails] = React.useState({});
+    const [msg, setMsg] = React.useState('')
+    const [progress, setProgress] = React.useState(0)
 
     useEffect(()=>{
-        fetch("http://localhost:3001/current_user/1")
+        let current_user = JSON.parse(localStorage.getItem("current_user"))
+        fetch(`${api}/user/${current_user.token}`)
         .then((res)=>res.json())
         .then((res)=>{
-            fetch(`http://localhost:3001/users?userid=${res.userid}`)
-            .then((res)=>res.json())
-            .then((res)=>dispatch(setUserDetails(res[0])))
+            setUserDetails(res)
         })
 
-    },[])
+    },[msg])
+
+
+    const uploadFiles = (file) => {
+        // console.log("hello")
+        if (file == null) return;
+
+        const storageRef = ref(storage, `/images/${file.name}`);
+
+        const uploadTask = uploadBytesResumable(storageRef, file);
+
+        uploadTask.on("state_changed", (snapshot) => {
+            const prog = Math.round(
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            setProgress(prog)
+        },
+            (err) => console.log(err),
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref)
+                    .then((url) =>{
+                    // console.log(url)
+                        save(url)}
+                    )
+            }
+        );
+
+    };
+    // save image on firebase method;
+    function save(userimage) {
+        // console.log(userimage)
+
+        let current_user = JSON.parse(localStorage.getItem("current_user"))
+        console.log(current_user.token)
+        return fetch(`${api}/uploadImage`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({token : current_user.token, userimage : userimage})
+        })
+            .then((res)=>res.json())
+            .then((res)=>{
+                alert(res.message);
+                setMsg(res.message);
+            })
+    }
     return (
         <>
         <Navbar />
          <Profile_div>
            <div>
                <div>
-                   <img src={user_details.userimage} alt="userimage icon" />
+                   <img src={user_details.userimage} alt="userimage icon" style={{height:"140px", width:"140px"}}/>
                    <div>
                        <div>
                            <h1>{user_details.username}</h1>
@@ -250,7 +306,14 @@ export const Profile = () => {
                        <div>{user_details.followers} followers . {user_details.following} following</div>
                    </div>
                </div>
-               <p>Write a description about yourself</p>
+               <p>Write a description about yourself
+                   <label htmlFor="icon-button-file" style={{position: "relative", left:"-140px", top:"-100px"}}>
+                    <Input accept="image/*" id="icon-button-file" type="file" onChange={(e)=>uploadFiles(e.target.files[0])}/>
+                    <IconButton color="primary" aria-label="upload picture" component="span">
+                    <PhotoCamera style={{position:"relative"}} />
+                    </IconButton>
+                </label>
+               </p>
                <div>
                    <p>Profile</p>
                    <p>0 Answers</p>
