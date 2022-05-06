@@ -1,6 +1,5 @@
 const postModel = require("../Models/post");
 const questionModel = require("../Models/question");
-const descriptionModel = require("../Models/description");
 const userModel = require("../Models/user");
 const tokenModel = require("../Models/token");
 const encryptDecrypt = require("../CommonLib/encryption-decryption");
@@ -276,15 +275,21 @@ async function getDescription(req, res, next) {
   }
 }
 
-async function createQuestion(req, res, next) {
-  try {
-    let question = req.body;
-    let response = await questionModel.insertMany([question]);
-    console.log(response);
-    res.json(response);
-  } catch (error) {
-    res.status(500).json(error);
+async function getUserByToken(req, res, next) {
+  let token = req.params.token;
+  console.log(token);
+  let response1 = await tokenModel.findOne({ token });
+  if (!response1) {
+    res.json({ status: "failed", message: "Invalid Token" });
+    return;
   }
+  let response2 = await userModel.findOne({ _id: response1.userid });
+  console.log(response2);
+  if (!response2) {
+    res.json({ status: "failed", message: "Invalid Token" });
+    return;
+  }
+  res.json(response2);
 }
 
 async function uploadImage(req, res, next) {
@@ -305,10 +310,6 @@ async function uploadImage(req, res, next) {
   });
 }
 module.exports = {
-  createPost,
-  getAllPost,
-  createQuestion,
-  getDescription,
   registerUser,
   signIn,
   logout,

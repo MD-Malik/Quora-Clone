@@ -1,13 +1,18 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
-const userController = require("../Controller/user");
-const passportFacebook = require("../Authentication/facebookLogin");
+const bodyParser = require('body-parser')
+const userController = require('../Controller/user')
+const postController = require('../Controller/post')
+const passportFacebook = require('../Authentication/facebookLogin');
+
+const cors = require('cors');
+const { engine } = require('express-handlebars')
+
 const googleOuth = require("../Authentication/googleLogin");
 const user = require("../Models/user");
-const cors = require("cors");
+
 const passportGoogle = require("../Authentication/googleLogin");
-const { engine } = require("express-handlebars");
+
 
 app.use(bodyParser.json([]));
 app.use(googleOuth.initialize());
@@ -72,9 +77,11 @@ app.get("/user/:token", userController.getUserByToken);
 
 app.get("/verifyToken/:token", userController.verifyToken);
 
-app.post("/post", userController.createPost);
-app.get("/post", userController.getAllPost);
-app.get("/descriptionInfo/:postId", userController.getDescription);
+app.post('/post',postController.createPost);
+app.get('/post', postController.getAllPost);
+app.post('/postQuestion', postController.createQuestion);
+app.get('/allQuestion',postController.getAllQuestion);
+app.post('/addAnswer', postController.addAnswer);
 
 app.post('/uploadImage', userController.uploadImage)
 
