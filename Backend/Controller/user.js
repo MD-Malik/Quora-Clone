@@ -75,14 +75,7 @@ async function loginUsingFacebook(req, res, next){
     if(userDetails){
         let token = JWTService.generateToken({...userDetails});
         await tokenModel.insertMany([{userid : userDetails._id, token}]);
-        // localStorage.setItem("current_user", JSON.stringify({token}))
-        // res.status(200).json(
-            // {
-            //     message: "Success login",
-            //     token
-            // }
-            
-        // )
+        
         res.render('home', {name: "Facebook LogIn", token});
     }
     else{
@@ -91,7 +84,7 @@ async function loginUsingFacebook(req, res, next){
             username : req.user._json.name,
             useremail : req.user._json.email,
             password : "NA",
-            userimage : req.user._json.picture.data.url
+            userimage : "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png"
         }
         let response = await userModel.insertMany([resObject]);
 
@@ -106,13 +99,7 @@ async function loginUsingFacebook(req, res, next){
             text: `Welcome ${resObject.username}`, // plain text body
             html: `<h2> Welcome ${resObject.username} you have been successfully registered to quora.com</h2>`, // html body
         });
-        // HttpContext.Current.Response.Cookies["token"].Value = token;
-
-        // res.status(200).json(
-        //     {
-        //         message : "Registration Success",
-        //         token
-        //     })
+        
         res.render('home', {name: "Facebook LogIn", token});
     }
 
@@ -124,7 +111,7 @@ async function loginUsingGoogle(req, res){
     let username = req.user._json.name;
     let useremail = req.user._json.email;
     let password = `${Math.random(100)}${username}${Math.random(100)}${useremail}${Math.random(100)}`;
-    let userimage = req.user._json.picture;
+    let userimage = "https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png";
 
     let response = await userModel.findOne({useremail})
 
@@ -227,7 +214,15 @@ async function verifyToken(req, res, next){
 async function getUserByToken(req, res, next){
     let token = req.params.token;
     let response1 = await tokenModel.findOne({token});
+    if(!response1){
+        res.json({status : "failed", message : "Invalid Token"})
+        return;
+    }
     let response2 = await userModel.findOne({_id: response1.userid});
+    if(!response2){
+        res.json({status : "failed", message : "Invalid Token"})
+        return;
+    }
     res.json(response2);
 }
 
@@ -284,6 +279,17 @@ async function  createQuestion(req, res, next){
     }
 }
 
+async function uploadImage(req, res, next){
+    let userimage = req.body.userimage;
+    if(!userimage){
+        res.json({status : 'failed', message : "Image upload failed"})
+        return;
+    }
+    let token = req.body.token;
+    let response1 = await tokenModel.findOne({token})
+    let response2 = await userModel.updateOne({_id : response1.userid},{$set:{userimage}});
+    res.json({status : "success", message : "Profile Image uploaded successfully"})
+}
 module.exports = {
     createPost,
     getAllPost,
@@ -300,5 +306,6 @@ module.exports = {
     resetPassword,
     getAllUsers,
     verifyToken,
-    getUserByToken
+    getUserByToken,
+    uploadImage
 }
