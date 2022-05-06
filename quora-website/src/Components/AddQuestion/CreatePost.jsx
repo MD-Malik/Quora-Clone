@@ -356,7 +356,7 @@ export const CreatePost = () => {
                     </div>
 
                     <div style={{ marginTop: "20px" }}>
-                        <img src={user_details.userimage} alt="profile_img" />
+                        <img src={user.userimage} alt="profile_img" style={{width:"27px", height:"27px"}}/>
                         <button style={{ border: '1px solid #D5D4D4', display: 'flex', alignContent: 'center' }}>
                             <div>
                                 <img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/128/615/615075.png" alt="public" />
