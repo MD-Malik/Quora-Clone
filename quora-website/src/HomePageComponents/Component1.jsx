@@ -17,6 +17,14 @@ import { api } from "../apiLink";
 export const Component1 = () => {
 
   const { posts } = useSelector((state) => state.postReducer);
+  const [userAvtar, setUserAvtar] = React.useState("")
+
+  const getUser = () => {
+    let current_user = JSON.parse(localStorage.getItem("current_user"));
+    fetch(`${api}/user/${current_user.token}`)
+    .then((res)=>res.json())
+    .then((res)=>setUserAvtar(res.userimage))
+  }
   // console.log("post", posts);
   const dispatch = useDispatch();
   const getPosts = () => {
@@ -30,6 +38,7 @@ export const Component1 = () => {
 
   useEffect(() => {
     getPosts();
+    getUser();
   }, []);
 
   const PostList = styled.div`
@@ -65,7 +74,7 @@ export const Component1 = () => {
           alignContent: 'space-around',
         }} >
         <div style={{ display: "flex", alignContent: 'space-around', justifyContent: 'center', columnGap: '1%' }}>
-          <Avatar style={{ height: "30px", width: "30px" }} />
+          <Avatar style={{ height: "30px", width: "30px" }} src={userAvtar}/>
           <Button style={{
             textAlign: 'left', width: '90%', border: "1px solid #dee0dc", borderRadius: '70px', backgroundColor: '#F7F7F8', justifyContent: 'start', color: '#A6A8AA', fontSize: '11px', padding: '0px 10px'
           }} href="#text-buttons" size="large" onClick={() => dispatch(isBoxVisibleAction(false))}>
@@ -104,7 +113,7 @@ export const Component1 = () => {
                 columnGap: '1%',
                 alignItems: 'center'
               }}>
-                <Avatar style={{ height: "35px", width: "35px" }} />
+                <Avatar style={{ height: "35px", width: "35px" }} src={post.userId.userimage}/>
                 <span style={{ marginLeft: '5px' }}> {post.userId.username}</span>
               </div>
 
