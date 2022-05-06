@@ -105,7 +105,7 @@ export const Component1 = () => {
                 columnGap: '1%',
                 alignItems: 'center'
               }}>
-                <Avatar style={{ height: "35px", width: "35px" }} />
+                <Avatar src = {post.userId.userimage}style={{ height: "35px", width: "35px" }} />
                 <span style={{ marginLeft: '5px' }}> {post.userId.username}</span>
               </div>
 
