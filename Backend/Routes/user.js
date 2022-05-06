@@ -6,6 +6,8 @@ const passportFacebook = require("../Authentication/facebookLogin");
 const googleOuth = require("../Authentication/googleLogin");
 const user = require("../Models/user");
 const cors = require("cors");
+const passportGoogle = require("../Authentication/googleLogin");
+const { engine } = require("express-handlebars");
 
 app.use(bodyParser.json([]));
 app.use(googleOuth.initialize());
@@ -16,6 +18,10 @@ app.get("/getAllUsers", userController.getAllUsers);
 app.post("/register", userController.registerUser);
 
 app.post("/signIn", userController.signIn);
+
+app.engine("handlebars", engine());
+app.set("view engine", "handlebars");
+app.set("views", "./views");
 
 app.delete("/logout/:token", userController.logout);
 

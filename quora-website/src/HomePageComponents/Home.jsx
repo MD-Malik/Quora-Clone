@@ -11,7 +11,7 @@ import { setUserDetails, setUserId } from '../Redux/CurrentUser Reducer/action';
 import { userReducer } from '../Redux/User Reducer/reducer';
 import { CreatePost } from '../Components/AddQuestion/CreatePost';
 import { ChangeAuth } from '../Redux/Auth Reducer/action';
-import api from '../apiLink';
+import {api} from '../apiLink';
 import { CleaningServicesOutlined } from '@mui/icons-material';
 
 

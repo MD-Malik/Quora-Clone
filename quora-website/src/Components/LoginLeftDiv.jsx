@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
-import api from "../apiLink";
+import {api} from "../apiLink";
 
 const Left_div = styled.div`
 display:flex;
@@ -60,24 +60,20 @@ export const LoginLeftDiv = ({state}) => {
 
     let navigate = useNavigate();
 
-    const handleClick=()=>{
-        console.log(window.location.href)
-        window.location.href = "http://localhost:9008/google";
-        setTimeout(() => {
-            console.log(window.location.href)
-        }, 3000);
+    const handleClick=(path)=>{
+        window.location.href = `${api}${path}`;
     }
 
 
     return (
         <>
                     <Left_div>
-                        {/* <a href={api+"/google"}> */}
-                         <ELIDiv onClick={handleClick}>
+                        
+                         <ELIDiv onClick={()=>handleClick(`/google`)}>
                              <img src="https://www.bing.com/th?id=OIP.bUazsv7bC2pTq1nFHvqg4AHaD4&w=187&h=170&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" alt="google" />
                              <h4>Continue with Google</h4>
                          </ELIDiv>
-                         {/* </a> */}
+                        
                          <ELIDiv onClick={()=>handleClick("/auth/facebook")}>
                              <img src="https://www.bing.com/th?id=OIP.bOdxtMx_BX8ICFq2szS3HwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" alt="facebook" />
                              <h4>Continue with Facebook</h4>
