@@ -31,12 +31,28 @@
 }
 
 .icon > .MuiSvgIcon-root {
+  width: 20px;
+  height: 5px;
   color: gray;
   cursor: pointer;
   font-size: xx-large;
   padding: 5px 15px;
 }
-
+.MuiAvatar-root {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1;
+  user-select: none;
+  border-radius: 50%;
+  justify-content: center;
+}
 .navbar-search {
   display: flex;
   margin: 0px 15px;
