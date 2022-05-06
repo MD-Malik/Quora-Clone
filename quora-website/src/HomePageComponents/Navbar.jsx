@@ -15,6 +15,7 @@ import BasicMenu from "./ProfileComponents/BasicMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { isBoxVisibleReducer } from "../Redux/ShowAddQuestion Reducer/reducer";
 import { isBoxVisibleAction } from "../Redux/ShowAddQuestion Reducer/action";
+import { api } from "../apiLink"
 
 export const Navbar = () => {
   const navigate = useNavigate()
@@ -74,7 +75,7 @@ export const Navbar = () => {
           <input type="text" placeholder="Try Quora +" />
         </div>
         <div className="navbar-avtar">
-          <BasicMenu style={{ width: '5px', height: "5px" }} />
+          <BasicMenu style={{ width: '7px', height: "7px" }}/>
         </div>
         <LanguageIcon style={{ width: '30px', height: "30px" }} />
         <Button onClick={() => dispatch(isBoxVisibleAction(false))} style={{ backgroundColor: 'red', textTransform: 'none', borderRadius: '50px', height: '30px', padding: '0px 10px', color: 'white' }}>Add Question

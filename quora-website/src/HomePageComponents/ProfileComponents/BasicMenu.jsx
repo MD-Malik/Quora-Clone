@@ -110,6 +110,19 @@ export default function BasicMenu() {
     navigate("/profile")
   }
 
+  const [userAvtar, setUserAvtar] = React.useState("")
+
+  const getUser = () => {
+    let current_user = JSON.parse(localStorage.getItem("current_user"));
+    fetch(`${api}/user/${current_user.token}`)
+    .then((res)=>res.json())
+    .then((res)=>setUserAvtar(res.userimage))
+  }
+
+  React.useEffect(()=>{
+    getUser();
+  },[])
+
   return (
     <div>
       <Button
@@ -119,7 +132,7 @@ export default function BasicMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <Avatar />
+        <Avatar src={userAvtar} style={{height:"30px", width:"30px"}}/>
       </Button>
       <Menu
         id="basic-menu"
