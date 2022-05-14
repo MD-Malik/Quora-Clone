@@ -33,7 +33,7 @@ passport.deserializeUser(function (user, done) {
 passport.use(new FacebookStrategy({
     clientID: "329209822655348",
     clientSecret: "85a9e6f5bf8d4dfc8e0964b305423c69",
-    callbackURL: "http://localhost:9008/auth/facebook/callback",
+    callbackURL: "https://quora-clone-backend.herokuapp.com/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'photos', 'email'],
     passReqToCallback: true
   },

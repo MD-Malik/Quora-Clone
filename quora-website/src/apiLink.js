@@ -1,3 +1,3 @@
-export const api = "http://localhost:9008";
+export const api = "https://quora-clone-backend.herokuapp.com";
 
 
