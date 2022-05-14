@@ -13,9 +13,9 @@ passportForGoogle.use(
   new GoogleStrategy(
     {
       clientID:
-        "281913688914-lsut6alanqb38gqoagkfc9lok484fs2e.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL: "http://localhost:9008/google/callback",
+        "281913688914-6koonm1m8laci0lt0lgvo6s811sm3i1d.apps.googleusercontent.com",
+      clientSecret: "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",
+      callbackURL: "https://quora-clone-backend.herokuapp.com/google/callback",
       passReqToCallback: true, //google authentication
     },
     function (request, accessToken, refreshToken, profile, done) {

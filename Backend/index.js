@@ -1,6 +1,8 @@
 const http = require('http');
 const app = require('./Routes/user')
-const port = 9008;
+const dotenv = require('dotenv')
+dotenv.config()
+const port = process.env.PORT;
 const mongodbconnection = require('./DBConnection/mongodb')
 
 http.createServer(app).listen(port, ()=>{
