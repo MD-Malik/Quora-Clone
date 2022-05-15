@@ -42,7 +42,7 @@ Start
 ![](https://github.com/Upendra-99/Quora-Clone/blob/master/quora-website/src/images/quora_image3.png?raw=true)
 ## Demo 🎥
 
-Deployed Link: [Quora Link](https://quora-clone-react-app.netlify.app)
+Deployed Link: [Quora Link](https://quoraclonewebsite.netlify.app/login)
 
 
 ## Authors 🤝
