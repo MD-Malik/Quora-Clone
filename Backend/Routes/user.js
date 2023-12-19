@@ -17,6 +17,10 @@ const passportGoogle = require("../Authentication/googleLogin");
 app.use(bodyParser.json([]));
 app.use(googleOuth.initialize());
 app.use(cors());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+})
 
 app.get("/getAllUsers", userController.getAllUsers);
 
@@ -77,10 +81,10 @@ app.get("/user/:token", userController.getUserByToken);
 
 app.get("/verifyToken/:token", userController.verifyToken);
 
-app.post('/post',postController.createPost);
+app.post('/post', postController.createPost);
 app.get('/post', postController.getAllPost);
 app.post('/postQuestion', postController.createQuestion);
-app.get('/allQuestion',postController.getAllQuestion);
+app.get('/allQuestion', postController.getAllQuestion);
 app.post('/addAnswer', postController.addAnswer);
 
 app.post('/uploadImage', userController.uploadImage)
