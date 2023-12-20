@@ -1,3 +1,1 @@
-export const api = "https://quora-clone-backend.herokuapp.com";
-
-
+export const api = "https://quora-clone-sk.onrender.com";
