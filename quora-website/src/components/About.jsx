@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './about.module.css'
 
 
-const About = () => {
+export const About = () => {
 
     return (
         <>
@@ -143,5 +143,3 @@ const About = () => {
         </>
     )
 }
-
-export default About

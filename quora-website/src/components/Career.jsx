@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './career.module.css'
 
-const Career = () => {
+export const Career = () => {
     return (
         <>
             <div className={styles.container} >
@@ -292,5 +292,3 @@ const Career = () => {
         </>
     )
 }
-
-export default Career
