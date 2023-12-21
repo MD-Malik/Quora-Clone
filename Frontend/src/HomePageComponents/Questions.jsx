@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import RssFeedOutlinedIcon from "@material-ui/icons/RssFeedOutlined";
 import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
-import ScreenShareIcon from "@material-ui/icons//ScreenShare";
+import ScreenShareIcon from "@material-ui/icons/ScreenShare";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
 import styled from "styled-components"
