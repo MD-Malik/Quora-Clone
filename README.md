@@ -17,7 +17,7 @@ Quora clone - It's a clone of an American social question-and-answer 'Quora' web
 Clone the project
 
 ```bash
-  git clone https://github.com/Upendra-99/Quora-Clone.git
+  git@github.com:MD-Malik/Quora-Clone.git
 ```
 
 Go to the project directory
@@ -35,11 +35,11 @@ Start
 
 ## Snapshots 📷
 
-![](https://github.com/Upendra-99/Quora-Clone/blob/master/quora-website/src/images/quora_image1.png?raw=true)
+![](https://github.com/MD-Malik/Quora-Clone/blob/master/quora-website/src/images/quora_image1.png?raw=true)
 
-![](https://github.com/Upendra-99/Quora-Clone/blob/master/quora-website/src/images/quora_image2.png?raw=true)
+![](https://github.com/MD-Malik/Quora-Clone/blob/master/quora-website/src/images/quora_image2.png?raw=true)
 
-![](https://github.com/Upendra-99/Quora-Clone/blob/master/quora-website/src/images/quora_image3.png?raw=true)
+![](https://github.com/MD-Malik/Quora-Clone/blob/master/quora-website/src/images/quora_image3.png?raw=true)
 ## Demo 🎥
 
 Deployed Link: [Quora Link](https://quoraclonewebsite.netlify.app/login)
