@@ -45,8 +45,5 @@ Start
 Deployed Link: [Quora Link](https://quoraclonewebsite.netlify.app/login)
 
 
-## Creators 🤝
-
-- [@Upendra-99](https://github.com/Upendra-99)
-- [@a4aks](https://github.com/a4aks)
+## Creator
 - [@MD-Malik](https://github.com/MD-Malik)
